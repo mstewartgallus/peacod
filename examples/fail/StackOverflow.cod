@@ -1,0 +1,2 @@
+(type main int)
+(define main + 1 main)

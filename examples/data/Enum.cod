@@ -1,0 +1,37 @@
+;; defined like a GAT
+;; data Expr a where
+;;     I   :: Int  -> Expr Int
+;;     B   :: Bool -> Expr Bool
+;;     Add :: Expr Int -> Expr Int -> Expr Int
+;;     Mul :: Expr Int -> Expr Int -> Expr Int
+;;     Eq  :: Eq a => Expr a -> Expr a -> Expr Bool
+
+;; is enum right?
+(enum (either A B)
+      (declare (left A) function A (either A B))
+      (declare (right A) function A (either A B)))
+
+;; consider ?
+(enum (list A)
+      (declare (nil A) list A)
+      (record (cons A)
+              (declare (head A) function (cons a) A)
+              (declare (tail A) function (cons a) (list A)))
+
+;; I-Exprs hopefully
+;; enum (either A B)
+;;   declare (left A) function A (either A B)
+;;   declare (right A) function A (either A B)
+
+
+(declare (count A) function (list A) int)
+(define (count List) count-accum 0 List)
+
+(declare (count-accum A) function int (list A) int)
+(define (count-accum Accum List)
+  case List
+  (define nil 0)
+  (define (cons Head Tail) count-accum (+ 1 Accum) Tail))
+
+(declare main int)
+(define main 131)

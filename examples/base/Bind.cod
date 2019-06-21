@@ -1,0 +1,13 @@
+;; FIXME? Kinds?
+;; (kind id *)
+(declare (id A) fn A A)
+(define (id X) X)
+
+(declare idInt fn int int)
+(define (idInt X) id X)
+
+(declare idFn fn (fn int int) (fn int int))
+(define (idFn X) id X)
+
+(declare main int)
+(define main (idFn id) 5)

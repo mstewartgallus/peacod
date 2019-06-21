@@ -1,0 +1,5 @@
+(declare add fn int int int)
+(define (add X Y) + X Y)
+
+(declare main int)
+(define main add 3 5)

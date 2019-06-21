@@ -1,0 +1,8 @@
+(declare fact fn int int int)
+(define (fact Accum N)
+   if (< N 1)
+      Accum
+      (fact (* N Accum) (- N 1)))
+
+(declare main int)
+(define main fact 1 5)

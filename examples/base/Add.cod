@@ -1,0 +1,2 @@
+(declare main int)
+(define main + 23 132)

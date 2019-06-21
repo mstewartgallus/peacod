@@ -1,0 +1,7 @@
+(declare x int)
+(declare y int)
+(declare main int)
+
+(define x + 4 y)
+(define y + 3 4)
+(define main + x y)

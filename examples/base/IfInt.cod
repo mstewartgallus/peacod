@@ -1,0 +1,2 @@
+(declare main int)
+(define main if true (+ 23 132) 4)

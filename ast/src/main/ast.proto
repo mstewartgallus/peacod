@@ -1,0 +1,113 @@
+//Copyright 2019 Steven-Stewart-Gallus
+//
+//Licensed under the Apache License, Version 2.0 (the "License");
+//you may not use this file except in compliance with the License.
+//You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+//Unless required by applicable law or agreed to in writing, software
+//distributed under the License is distributed on an "AS IS" BASIS,
+//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//See the License for the specific language governing permissions and
+//limitations under the License.
+syntax = "proto3";
+
+package peacod_ast;
+
+option java_package = "com.sstewartgallus.peacod.ast";
+option java_multiple_files = true;
+
+message LibraryDef {
+    uint32 version = 1;
+    string name = 2;
+    // fixme consider map?
+    repeated FunctionDef function = 3;
+}
+
+// Fixme, just rename Def or something
+message FunctionDef {
+    string name = 1;
+    uint32 num_type_params = 2;
+    TypeExpr type = 3;
+    Expr body = 4;
+}
+
+// FIXME: Rename as Term?
+message Expr {
+    // FIXME Add debug information
+    oneof value {
+        Simple simple = 1;
+
+        // FIXME spell out fully as LiteralByte ?
+        LitByte lit_byte = 2;
+        LitShort lit_short = 3;
+        LitInt lit_int = 4;
+        LitLong lit_long = 5;
+
+        Get get = 6;
+        Apply apply = 7;
+
+        LoadArg load_arg = 13;
+    }
+
+    // FIXME, just do literal boolean
+    enum Simple {
+        FALSE = 0;
+        TRUE = 1;
+    }
+
+    message LitByte {
+        int32 value = 1;
+    }
+    message LitShort {
+        int32 value = 1;
+    }
+    message LitInt {
+        int32 value = 1;
+    }
+    message LitLong {
+        int64 value = 1;
+    }
+
+    message Get {
+        string library = 1;
+        string name = 2;
+        TypeExpr type = 3;
+
+        // FIXME delay?
+        repeated TypeExpr type_argument = 5;
+    }
+
+    // FIXME consider types?
+    message Apply {
+        Expr function = 1;
+        repeated Expr argument = 2;
+    }
+
+    // fixme rename
+    message LoadArg {
+        TypeExpr type = 1;
+        uint32 index = 2;
+    }
+}
+
+// FIXME: Rename as Type
+message TypeExpr {
+    oneof value {
+        Literal literal = 1;
+        Variable variable = 2;
+    }
+
+    // FIXME? arity
+    message Literal {
+        string library = 1;
+        string name = 2;
+        repeated TypeExpr argument = 3;
+    }
+
+    message Variable {
+        // FIXME... give a kind?
+        uint32 index = 1;
+    }
+}

@@ -1,0 +1,20 @@
+;; defined like a GAT
+;; data Expr a where
+;;     I   :: Int  -> Expr Int
+;;     B   :: Bool -> Expr Bool
+;;     Add :: Expr Int -> Expr Int -> Expr Int
+;;     Mul :: Expr Int -> Expr Int -> Expr Int
+;;     Eq  :: Eq a => Expr a -> Expr a -> Expr Bool
+
+(struct (pair A B)
+        (declare (first A B) fn (pair A B) A)
+        (declare (second A B) fn (pair A B) B))
+
+(struct (stream A)
+        (declare (head A) function (stream A) A)
+        (declare (tail A) function (stream A) (stream A)))
+
+;; But what then should a class be?
+
+(declare main int)
+(define main 131)

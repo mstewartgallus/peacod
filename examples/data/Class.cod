@@ -1,0 +1,6 @@
+(class (window A)
+       (declare main int)
+
+       (declare main int)
+       (define main 131)
+       )

@@ -1,0 +1,2 @@
+(declare main boolean)
+(define main if true false true)

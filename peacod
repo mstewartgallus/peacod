@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+
+VERSION=1.0-SNAPSHOT
+GRAAL_VERSION=19.0.0
+
+SCRIPT_HOME="$(cd "$(dirname "$0")" && pwd -P)"
+
+LAUNCHER_PATH="${SCRIPT_HOME}/launcher/target/launcher-$VERSION.jar"
+LANGUAGE_PATH="${SCRIPT_HOME}/runtime/target/runtime-$VERSION.jar"
+
+JAVACMD="$HOME/graalvm-ce-19.0.0/bin/java"
+
+exec "${JAVACMD}"  -Dtruffle.class.path.append="$LANGUAGE_PATH" -jar "${LAUNCHER_PATH}" "$@"
