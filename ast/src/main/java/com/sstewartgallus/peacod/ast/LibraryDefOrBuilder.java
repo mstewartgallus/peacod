@@ -4,65 +4,67 @@
 package com.sstewartgallus.peacod.ast;
 
 public interface LibraryDefOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:peacod_ast.LibraryDef)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:peacod_ast.LibraryDef)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>uint32 version = 1;</code>
-   */
-  int getVersion();
+    /**
+     * <code>uint32 version = 1;</code>
+     *
+     * @return The version.
+     */
+    int getVersion();
 
-  /**
-   * <code>string name = 2;</code>
-   */
-  java.lang.String getName();
-  /**
-   * <code>string name = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getNameBytes();
+    /**
+     * <code>string name = 2;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
 
-  /**
-   * <pre>
-   * fixme consider map?
-   * </pre>
-   *
-   * <code>repeated .peacod_ast.FunctionDef function = 3;</code>
-   */
-  java.util.List<com.sstewartgallus.peacod.ast.FunctionDef> 
-      getFunctionList();
-  /**
-   * <pre>
-   * fixme consider map?
-   * </pre>
-   *
-   * <code>repeated .peacod_ast.FunctionDef function = 3;</code>
-   */
-  com.sstewartgallus.peacod.ast.FunctionDef getFunction(int index);
-  /**
-   * <pre>
-   * fixme consider map?
-   * </pre>
-   *
-   * <code>repeated .peacod_ast.FunctionDef function = 3;</code>
-   */
-  int getFunctionCount();
-  /**
-   * <pre>
-   * fixme consider map?
-   * </pre>
-   *
-   * <code>repeated .peacod_ast.FunctionDef function = 3;</code>
-   */
-  java.util.List<? extends com.sstewartgallus.peacod.ast.FunctionDefOrBuilder> 
-      getFunctionOrBuilderList();
-  /**
-   * <pre>
-   * fixme consider map?
-   * </pre>
-   *
-   * <code>repeated .peacod_ast.FunctionDef function = 3;</code>
-   */
-  com.sstewartgallus.peacod.ast.FunctionDefOrBuilder getFunctionOrBuilder(
-      int index);
+    /**
+     * <code>string name = 2;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+    getNameBytes();
+
+    /**
+     * <code>map&lt;string, .peacod_ast.Def&gt; def = 3;</code>
+     */
+    int getDefCount();
+
+    /**
+     * <code>map&lt;string, .peacod_ast.Def&gt; def = 3;</code>
+     */
+    boolean containsDef(
+            java.lang.String key);
+
+    /**
+     * Use {@link #getDefMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.sstewartgallus.peacod.ast.Def>
+    getDef();
+
+    /**
+     * <code>map&lt;string, .peacod_ast.Def&gt; def = 3;</code>
+     */
+    java.util.Map<java.lang.String, com.sstewartgallus.peacod.ast.Def>
+    getDefMap();
+
+    /**
+     * <code>map&lt;string, .peacod_ast.Def&gt; def = 3;</code>
+     */
+
+    com.sstewartgallus.peacod.ast.Def getDefOrDefault(
+            java.lang.String key,
+            com.sstewartgallus.peacod.ast.Def defaultValue);
+
+    /**
+     * <code>map&lt;string, .peacod_ast.Def&gt; def = 3;</code>
+     */
+
+    com.sstewartgallus.peacod.ast.Def getDefOrThrow(
+            java.lang.String key);
 }

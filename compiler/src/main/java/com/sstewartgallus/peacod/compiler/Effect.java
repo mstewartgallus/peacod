@@ -15,6 +15,8 @@
  */
 package com.sstewartgallus.peacod.compiler;
 
+import java.util.Objects;
+
 interface Effect<T> {
     Results<T> execute(Env env);
 
@@ -22,8 +24,9 @@ interface Effect<T> {
         final Env env;
         final T result;
 
+        // fixme require nonnull result
         Results(Env env, T result) {
-            this.env = env;
+            this.env = Objects.requireNonNull(env);
             this.result = result;
         }
     }

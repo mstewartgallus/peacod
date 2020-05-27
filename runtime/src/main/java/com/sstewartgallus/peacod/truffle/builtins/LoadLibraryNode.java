@@ -17,21 +17,18 @@ package com.sstewartgallus.peacod.truffle.builtins;
 
 import com.oracle.truffle.api.dsl.Cached;
 import com.oracle.truffle.api.dsl.Specialization;
-import com.oracle.truffle.api.frame.VirtualFrame;
 import com.oracle.truffle.api.nodes.RootNode;
 import com.sstewartgallus.peacod.ast.LibraryDef;
 import com.sstewartgallus.peacod.truffle.Libraries;
 import com.sstewartgallus.peacod.truffle.PeacodLanguage;
-import com.sstewartgallus.peacod.truffle.runtime.Library;
+import com.sstewartgallus.peacod.truffle.runtime.Lib;
 
 public abstract class LoadLibraryNode extends RootNode {
 
-    private final PeacodLanguage language;
     private LibraryDef ast;
 
-    public LoadLibraryNode(PeacodLanguage language, LibraryDef library) {
-        super(language);
-        this.language = language;
+    public LoadLibraryNode(LibraryDef library) {
+        super(PeacodLanguage.getLanguage());
         // FIXME: Verify?
         ast = library;
     }
@@ -53,14 +50,14 @@ public abstract class LoadLibraryNode extends RootNode {
     }
 
     @Specialization
-    public Library loadLibrary(VirtualFrame frame, @Cached("load()") Library library) {
+    public Lib loadLibrary(@Cached("load()") Lib library) {
         return library;
     }
 
-    Library load() {
+    Lib load() {
         // FIXME: Use some kind of lambda passing in
         // this should be a builtin not a nodes
-        Library library = Libraries.loadLibrary(language, ast);
+        var library = Libraries.loadLibrary(ast);
         ast = null;
         return library;
     }

@@ -41,7 +41,7 @@
 package com.sstewartgallus.peacod.truffle.nodes.type;
 
 import com.oracle.truffle.api.frame.VirtualFrame;
-import com.sstewartgallus.peacod.truffle.runtime.PeacodType;
+import com.sstewartgallus.peacod.truffle.runtime.PeacodTypeInstance;
 
 public final class LoadTypeNode extends TypeNode {
     private final int index;
@@ -50,12 +50,12 @@ public final class LoadTypeNode extends TypeNode {
         this.index = index;
     }
 
-    public static LoadTypeNode of(int index) {
+    public static TypeNode of(int index) {
         return new LoadTypeNode(index);
     }
 
     @Override
-    public PeacodType execute(VirtualFrame frame) {
-        return (PeacodType) frame.getArguments()[index];
+    public PeacodTypeInstance execute(VirtualFrame frame) {
+        return (PeacodTypeInstance) frame.getArguments()[index];
     }
 }

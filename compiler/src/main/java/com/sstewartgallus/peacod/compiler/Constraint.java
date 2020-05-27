@@ -15,6 +15,8 @@
  */
 package com.sstewartgallus.peacod.compiler;
 
+import java.util.Objects;
+
 abstract class Constraint {
     static Constraint ofEqual(Type left, Type right) {
         return new Equality(left, right);
@@ -31,8 +33,8 @@ abstract class Constraint {
         final Type right;
 
         private Equality(Type left, Type right) {
-            this.left = left;
-            this.right = right;
+            this.left = Objects.requireNonNull(left);
+            this.right = Objects.requireNonNull(right);
         }
 
         @Override

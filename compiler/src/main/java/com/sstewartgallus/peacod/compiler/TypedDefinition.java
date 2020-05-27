@@ -15,26 +15,26 @@
  */
 package com.sstewartgallus.peacod.compiler;
 
-import java.util.List;
+import java.util.Objects;
 
 final class TypedDefinition {
-    final List<Type> typeArguments;
-    final Type type;
+    final TypeScheme scheme;
+    final int arity;
     final Term expr;
 
-    private TypedDefinition(List<Type> typeArguments, Type type, Term expr) {
-        this.typeArguments = typeArguments;
-        this.type = type;
-        this.expr = expr;
+    private TypedDefinition(TypeScheme scheme, int arity, Term expr) {
+        this.scheme = Objects.requireNonNull(scheme);
+        this.arity = arity;
+        this.expr = Objects.requireNonNull(expr);
     }
 
-    static TypedDefinition of(List<Type> typeArguments, Type type, Term expr) {
-        return new TypedDefinition(typeArguments, type, expr);
+    static TypedDefinition of(TypeScheme scheme, int arity, Term expr) {
+        return new TypedDefinition(scheme, arity, expr);
     }
 
     @Override
     public String toString() {
         // FIXME... lambda syntax?
-        return expr + " : " + type;
+        return expr + " : " + scheme;
     }
 }

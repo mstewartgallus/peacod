@@ -15,18 +15,14 @@
  */
 package com.sstewartgallus.peacod.compiler;
 
-import java.util.List;
-
 final class Declaration {
-    final List<Type> typeArguments;
-    final Type result;
+    final TypeScheme scheme;
 
-    private Declaration(List<Type> typeArguments, Type type) {
-        this.typeArguments = typeArguments;
-        this.result = type;
+    private Declaration(TypeScheme scheme) {
+        this.scheme = scheme;
     }
 
-    static Declaration of(List<Type> typeArguments, Type result) {
-        return new Declaration(typeArguments, result);
+    static Declaration of(TypeScheme scheme) {
+        return new Declaration(scheme);
     }
 }

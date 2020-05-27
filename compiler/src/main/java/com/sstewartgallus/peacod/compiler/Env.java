@@ -18,14 +18,19 @@ package com.sstewartgallus.peacod.compiler;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 
+// fixme.. use explicit scopings...
 final class Env {
-    private static final Env EMPTY = new Env(Collections.emptyMap());
+    private static final Env EMPTY = new Env(null, Collections.emptyMap());
+
+    private final Env predecessor;
     private final Map<Var<?>, Object> map;
 
-    private Env(Map<Var<?>, Object> map) {
-        this.map = map;
+    private Env(Env predecessor, Map<Var<?>, Object> map) {
+        this.predecessor = predecessor;
+        this.map = Objects.requireNonNull(map);
     }
 
     static Env empty() {
@@ -37,21 +42,29 @@ final class Env {
         return map.toString();
     }
 
+    Env scope() {
+        return new Env(this, new HashMap<>());
+    }
+
     <T> Env put(Var<T> domain, T value) {
         Map<Var<?>, Object> copy = new HashMap<>(map);
         copy.put(domain, value);
-        return new Env(copy);
+        return new Env(predecessor, copy);
     }
 
 
     <T> T get(Var<T> var) {
-        return (T) map.get(var);
+        var value = (T) map.get(var);
+        if (null == value && predecessor != null) {
+            return predecessor.get(var);
+        }
+        return value;
     }
 
     <T> Env transform(Var<T> var, Function<T, T> f) {
         Map<Var<?>, Object> copy = new HashMap<>(map);
-        copy.put(var, f.apply((T) map.get(var)));
-        return new Env(copy);
+        copy.put(var, f.apply(get(var)));
+        return new Env(predecessor, copy);
     }
 
     static final class Var<T> {

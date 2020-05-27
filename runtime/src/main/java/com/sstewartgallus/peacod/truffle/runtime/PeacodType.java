@@ -15,15 +15,26 @@
  */
 package com.sstewartgallus.peacod.truffle.runtime;
 
-public class PeacodType extends PeacodObject {
-    public static final PeacodType LONG_VALUE = new PeacodType();
-    public static final PeacodType INT_VALUE = new PeacodType();
-    public static final PeacodType SHORT_VALUE = new PeacodType();
-    public static final PeacodType BYTE_VALUE = new PeacodType();
-    public static final PeacodType BOOLEAN_VALUE = new PeacodType();
+import com.sstewartgallus.peacod.truffle.nodes.type.TypeNode;
+
+public abstract class PeacodType extends PeacodObject {
+    public static PeacodType of(int arity) {
+        switch (arity) {
+            case 0:
+                return new PeacodConstantType();
+            case 1:
+                return new PeacodUnaryType();
+            default:
+                return new PeacodGenericType(arity);
+        }
+    }
 
     @Override
     public Object findMetaObject() {
         return "type";
     }
+
+    public abstract PeacodTypeInstance instance(PeacodTypeInstance... args);
+
+    public abstract TypeNode factory(TypeNode... args);
 }

@@ -15,95 +15,93 @@
  */
 package com.sstewartgallus.peacod.truffle;
 
-import com.oracle.truffle.api.Truffle;
-import com.oracle.truffle.api.nodes.RootNode;
 import com.sstewartgallus.peacod.ast.Expr;
-import com.sstewartgallus.peacod.ast.FunctionDef;
 import com.sstewartgallus.peacod.ast.LibraryDef;
 import com.sstewartgallus.peacod.ast.TypeExpr;
-import com.sstewartgallus.peacod.truffle.nodes.PeacodLazyRootNode;
-import com.sstewartgallus.peacod.truffle.nodes.PeacodStrictRootNode;
-import com.sstewartgallus.peacod.truffle.nodes.exprs.*;
-import com.sstewartgallus.peacod.truffle.nodes.exprs.intrinsics.BuiltinIntrinsics;
-import com.sstewartgallus.peacod.truffle.nodes.exprs.lazy.*;
-import com.sstewartgallus.peacod.truffle.nodes.exprs.strict.*;
-import com.sstewartgallus.peacod.truffle.nodes.exprs.intrinsics.integers.IntegerIntrinsics;
-import com.sstewartgallus.peacod.truffle.nodes.type.FunctionNode;
+import com.sstewartgallus.peacod.truffle.nodes.action.ActionNode;
+import com.sstewartgallus.peacod.truffle.nodes.action.PushActionNode;
+import com.sstewartgallus.peacod.truffle.nodes.action.UnresolvedCallNode;
+import com.sstewartgallus.peacod.truffle.nodes.type.LiteralNode;
 import com.sstewartgallus.peacod.truffle.nodes.type.LoadTypeNode;
 import com.sstewartgallus.peacod.truffle.nodes.type.TypeNode;
+import com.sstewartgallus.peacod.truffle.nodes.value.*;
 import com.sstewartgallus.peacod.truffle.runtime.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public final class Libraries {
 
-    private static final Map<String, Map<String, Intrinsic>> INTRINSICS;
-
-    static {
-        INTRINSICS = new HashMap<>();
-        INTRINSICS.put("peacod.lang.Integers", IntegerIntrinsics.INTRINSICS);
-        INTRINSICS.put("peacod.lang.Builtin", BuiltinIntrinsics.INTRINSICS);
-    }
-
     private Libraries() {
     }
 
-    public static Library loadLibrary(PeacodLanguage language, LibraryDef ast) {
+    public static Lib loadLibrary(LibraryDef ast) {
         Map<String, Definition> targets = new HashMap<>();
 
         System.err.println(ast);
 
-        int version = ast.getVersion();
+        var version = ast.getVersion();
         if (version != 1) {
             throw new Error("unknown library version " + version);
         }
 
-        for (FunctionDef function : ast.getFunctionList()) {
-            String name = function.getName();
+        for (var entry : ast.getDefMap().entrySet()) {
+            var name = entry.getKey();
+            var def = entry.getValue();
 
-            TypeExpr type = function.getType();
-            Expr body = function.getBody();
+            var scheme = def.getType();
 
-            ContextInfo context = new ContextInfo();
+            var type = scheme.getType();
+            // fixme check if actually function
+            // fixme.. awkward incorrect for 0 argument..
+            var numArgs = def.getArity();
+            var numTypeParams = scheme.getArity();
 
-            PolyNode node = toNode(context, targets, body);
+            var body = def.getBody();
 
-            RootNode root;
-            if (node instanceof StrictNode) {
-                StrictNode strict = (StrictNode) node;
-                root = new PeacodStrictRootNode(name, strict);
-            } else if (node instanceof LazyNode) {
-                LazyNode lazy = (LazyNode) node;
-                root = new PeacodLazyRootNode(name, lazy);
-            } else {
-                throw new Error("unhandled node case " + node);
+            var context = new ContextInfo(targets, name);
+
+            for (var ii = 0; ii < numArgs; ++ii) {
+                context.argument();
+            }
+            for (var ii = 0; ii < numTypeParams; ++ii) {
+                context.typeArgument();
             }
 
-            Spec proc = Spec.of(Truffle.getRuntime().createCallTarget(root));
-            Definition def =  Definition.of(Truffle.getRuntime().createCallTarget(RootNode.createConstantNode(proc)));
-            targets.put(name, def);
+            var typeNode = toTypeNode(context, type);
+
+            var bodyNode = toNodeCps(context, body, PushActionNode::of);
+
+            var defRt = Definition.of(name, numTypeParams, numArgs, typeNode, bodyNode);
+
+            System.err.println(defRt);
+
+            targets.put(name, defRt);
         }
 
-        return Library.of(targets);
+        return Lib.of(targets);
     }
 
-    private static TypeNode toTypeNode(TypeExpr expr) {
+    private static TypeNode toTypeNode(ContextInfo context, TypeExpr expr) {
         switch (expr.getValueCase()) {
             case VARIABLE: {
-                int index = expr.getVariable().getIndex();
+                var index = expr.getVariable().getIndex();
                 return LoadTypeNode.of(index);
             }
 
             case LITERAL: {
-                TypeExpr.Literal literal = expr.getLiteral();
-                String name = literal.getName();
-                List<TypeNode> params = literal
+                var literal = expr.getLiteral();
+                var name = literal.getName();
+                var params = literal
                         .getArgumentList()
                         .stream()
-                        .map(Libraries::toTypeNode)
+                        .map(t -> Libraries.toTypeNode(context, t))
                         .collect(Collectors.toList());
-                return TypeNode.ofLiteral(name, params);
+                return LiteralNode.of(name, params);
             }
 
             case VALUE_NOT_SET:
@@ -114,93 +112,70 @@ public final class Libraries {
         }
     }
 
-    private static PolyNode toNode(ContextInfo context, Map<String, Definition> targets, Expr expr) {
+    private static ActionNode toNodeCps(ContextInfo context, Expr expr, Function<ValueNode, ActionNode> k) {
         switch (expr.getValueCase()) {
-            case LOAD_ARG: {
-                Expr.LoadArg loadArg = expr.getLoadArg();
-                TypeNode type = toTypeNode(loadArg.getType());
-                return LoadArgNode.of(loadArg.getIndex(), type);
+            case VARIABLE: {
+                var loadArg = expr.getVariable();
+                var type = toTypeNode(context, loadArg.getType());
+                var index = loadArg.getIndex();
+                return k.apply(ArgumentNode.of(type, index));
             }
 
-            case GET: {
-                throw new Error("unimpl");
+            // fixme... have constant f...
+            case CALL: {
+                var call = expr.getCall();
+
+                // fixme...
+                var function = call.getFunction().getReference();
+
+                List<ValueNode> arguments = new ArrayList<>();
+                var argList = new ArrayList<>(call.getArgumentList());
+                return doCall(context, k, call, function, arguments, argList);
             }
 
-            case APPLY: {
-                Expr.Apply apply = expr.getApply();
+            case CONSTANT: {
+                var constant = expr.getConstant();
+                switch (constant.getValueCase()) {
+                    // fixme.. can strictness be used here as well?
+                    case REFERENCE: {
+                        var call = constant.getReference();
 
-                List<PolyNode> arguments = apply
-                        .getArgumentList()
-                        .stream()
-                        .map((e) -> toNode(context, targets, e))
-                        .collect(Collectors.toList());
+                        var ref = toCallSite(context, call);
 
-                // FIXME is this good design?
-                Expr funcNode = apply.getFunction();
-                if (funcNode.hasGet()) {
-                    Expr.Get get = funcNode.getGet();
+                        return k.apply(UnresolvedNode.of(context.targets, ref));
+                    }
+                    case LITERAL: {
+                        var lit = constant.getLiteral();
+                        switch (lit.getValueCase()) {
+                            case LITERAL_TRUE:
+                                return k.apply(BooleanValueNode.of(true));
+                            case LITERAL_FALSE:
+                                return k.apply(BooleanValueNode.of(false));
+                            case LITERAL_BYTE: {
+                                var value = lit.getLiteralByte().getValue();
+                                return k.apply(IntValueNode.of(value));
+                            }
+                            case LITERAL_SHORT: {
+                                var value = lit.getLiteralShort().getValue();
+                                return k.apply(IntValueNode.of(value));
+                            }
+                            case LITERAL_INT: {
+                                var value = lit.getLiteralInt().getValue();
+                                return k.apply(IntValueNode.of(value));
+                            }
+                            case LITERAL_LONG: {
+                                var value = lit.getLiteralLong().getValue();
+                                return k.apply(LongValueNode.of(value));
+                            }
 
-                    String libraryName = get.getLibrary();
-                    String name = get.getName();
-
-                    TypeExpr typeExpr = get.getType();
-
-                    List<TypeNode> typeArguments = get
-                            .getTypeArgumentList()
-                            .stream()
-                            .map(Libraries::toTypeNode)
-                            .collect(Collectors.toList());
-
-                    isIntrinsic:
-                    {
-                        Map<String, Intrinsic> libIntrinsics = INTRINSICS.get(libraryName);
-                        if (libIntrinsics == null) {
-                            break isIntrinsic;
+                            case VALUE_NOT_SET:
+                                throw new Error("no value set");
                         }
-                        Intrinsic intrinsic = libIntrinsics.get(name);
-                        if (intrinsic == null) {
-                            break isIntrinsic;
-                        }
-                        return intrinsic.makeNode(arguments, typeArguments);
                     }
 
-                    return StaticApplyNode.of(targets, name, typeArguments, arguments);
+                    case VALUE_NOT_SET:
+                        throw new Error("no value set");
                 }
-
-                // fixme dynamic case
-                throw new Error("unimp");
-            }
-
-            case SIMPLE:
-                switch (expr.getSimple()) {
-                    case TRUE:
-                        return LiteralBoolean.of(true);
-
-                    case FALSE:
-                        return LiteralBoolean.of(false);
-
-                    case UNRECOGNIZED:
-                        throw new Error("unrecognized value set");
-
-                    default:
-                        throw new Error("no correct value set");
-                }
-
-            case LIT_BYTE: {
-                Expr.LitByte value = expr.getLitByte();
-                return LiteralInt.of(value.getValue());
-            }
-            case LIT_SHORT: {
-                Expr.LitShort value = expr.getLitShort();
-                return LiteralInt.of(value.getValue());
-            }
-            case LIT_INT: {
-                Expr.LitInt value = expr.getLitInt();
-                return LiteralInt.of(value.getValue());
-            }
-            case LIT_LONG: {
-                Expr.LitLong value = expr.getLitLong();
-                return LiteralLong.of(value.getValue());
             }
 
             case VALUE_NOT_SET:
@@ -211,13 +186,55 @@ public final class Libraries {
         }
     }
 
-    public interface Intrinsic {
-        PolyNode makeNode(List<PolyNode> arguments, List<TypeNode> typeArguments);
+    private static ActionNode doCall(ContextInfo context, Function<ValueNode, ActionNode> k, Expr.Call call, Expr.TermReference function, List<ValueNode> arguments, List<Expr> argList) {
+        if (argList.isEmpty()) {
+            var typeArguments = call
+                    .getTypeArgumentList()
+                    .stream()
+                    .map(t -> Libraries.toTypeNode(context, t))
+                    .collect(Collectors.toList());
+
+            return UnresolvedCallNode.of(context.targets, toCallSite(context, function), typeArguments, arguments, k);
+
+        }
+        return toNodeCps(context, argList.remove(0), arg -> {
+            arguments.add(arg);
+            return doCall(context, k, call, function, arguments, argList);
+        });
     }
 
-    private static final class ContextInfo {
+    private static CallSite toCallSite(ContextInfo context, Expr.TermReference ref) {
+        var library = ref.getReference().getLibrary();
+        var name = ref.getReference().getName();
+        var type = ref.getScheme();
+        return new CallSite(library, name);
+    }
 
-        private ContextInfo() {
+
+    private static final class ContextInfo {
+        final String name;
+        final List<TypeArgument> typeArguments;
+        final List<Variable> arguments;
+        final Map<String, Definition> targets;
+
+        private ContextInfo(Map<String, Definition> targets, String name) {
+            this.typeArguments = new ArrayList<>();
+            this.arguments = new ArrayList<>();
+            this.targets = targets;
+            this.name = name;
         }
+
+        TypeArgument typeArgument() {
+            var arg = new TypeArgument();
+            typeArguments.add(arg);
+            return arg;
+        }
+
+        Variable argument() {
+            var arg = new Variable();
+            arguments.add(arg);
+            return arg;
+        }
+
     }
 }

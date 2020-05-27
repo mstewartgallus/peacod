@@ -18,10 +18,14 @@ package com.sstewartgallus.peacod.compiler;
 import com.sstewartgallus.peacod.ast.LibraryDef;
 
 import java.io.Reader;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 
 public final class Compiler {
+    static final Env.Var<LetBindings> LET = new Env.Var<>("let");
 
     static final Env.Var<Dict<Definition>> DEF = new Env.Var<>("def");
     static final Env.Var<Dict<Declaration>> DECL = new Env.Var<>("decl");
@@ -32,20 +36,25 @@ public final class Compiler {
                     .put("struct", BuiltinSpecial::data)
                     .put("class", BuiltinSpecial::data)
 
+                    .put("let", BuiltinSpecial::let)
+
                     .put("define", BuiltinSpecial::define)
                     .put("declare", BuiltinSpecial::declare)
 
-                    .put("boolean", Expander.typeOp(new Expander.KindSig(0, (l) -> BuiltinTerms.BOOL_VALUE)))
-                    .put("int", Expander.typeOp(new Expander.KindSig(0, (l) -> BuiltinTerms.INT_VALUE)))
+                    .put("boolean", (g) -> env -> new Effect.Results<>(env, Expander.Value.of(BuiltinTerms.BOOL_VALUE)))
+                    .put("int", (g) -> env -> new Effect.Results<>(env, Expander.Value.of(BuiltinTerms.INT_VALUE)))
+
+                    .put("box", Expander.typeOp(BuiltinTerms.BOX))
 
                     .put("fn", BuiltinTerms::functionType)
 
+                    .put("!", Expander.op(BuiltinTerms.FORCE))
                     .put("if", Expander.op(BuiltinTerms.IF))
+                    .put("!if", Expander.op(BuiltinTerms.FORCE_IF))
 
                     .put("+", Expander.op(BuiltinTerms.ADD))
                     .put("-", Expander.op(BuiltinTerms.SUB))
                     .put("*", Expander.op(BuiltinTerms.MUL))
-
                     .put("<", Expander.op(BuiltinTerms.LESS_THAN))
 
                     .put("true", BuiltinTerms::trueVal)
@@ -60,40 +69,40 @@ public final class Compiler {
     }
 
     public static LibraryDef compile(Reader reader) {
-        Form forms = Parser.parseForms(reader);
+        var forms = Parser.parseForms(reader);
 
-        Env env = Expander.expandForms(DEFAULT_ENV, forms);
+        var env = Expander.expandForms(DEFAULT_ENV, forms);
 
-        Dict<Definition> definitions = env.get(DEF);
-
+        var definitions = env.get(DEF);
 
         Map<String, TypedDefinition> defMap = new HashMap<>();
-        for (Map.Entry<String, Definition> entry : definitions.entrySet()) {
-            String name = entry.getKey();
-            Definition def = entry.getValue();
+        for (var entry : definitions.entrySet()) {
+            var name = entry.getKey();
+            var def = entry.getValue();
 
             Set<Constraint> constraints = new HashSet<>();
-            Type exprType = Constraints.termType(def.expr, constraints);
+            var exprType = Constraints.termType(def.expr, constraints);
 
-            Type type = def.type;
-            List<Type> arguments = def.arguments;
+            var arguments = def.arguments;
 
             Type wrappedType;
             if (arguments.size() > 0) {
-                List<Type> sig = new ArrayList<>(arguments);
-                sig.add(exprType);
-                wrappedType = BuiltinTerms.fn(sig.toArray(new Type[0]));
+                wrappedType = BuiltinTerms.fn(arguments, exprType);
             } else {
                 wrappedType = exprType;
             }
 
+            // fixme.. push down!
+            var scheme = def.scheme;
+
+            var type = scheme.type;
             constraints.add(Constraint.ofEqual(wrappedType, type));
 
-            Map<Type, Type> solutions = Constraints.solve(constraints);
+            var solutions = Constraints.solve(constraints);
 
-            TypedDefinition typed = TypedDefinition.of(
-                    def.typeArguments,
-                    Constraints.resolve(solutions, type),
+            var typed = TypedDefinition.of(
+                    TypeScheme.over(scheme.holes, Constraints.resolve(solutions, scheme.type)),
+                    def.arguments.size(),
                     Constraints.decorate(solutions, def.expr));
 
             defMap.put(name, typed);

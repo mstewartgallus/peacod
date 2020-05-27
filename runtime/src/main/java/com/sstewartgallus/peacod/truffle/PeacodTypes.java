@@ -40,11 +40,44 @@
  */
 package com.sstewartgallus.peacod.truffle;
 
+import com.oracle.truffle.api.dsl.TypeCast;
+import com.oracle.truffle.api.dsl.TypeCheck;
 import com.oracle.truffle.api.dsl.TypeSystem;
-import com.sstewartgallus.peacod.truffle.runtime.Thunk;
+import com.sstewartgallus.peacod.truffle.cbpv.Action;
+import com.sstewartgallus.peacod.truffle.cbpv.IntValue;
+import com.sstewartgallus.peacod.truffle.cbpv.PushAction;
+import com.sstewartgallus.peacod.truffle.cbpv.Value;
 
 @TypeSystem({
-        boolean.class, byte.class, short.class, int.class, long.class, Thunk.class
+        boolean.class, byte.class, short.class, int.class, long.class, Action.class, Value.class
 })
 public abstract class PeacodTypes {
+    @TypeCheck(Value.class)
+    public static boolean isValue(Object value) {
+        return true;
+    }
+
+    @TypeCast(Value.class)
+    public static Value<?> asValue(Object value) {
+        if (value instanceof Value) {
+            return (Value) value;
+        }
+        if (value instanceof Integer) {
+            return new IntValue((int) value);
+        }
+        throw new Error("todo");
+    }
+
+    @TypeCheck(Action.class)
+    public static boolean isAction(Object value) {
+        return true;
+    }
+
+    @TypeCast(Action.class)
+    public static Action<?> asAction(Object value) {
+        if (value instanceof Action) {
+            return (Action<?>) value;
+        }
+        return new PushAction<>(asValue(value));
+    }
 }

@@ -15,26 +15,32 @@
  */
 package com.sstewartgallus.peacod.truffle.nodes;
 
-import com.sstewartgallus.peacod.truffle.runtime.PeacodType;
+import com.sstewartgallus.peacod.truffle.PeacodContext;
+import com.sstewartgallus.peacod.truffle.runtime.PeacodTypeInstance;
+import com.sstewartgallus.peacod.truffle.runtime.Usage;
 
 public class NodeUtils {
-    public static boolean isBoolean(PeacodType t) {
-        return PeacodType.BOOLEAN_VALUE == t;
+    public static boolean isStrict(Usage strictness) {
+        return strictness == Usage.STRICT;
     }
 
-    public static boolean isByte(PeacodType t) {
-        return PeacodType.BYTE_VALUE == t;
+    public static boolean isBoolean(PeacodTypeInstance t) {
+        return PeacodContext.BOOLEAN_VALUE == t.parent;
     }
 
-    public static boolean isShort(PeacodType t) {
-        return PeacodType.SHORT_VALUE == t;
+    public static boolean isByte(PeacodTypeInstance t) {
+        return PeacodContext.BYTE_VALUE == t.parent;
     }
 
-    public static boolean isInt(PeacodType t) {
-        return PeacodType.INT_VALUE == t;
+    public static boolean isShort(PeacodTypeInstance t) {
+        return PeacodContext.SHORT_VALUE == t.parent;
     }
 
-    public static boolean isLong(PeacodType t) {
-        return PeacodType.LONG_VALUE == t;
+    public static boolean isInt(PeacodTypeInstance t) {
+        return PeacodContext.INT_VALUE == t.parent;
+    }
+
+    public static boolean isLong(PeacodTypeInstance t) {
+        return PeacodContext.LONG_VALUE == t.parent;
     }
 }

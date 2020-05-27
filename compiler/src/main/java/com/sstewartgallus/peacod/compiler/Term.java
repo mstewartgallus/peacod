@@ -15,7 +15,8 @@
  */
 package com.sstewartgallus.peacod.compiler;
 
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
 
 abstract class Term {
     // FIXME https://crypto.stanford.edu/~blynn/lambda/pts.html just unify terms ands types (on the backend only though)
@@ -28,44 +29,51 @@ abstract class Term {
         LIT_LONG,
 
         APPLY,
-        GET,
+        REFERENCE,
         LOAD_ARG
-     }
+    }
 
-    static final class Get extends Term {
+    static final class Reference {
         final String library;
         final String name;
-        final Type type;
+
+        Reference(String library, String name) {
+            this.library = library;
+            this.name = name;
+        }
+    }
+
+    static final class TermReference extends Term {
+        final Reference reference;
+        final TypeScheme scheme;
 
         // Maybe leave until later?
         final List<Type> typeArguments;
 
-        Get(String library,
-             String name, Type type,
-             List<Type> typeArguments) {
-            this.library = library;
-            this.name = name;
-            this.type = type;
-            this.typeArguments = typeArguments;
+        TermReference(Reference reference, TypeScheme type,
+                      List<Type> typeArguments) {
+            this.reference = Objects.requireNonNull(reference);
+            this.scheme = Objects.requireNonNull(type);
+            this.typeArguments = Objects.requireNonNull(typeArguments);
         }
 
         @Override
         Tag tag() {
-            return Tag.GET;
+            return Tag.REFERENCE;
         }
 
         @Override
         public String toString() {
-            return "(" + library + "." + name + ") : " + type;
+            return reference + " : " + scheme;
         }
     }
 
-    // FIXME (add type?)
+    // FIXME (add scheme?)
     static final class Apply extends Term {
-        final List<Term> arguments;
         final Term function;
+        final List<Term> arguments;
 
-        // FIXME Make one method signature argument...
+
         Apply(Term function, List<Term> arguments) {
             this.function = function;
             this.arguments = arguments;
@@ -78,7 +86,7 @@ abstract class Term {
 
         @Override
         public String toString() {
-            return "(" + function + " " + arguments + ") : ";
+            return "(" + function + " " + arguments + ")";
         }
     }
 
@@ -87,7 +95,7 @@ abstract class Term {
         final Type type;
 
         Variable(int argIndex, Type type) {
-            this.type = type;
+            this.type = Objects.requireNonNull(type);
             this.argIndex = argIndex;
         }
 

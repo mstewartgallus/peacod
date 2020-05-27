@@ -16,27 +16,27 @@
 package com.sstewartgallus.peacod.compiler;
 
 import java.util.List;
+import java.util.Objects;
 
 final class Definition {
-    final List<Type> typeArguments;
+    final TypeScheme scheme;
     final List<Type> arguments;
-    final Type type;
     final Term expr;
 
-    private Definition(List<Type> typeArguments, List<Type> arguments, Type type, Term expr) {
-        this.typeArguments = typeArguments;
-        this.arguments = arguments;
-        this.type = type;
-        this.expr = expr;
+    private Definition(TypeScheme scheme, List<Type> arguments, Term expr) {
+        this.scheme = Objects.requireNonNull(scheme);
+        this.arguments = Objects.requireNonNull(arguments);
+        this.expr = Objects.requireNonNull(expr);
     }
 
-    static Definition of(List<Type> typeArguments, List<Type> arguments, Type type, Term expr) {
-        return new Definition(typeArguments, arguments, type, expr);
+    // fixme.. push down arguments?
+    static Definition of(LetBindings letEnv, TypeScheme scheme, List<Type> arguments, Term expr) {
+        return new Definition(scheme, arguments, expr);
     }
 
     @Override
     public String toString() {
-        return expr + " : " + type;
+        return expr + " : " + scheme;
     }
 
 }

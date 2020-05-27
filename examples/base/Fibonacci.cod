@@ -5,4 +5,4 @@
       (+ (fib (- N 1)) (fib (- N 2))))
 
 (declare main int)
-(define main fib 30)
+(define main fib 22)

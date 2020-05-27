@@ -26,7 +26,7 @@ import static java.io.StreamTokenizer.*;
 class Parser {
 
     static Form parseForms(Reader reader) {
-        StreamTokenizer tokenizer = new StreamTokenizer(reader);
+        var tokenizer = new StreamTokenizer(reader);
         tokenizer.resetSyntax();
 
         tokenizer.eolIsSignificant(true);
@@ -37,8 +37,8 @@ class Parser {
         tokenizer.wordChars('a', 'z');
         tokenizer.wordChars('A', 'Z');
 
-        char[] specialcases = new char[]{'<', '-', '+', '*', '[', ']', '.', '-', '|', '>', ':', ',', '=', '?', '∀'};
-        for (char c : specialcases) {
+        var specialcases = new char[]{'<', '-', '+', '*', '[', ']', '.', '-', '|', '>', ':', ',', '=', '?', '∀', '\\', '!'};
+        for (var c : specialcases) {
             tokenizer.wordChars(c, c);
         }
 
@@ -78,7 +78,7 @@ class Parser {
                         break loop;
                     }
 
-                    List<Form> popped = currentList;
+                    var popped = currentList;
                     currentList = stack.remove(stack.size() - 1);
 
                     val = Form.list(popped);

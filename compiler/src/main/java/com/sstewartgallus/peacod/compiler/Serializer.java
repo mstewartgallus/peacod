@@ -17,75 +17,96 @@ package com.sstewartgallus.peacod.compiler;
 
 import com.sstewartgallus.peacod.ast.*;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 class Serializer {
     static LibraryDef serializeLibrary(Map<String, TypedDefinition> definitions) {
-        LibraryDef.Builder builder = LibraryDef
+        var builder = LibraryDef
                 .newBuilder()
                 .setVersion(1)
                 .setName("TheModuleNameTODO");
 
-        for (Map.Entry<String, TypedDefinition> expr : definitions.entrySet()) {
-            String name = expr.getKey();
-            TypedDefinition def = expr.getValue();
+        for (var expr : definitions.entrySet()) {
+            var name = expr.getKey();
+            var def = expr.getValue();
 
-            Type type = def.type;
-            List<Type> typeArguments = def.typeArguments;
-            Term body = def.expr;
+            var type = def.scheme;
+            var typeArguments = def.scheme.holes;
+            var body = def.expr;
 
             Map<Type, Integer> map = new HashMap<>();
             {
-                int ii = 0;
+                var ii = 0;
                 for (Type argument : typeArguments) {
                     map.put(argument, ii++);
                 }
             }
 
-            TypeExpr serializedType = serializeType(map, type);
-            Expr serialized = serialize(map, body);
+            var serializedType = serializeType(type);
+            var serialized = serialize(map, body);
 
-            FunctionDef.Builder func = FunctionDef
+            builder.putDef(name, Def
                     .newBuilder()
-                    .setName(name)
                     .setType(serializedType)
-                    .setNumTypeParams(typeArguments.size())
-                    .setBody(serialized);
-
-            builder.addFunction(func);
+                    .setArity(def.arity)
+                    .setBody(serialized)
+                    .build());
         }
 
         return builder.build();
     }
 
+    private static TypeSchemeExpr serializeType(TypeScheme scheme) {
+        Map<Type, Integer> holeMap = new HashMap<>();
+        var ii = 0;
+        for (var hole : scheme.holes) {
+            holeMap.put(hole, ii);
+            ++ii;
+        }
+        var type = serializeType(holeMap, scheme.type);
+
+        return TypeSchemeExpr.newBuilder()
+                .setArity(scheme.holes.size())
+                .setType(type)
+                .build();
+    }
+
     // FIXME Serialize declare constructors/tags more directly
-    private static TypeExpr serializeType(Map<Type, Integer> map, Type expr) {
-        if (expr instanceof Type.Hole) {
+    private static TypeExpr serializeType(Map<Type, Integer> map, Type type) {
+        Objects.requireNonNull(map);
+        if (type instanceof Type.Hole) {
+            Objects.requireNonNull(type);
+            int index = map.getOrDefault(type, -1);
+            if (index < 0) {
+                throw new Error("hole " + type + " not found in " + map);
+            }
             return TypeExpr
                     .newBuilder()
                     .setVariable(
                             TypeExpr.Variable
                                     .newBuilder()
-                                    .setIndex(map.get(expr))
+                                    .setIndex(index)
                                     .build())
                     .build();
         }
 
-        Type.Concrete conc = (Type.Concrete) expr;
+        var conc = (Type.Concrete) type;
 
-        Type.Tag tag = conc.tag;
-        String libraryName = tag.library;
-        String name = tag.name;
-        Type[] types = conc.types;
+        var tag = conc.tag;
+        var libraryName = tag.library;
+        var name = tag.name;
+        var types = conc.types;
 
-        TypeExpr.Literal.Builder literal = TypeExpr.Literal
+        var literal = TypeExpr.Literal
                 .newBuilder();
 
         literal.setLibrary(libraryName);
         literal.setName(name);
 
-        for (Type type : types) {
-            TypeExpr serialized = serializeType(map, type);
+        for (var argumentType : types) {
+            var serialized = serializeType(map, argumentType);
             literal.addArgument(serialized);
         }
 
@@ -97,58 +118,61 @@ class Serializer {
 
     private static Expr serialize(Map<Type, Integer> map, Term expr) {
         switch (expr.tag()) {
-            case GET: {
-                Term.Get get = (Term.Get) expr;
-
-                String library = get.library;
-                TypeExpr type = serializeType(map, get.type);
-
-                Expr.Get.Builder builder =
-                        Expr.Get
-                                .newBuilder()
-                                .setType(type)
-                                .setName(get.name);
-
-                if (library != null) {
-                    builder.setLibrary(library);
-                }
-
-                for (Type t : get.typeArguments) {
-                    builder.addTypeArgument(serializeType(map, t));
-                }
-                return Expr
-                        .newBuilder()
-                        .setGet(builder)
-                        .build();
-            }
-
             case APPLY: {
-                Term.Apply apply = (Term.Apply) expr;
+                var apply = (Term.Apply) expr;
 
-                Expr function = serialize(map, apply.function);
+                var function = apply.function;
+                // fixme... put type arguments in as normal applicatio part...
+                var arguments = apply.arguments;
 
-                Expr.Apply.Builder builder =
-                        Expr.Apply
-                                .newBuilder()
-                                .setFunction(function);
+                //fixme
+                var funS = serialize(map, function).getConstant();
 
-                for (Term val : apply.arguments) {
+                var builder = Expr.Call
+                        .newBuilder()
+                        .setFunction(funS);
+
+                // fixme... add type args...
+
+                for (var val : arguments) {
                     builder.addArgument(serialize(map, val));
                 }
 
                 return Expr
                         .newBuilder()
-                        .setApply(builder)
+                        .setCall(builder)
+                        .build();
+            }
+
+
+            case REFERENCE: {
+                var apply = (Term.TermReference) expr;
+
+                var ref = apply.reference;
+
+                var type = serializeType(apply.scheme);
+
+                var builder = Expr.TermReference
+                        .newBuilder()
+                        .setReference(Expr.Reference
+                                .newBuilder()
+                                .setLibrary(ref.library)
+                                .setName(ref.name))
+                        .setScheme(type);
+
+                return Expr
+                        .newBuilder()
+                        .setConstant(Expr.Constant.newBuilder().setReference(builder))
                         .build();
             }
             case LOAD_ARG: {
-                Term.Variable loadArg = (Term.Variable) expr;
-                TypeExpr type = serializeType(map, loadArg.type);
-                int argIndex = loadArg.argIndex;
+                var loadArg = (Term.Variable) expr;
+                var type = serializeType(map, loadArg.type);
+                var argIndex = loadArg.argIndex;
                 return Expr
                         .newBuilder()
-                        .setLoadArg(
-                                Expr.LoadArg
+                        .setVariable(
+                                Expr.Variable
                                         .newBuilder()
                                         .setType(type)
                                         .setIndex(argIndex))
@@ -156,35 +180,40 @@ class Serializer {
             }
 
             case LIT_BOOLEAN: {
-                Term.LitBoolean litBoolean = (Term.LitBoolean) expr;
-                return Expr
-                        .newBuilder()
-                        .setSimple(litBoolean.value ? Expr.Simple.TRUE : Expr.Simple.FALSE)
-                        .build();
+                var litBoolean = (Term.LitBoolean) expr;
+                if (litBoolean.value) {
+                    return Expr
+                            .newBuilder()
+                            .setConstant(Expr.Constant.newBuilder()
+                                    .setLiteral(Expr.Literal.newBuilder()
+                                            .setLiteralTrue(Expr.LiteralTrue.newBuilder())))
+                            .build();
+                } else {
+                    return Expr
+                            .newBuilder()
+                            .setConstant(Expr.Constant.newBuilder()
+                                    .setLiteral(Expr.Literal.newBuilder()
+                                            .setLiteralFalse(Expr.LiteralFalse.newBuilder())))
+                            .build();
+                }
             }
 
             case LIT_INT: {
-                Term.LitInt litInt = (Term.LitInt) expr;
-                return Expr
-                        .newBuilder()
-                        .setLitInt(
-                                Expr.LitInt
+                var litInt = (Term.LitInt) expr;
+                return Expr.newBuilder()
+                        .setConstant(Expr.Constant.newBuilder()
+                                .setLiteral(Expr.Literal
                                         .newBuilder()
-                                        .setValue(litInt.value)
-                                        .build())
+                                        .setLiteralInt(
+                                                Expr.LiteralInteger
+                                                        .newBuilder()
+                                                        .setValue(litInt.value))
+                                        .build()))
                         .build();
             }
 
             case LIT_LONG: {
-                Term.LitLong litInt = (Term.LitLong) expr;
-                return Expr
-                        .newBuilder()
-                        .setLitLong(
-                                Expr.LitLong
-                                        .newBuilder()
-                                        .setValue(litInt.value)
-                                        .build())
-                        .build();
+                throw null;
             }
             default:
                 throw new Error("unknown tag " + expr.tag());

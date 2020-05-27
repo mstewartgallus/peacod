@@ -16,14 +16,15 @@
 package com.sstewartgallus.peacod.compiler;
 
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Form {
     private Form() {
     }
 
     public static Form list(List<Form> list) {
-        int n = list.size();
-        Form form = empty();
+        var n = list.size();
+        var form = empty();
         while (n > 0) {
             --n;
             form = cons(list.get(n), form);
@@ -48,28 +49,32 @@ public abstract class Form {
 
         private Empty() {
         }
+
+        public String toString() {
+            return "()";
+        }
     }
 
     public static final class Cons extends Form {
-        public final Form head;
-        public final Form tail;
+        final Form head;
+        final Form tail;
 
         private Cons(Form head, Form tail) {
-            this.head = head;
-            this.tail = tail;
+            this.head = Objects.requireNonNull(head);
+            this.tail = Objects.requireNonNull(tail);
         }
 
         public String toString() {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
             builder.append('(');
             builder.append(head);
 
-            Form form = tail;
+            var form = tail;
             while (form instanceof Cons) {
-                Cons c = (Cons) form;
-                Form head = c.head;
-                Form tail = c.tail;
+                var c = (Cons) form;
+                var head = c.head;
+                var tail = c.tail;
                 builder.append(' ');
                 builder.append(head);
                 form = tail;
@@ -86,7 +91,7 @@ public abstract class Form {
         public final String value;
 
         private Atom(String value) {
-            this.value = value;
+            this.value = Objects.requireNonNull(value);
         }
 
         public String toString() {

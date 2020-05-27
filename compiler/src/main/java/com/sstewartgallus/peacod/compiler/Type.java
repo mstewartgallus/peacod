@@ -15,14 +15,13 @@
  */
 package com.sstewartgallus.peacod.compiler;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 // FIXME USE Type Constructors...
 abstract class Type {
 
     static Type of(Tag tag, Type... types) {
-        Objects.requireNonNull(tag);
-        Objects.requireNonNull(types);
         return new Concrete(tag, types);
     }
 
@@ -33,8 +32,8 @@ abstract class Type {
         final int arity;
 
         private Tag(String library, String name, int arity) {
-            this.library = library;
-            this.name = name;
+            this.library = Objects.requireNonNull(library);
+            this.name = Objects.requireNonNull(name);
             this.arity = arity;
         }
 
@@ -53,10 +52,14 @@ abstract class Type {
                 return false;
             }
 
-            Tag tag = (Tag) obj;
+            var tag = (Tag) obj;
             return
                     Objects.equals(library, tag.library)
                             && Objects.equals(name, tag.name);
+        }
+
+        public String toString() {
+            return library + "." + name + "/" + arity;
         }
     }
 
@@ -66,10 +69,10 @@ abstract class Type {
 
         Concrete(Tag tag, Type... types) {
             if (tag.arity != types.length) {
-                throw new Error("misaapplication");
+                throw new Error("misapplication of " + tag + " to " + Arrays.toString(types));
             }
-            this.tag = tag;
-            this.types = types;
+            this.tag = Objects.requireNonNull(tag);
+            this.types = Objects.requireNonNull(types);
         }
 
         @Override
@@ -78,11 +81,11 @@ abstract class Type {
                 return tag.name;
             }
 
-            StringBuilder buf = new StringBuilder();
+            var buf = new StringBuilder();
             buf.append('(');
             buf.append(tag.name);
 
-            for (Type t : types) {
+            for (var t : types) {
                 buf.append(' ');
                 buf.append(t);
             }

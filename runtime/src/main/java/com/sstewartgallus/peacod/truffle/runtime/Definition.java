@@ -1,36 +1,25 @@
 package com.sstewartgallus.peacod.truffle.runtime;
 
-import com.oracle.truffle.api.CompilerDirectives;
-import com.oracle.truffle.api.RootCallTarget;
-import com.oracle.truffle.api.interop.InteropLibrary;
+import com.oracle.truffle.api.Truffle;
 import com.oracle.truffle.api.interop.TruffleObject;
-import com.oracle.truffle.api.library.ExportLibrary;
-import com.oracle.truffle.api.library.ExportMessage;
+import com.sstewartgallus.peacod.truffle.nodes.action.ActionNode;
+import com.sstewartgallus.peacod.truffle.nodes.type.PeacodTypeRootNode;
+import com.sstewartgallus.peacod.truffle.nodes.type.TypeNode;
+import com.sstewartgallus.peacod.truffle.nodes.value.ValueNode;
 
-@CompilerDirectives.ValueType
-@ExportLibrary(InteropLibrary.class)
-public final class Definition implements TruffleObject {
-    public final RootCallTarget produceProcedure;
+import java.util.List;
+import java.util.function.Function;
 
-    private Definition(RootCallTarget produceProcedure) {
-        this.produceProcedure = produceProcedure;
-    }
-
-    public static Definition of(RootCallTarget produceProcedure) {
-        return new Definition(produceProcedure);
-    }
-
-    @SuppressWarnings("static-method")
-    @ExportMessage
-    boolean isExecutable() {
-        return true;
-    }
-
-    @ExportMessage
-    abstract static class Execute {
-        @com.oracle.truffle.api.dsl.Specialization
-        protected static Spec doDirect(Definition def, Object[] arguments) {
-            return (Spec) def.produceProcedure.call(arguments);
+public abstract class Definition implements TruffleObject {
+    public static Definition of(String name, int numTypeParams, int numArgs, TypeNode typeNode, ActionNode bodyNode) {
+        var typeTarget = Truffle.getRuntime().createCallTarget(new PeacodTypeRootNode(name, typeNode));
+        if (numTypeParams == 0) {
+            return NongenericDefinition.of(name, numArgs, (PeacodTypeInstance) typeTarget.call(), bodyNode);
         }
+        throw new Error("generics are unimplemented");
     }
+
+    public abstract ActionNode apply(List<TypeNode> typeArguments, List<ValueNode> arguments, Function<ValueNode, ActionNode> k);
+
+    public abstract ValueNode get();
 }

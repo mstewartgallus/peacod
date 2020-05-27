@@ -18,12 +18,10 @@ package com.sstewartgallus.peacod.launcher;
 import org.graalvm.polyglot.Context;
 import org.graalvm.polyglot.PolyglotException;
 import org.graalvm.polyglot.Source;
-import org.graalvm.polyglot.Value;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,7 +33,7 @@ final class Launcher {
      * The main entry point.
      */
     public static void main(String[] args) throws IOException {
-        int result = executeSource(args);
+        var result = executeSource(args);
         System.exit(result);
     }
 
@@ -43,7 +41,7 @@ final class Launcher {
         Source source;
         Map<String, String> options = new HashMap<>();
         String file = null;
-        for (String arg : args) {
+        for (var arg : args) {
             if (parseOption(options, arg)) {
                 continue;
             }
@@ -53,7 +51,7 @@ final class Launcher {
             }
         }
         Context context;
-        PrintStream err = System.err;
+        var err = System.err;
         try {
             context = Context
                     .newBuilder(PEACOD)
@@ -73,26 +71,23 @@ final class Launcher {
         }
 
         try {
-            Value library = context.eval(source);
-            Value main = library.getMember("main");
+            var library = context.eval(source);
+            var main = library.getMember("main");
             if (null == main) {
-                err.println("No procedure main() defined in PEACOD source file.");
+                err.println("No procedure main () defined in PEACOD source file.");
                 return 1;
             }
 
-            // FIXME.. specialize?
-            main = main.execute();
-
             // Dead code elimination only applies if it is warmed up
-            for (int ii = 0; ii < 1000; ++ii) {
-                main.execute();
+            for (long ii = 0; ii < 1000; ++ii) {
+                main.execute().execute();
             }
 
-            long start = System.currentTimeMillis();
-            Value result = main.execute();
-            long end = System.currentTimeMillis();
+            var start = System.currentTimeMillis();
+            var result = main.execute().execute().execute();
+            var end = System.currentTimeMillis();
 
-            System.out.println("results => " + result.toString() + " in " + (end - start) + "ms");
+            System.out.println(result.toString() + " in " + (end - start) + "ms");
             return 0;
         } catch (PolyglotException ex) {
             if (ex.isInternalError()) {
@@ -111,7 +106,7 @@ final class Launcher {
         if (arg.length() <= 2 || !arg.startsWith("--")) {
             return false;
         }
-        int eqIdx = arg.indexOf('=');
+        var eqIdx = arg.indexOf('=');
         String key;
         String value;
         if (eqIdx < 0) {

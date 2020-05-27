@@ -15,13 +15,11 @@
  */
 package com.sstewartgallus.peacod.truffle.nodes;
 
-import com.oracle.truffle.api.nodes.NodeInfo;
+import com.oracle.truffle.api.dsl.ReportPolymorphism;
 import com.oracle.truffle.api.nodes.RootNode;
 import com.sstewartgallus.peacod.truffle.PeacodLanguage;
 
-@NodeInfo(
-        language = PeacodLanguage.ID,
-        description = "The root of all strict Peacod execution trees")
+@ReportPolymorphism
 public abstract class PeacodRootNode extends RootNode {
     private final String name;
 
@@ -37,7 +35,7 @@ public abstract class PeacodRootNode extends RootNode {
 
     @Override
     public boolean isCloningAllowed() {
-        return false;
+        return true;
     }
 
     @Override
@@ -45,5 +43,5 @@ public abstract class PeacodRootNode extends RootNode {
         return "root " + name;
     }
 
-    public abstract boolean strict();
+    public abstract String graph();
 }

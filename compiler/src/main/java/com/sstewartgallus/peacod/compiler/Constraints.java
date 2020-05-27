@@ -25,14 +25,14 @@ final class Constraints {
         Map<Type, Type> solutionsSoFar = new HashMap<>(holes(constraints));
         List<Constraint> unresolvedConstraints = new ArrayList<>(constraints);
         while (unresolvedConstraints.size() > 0) {
-            Constraint constraint = unresolvedConstraints.remove(0);
+            var constraint = unresolvedConstraints.remove(0);
             if (constraint.tag() == Constraint.Tag.EQUALITY) {
-                Constraint.Equality eq = (Constraint.Equality) constraint;
-                Type left = eq.left;
-                Type right = eq.right;
+                var eq = (Constraint.Equality) constraint;
+                var left = eq.left;
+                var right = eq.right;
 
-                Type xCanonical = resolve(solutionsSoFar, left);
-                Type yCanonical = resolve(solutionsSoFar, right);
+                var xCanonical = resolve(solutionsSoFar, left);
+                var yCanonical = resolve(solutionsSoFar, right);
 
                 if (Objects.equals(xCanonical, yCanonical)) {
                     // no new information
@@ -53,7 +53,7 @@ final class Constraints {
                         break mapHoleBlock;
                     }
 
-                    Map<Type, Type> m = Collections.singletonMap(key, value);
+                    var m = Collections.singletonMap(key, value);
                     solutionsSoFar.replaceAll((h, b) -> resolve(m, b));
                     continue;
                 }
@@ -63,20 +63,20 @@ final class Constraints {
                     if (!(xCanonical instanceof Type.Concrete)) {
                         break block;
                     }
-                    Type.Concrete xConc = (Type.Concrete) xCanonical;
+                    var xConc = (Type.Concrete) xCanonical;
 
                     if (!(yCanonical instanceof Type.Concrete)) {
                         break block;
                     }
-                    Type.Concrete yConc = (Type.Concrete) yCanonical;
+                    var yConc = (Type.Concrete) yCanonical;
 
                     if (xConc.tag != yConc.tag) {
                         break block;
                     }
 
-                    Type[] xTypes = xConc.types;
-                    Type[] yTypes = yConc.types;
-                    for (int ii = 0; ii < xTypes.length; ++ii) {
+                    var xTypes = xConc.types;
+                    var yTypes = yConc.types;
+                    for (var ii = 0; ii < xTypes.length; ++ii) {
                         unresolvedConstraints.add(
                                 Constraint.ofEqual(xTypes[ii], yTypes[ii]));
                     }
@@ -96,57 +96,66 @@ final class Constraints {
                 .stream()
                 .flatMap((constraint) -> {
                     if (constraint.tag() == Constraint.Tag.EQUALITY) {
-                        Constraint.Equality eq = (Constraint.Equality) constraint;
-                        Type x = eq.left;
-                        Type y = eq.right;
+                        var eq = (Constraint.Equality) constraint;
+                        var x = eq.left;
+                        var y = eq.right;
 
                         return Stream.of(x, y);
                     }
                     throw new Error("unimpl");
                 })
                 .distinct()
-                .flatMap((type) -> {
-                    if (type instanceof Type.Hole) {
-                        return Stream.of(type);
-                    }
-
-                    Type.Concrete concrete = (Type.Concrete) type;
-                    return Arrays.stream(concrete.types);
-                })
+                .flatMap(Constraints::holes)
                 .distinct()
                 .collect(Collectors.toMap((t) -> t, (t) -> t));
     }
 
+    private static Stream<Type.Hole> holes(Type type) {
+        if (type instanceof Type.Hole) {
+            return Stream.of((Type.Hole) type);
+        }
+
+        var concrete = (Type.Concrete) type;
+        return Arrays
+                .stream(concrete.types)
+                .flatMap(Constraints::holes)
+                .distinct();
+    }
+
     static Type termType(Term term, Set<Constraint> constraints) {
         switch (term.tag()) {
-            case GET: {
-                Term.Get get = (Term.Get) term;
-                return get.type;
+            case REFERENCE: {
+                var get = (Term.TermReference) term;
+                var scheme = get.scheme.copy();
+
+                for (var ii = 0; ii < get.typeArguments.size(); ++ii) {
+                    constraints.add(Constraint.ofEqual(scheme.holes.get(ii), get.typeArguments.get(ii)));
+                }
+                return scheme.type;
             }
 
             case APPLY: {
-                Term.Apply apply = (Term.Apply) term;
+                var apply = (Term.Apply) term;
 
-                Term function = apply.function;
-                List<Term> arguments = apply.arguments;
+                var function = apply.function;
+                var arguments = apply.arguments;
 
-                Type functionType = termType(function, constraints);
+                var functionType = termType(function, constraints);
 
                 List<Type> argumentTypes = new ArrayList<>();
-                for (Term argTerm : arguments) {
-                    Type shouldBe = termType(argTerm, constraints);
+                for (var argTerm : arguments) {
+                    var shouldBe = termType(argTerm, constraints);
                     argumentTypes.add(shouldBe);
                 }
 
-                Type resultType = new Type.Hole();
-                argumentTypes.add(resultType);
-                Type inferredType = BuiltinTerms.fn(argumentTypes.toArray(new Type[0]));
-                constraints.add(Constraint.ofEqual(functionType, inferredType));
-                return resultType;
+                Type result = new Type.Hole();
+                var inferred = BuiltinTerms.fn(argumentTypes, result);
+                constraints.add(Constraint.ofEqual(functionType, inferred));
+                return result;
             }
 
             case LOAD_ARG: {
-                Term.Variable loadArgument = (Term.Variable) term;
+                var loadArgument = (Term.Variable) term;
                 return loadArgument.type;
             }
 
@@ -169,29 +178,30 @@ final class Constraints {
             return term;
         }
         switch (term.tag()) {
-            case GET: {
-                Term.Get get = (Term.Get) term;
-                List<Type> typeArguments = get.typeArguments
+            case REFERENCE: {
+                var get = (Term.TermReference) term;
+                var typeArguments = get.typeArguments
                         .stream()
                         .map((e) -> resolve(solutions, e))
                         .collect(Collectors.toList());
-                Type type = resolve(solutions, get.type);
-                return new Term.Get(get.library, get.name, type, typeArguments);
+                var type = resolve(solutions, get.scheme);
+                return new Term.TermReference(get.reference, type, typeArguments);
             }
 
             case APPLY: {
-                Term.Apply apply = (Term.Apply) term;
-                Term function = decorate(solutions, apply.function);
-                List<Term> arguments = apply.arguments
+                var apply = (Term.Apply) term;
+                var function = decorate(solutions, apply.function);
+                var arguments = apply
+                        .arguments
                         .stream()
-                        .map((e) -> decorate(solutions, e))
+                        .map(e -> decorate(solutions, e))
                         .collect(Collectors.toList());
                 return new Term.Apply(function, arguments);
             }
 
             case LOAD_ARG: {
-                Term.Variable loadArgument = (Term.Variable) term;
-                Type type = resolve(solutions, loadArgument.type);
+                var loadArgument = (Term.Variable) term;
+                var type = resolve(solutions, loadArgument.type);
                 return new Term.Variable(loadArgument.argIndex, type);
             }
 
@@ -205,15 +215,18 @@ final class Constraints {
             return solutions.getOrDefault(type, type);
         }
 
-        Type.Concrete concrete = (Type.Concrete) type;
+        var concrete = (Type.Concrete) type;
         if (concrete.tag.arity == 0) {
             return type;
         }
 
-        Type[] replaced = Arrays.stream(concrete.types)
+        var replaced = Arrays.stream(concrete.types)
                 .map((e) -> resolve(solutions, e))
                 .toArray(Type[]::new);
         return new Type.Concrete(concrete.tag, replaced);
     }
 
+    private static TypeScheme resolve(Map<Type, Type> solutions, TypeScheme scheme) {
+        return TypeScheme.over(scheme.holes, resolve(solutions, scheme.type));
+    }
 }

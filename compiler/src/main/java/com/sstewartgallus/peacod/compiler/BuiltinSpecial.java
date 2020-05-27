@@ -1,6 +1,7 @@
 package com.sstewartgallus.peacod.compiler;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 class BuiltinSpecial {
@@ -11,15 +12,38 @@ class BuiltinSpecial {
         };
     }
 
-    static Effect<Expander.Value> declare(Form g) {
+    static Effect<Expander.Value> let(Form g) {
         return (env) -> {
-            Form form = g;
-            Form.Cons c = (Form.Cons) form;
+            var form = g;
+            var c = (Form.Cons) form;
             form = c.tail;
             c = (Form.Cons) form;
 
-            Form methodHead = c.head;
-            Form body = c.tail;
+            var expr = ((Form.Cons) (c.head)).head;
+            var tail = ((Form.Cons) (c.head)).tail;
+
+            // fixme.. give local environment to to define
+            var bodyEnv = env;
+            while (tail instanceof Form.Cons) {
+                // fixme.. ignore result?
+                bodyEnv = Expander.expand(bodyEnv, expr).env;
+                expr = ((Form.Cons) tail).head;
+                tail = ((Form.Cons) tail).tail;
+            }
+            System.err.println(c.tail);
+            return new Effect.Results<>(env, Expander.expand(bodyEnv, c.tail).result);
+        };
+    }
+
+    static Effect<Expander.Value> declare(Form g) {
+        return (env) -> {
+            var form = g;
+            var c = (Form.Cons) form;
+            form = c.tail;
+            c = (Form.Cons) form;
+
+            var methodHead = c.head;
+            var body = c.tail;
 
             Form args;
             String defName;
@@ -35,20 +59,20 @@ class BuiltinSpecial {
 
             while (args instanceof Form.Cons) {
                 c = (Form.Cons) args;
-                Form head = c.head;
+                var head = c.head;
                 args = c.tail;
 
                 argStrs.add(((Form.Atom) head).value);
             }
 
-            List<Type> typeArgs;
+            List<Type.Hole> typeArgs;
             Type type;
             {
                 typeArgs = new ArrayList<>();
-                Env bodyEnv = env
+                var bodyEnv = env
                         .transform(Expander.EXPR, (e) -> {
-                            for (String arg : argStrs) {
-                                Type hole = new Type.Hole();
+                            for (var arg : argStrs) {
+                                var hole = new Type.Hole();
                                 typeArgs.add(hole);
                                 e = e.put(arg, (f) -> (env1) -> new Effect.Results<>(env1, Expander.Value.of(hole)));
                             }
@@ -59,14 +83,15 @@ class BuiltinSpecial {
                 type = Expander.expand(bodyEnv, body).result.type();
             }
 
-            Declaration decl = Declaration.of(typeArgs, type);
+            var scheme = TypeScheme.over(typeArgs, type);
+            var decl = Declaration.of(scheme);
 
 // FIXME: Error if there is already a decl
             env = env.transform(Compiler.DECL, (e) -> e.put(defName, decl));
 
-            Signature signature = Signature.of(null, defName, type, typeArgs);
+            var signature = Signature.of("", defName, scheme);
 
-            Function<Form, Effect<Expander.Value>> localCallFactory = Expander.op(signature);
+            var localCallFactory = Expander.op(signature);
             env = env.transform(Expander.EXPR, (e) -> e.put(defName, localCallFactory));
             return new Effect.Results<>(env, null);
         };
@@ -74,13 +99,13 @@ class BuiltinSpecial {
 
     static Effect<Expander.Value> define(Form g) {
         return (env) -> {
-            Form form = g;
-            Form.Cons c = (Form.Cons) form;
+            var form = g;
+            var c = (Form.Cons) form;
             form = c.tail;
             c = (Form.Cons) form;
 
-            Form methodHead = c.head;
-            Form body = c.tail;
+            var methodHead = c.head;
+            var body = c.tail;
 
             Form args;
             String defName;
@@ -95,26 +120,26 @@ class BuiltinSpecial {
             List<String> argStrs = new ArrayList<>();
             while (args instanceof Form.Cons) {
                 c = (Form.Cons) args;
-                Form head = c.head;
+                var head = c.head;
                 args = c.tail;
 
                 argStrs.add(((Form.Atom) head).value);
             }
 
-            Declaration decl = env.get(Compiler.DECL).get(defName);
+            var decl = env.get(Compiler.DECL).get(defName);
             if (null == decl) {
                 throw new Error("undeclared " + defName);
             }
 
-            Type type = decl.result;
+            var scheme = decl.scheme;
 
             List<Type> arguments = new ArrayList<>();
 
-            Env bodyEnv = env
+            var bodyEnv = env
                     .transform(Expander.EXPR, (e) -> {
-                        int ii = 0;
-                        for (String arg : argStrs) {
-                            int argIndex = ii++;
+                        var ii = 0;
+                        for (var arg : argStrs) {
+                            var argIndex = ii++;
                             Type argType = new Type.Hole();
                             arguments.add(argType);
                             e = e.put(arg, loadArg(argIndex, argType));
@@ -122,12 +147,16 @@ class BuiltinSpecial {
                         return e;
                     });
 
-            Effect.Results<Expander.Value> expr = Expander.expand(bodyEnv, body);
-            env = expr.env;
-            Term exprResult = expr.result.expr();
+            var expr = Expander.expand(bodyEnv, body);
+            bodyEnv = expr.env;
 
-            // fixme put definition arity in...
-            Definition def = Definition.of(decl.typeArguments, arguments, type, exprResult);
+            // fixme...
+            var letEnv = bodyEnv.get(Compiler.LET);
+            //   env = expr.env;
+            var exprResult = expr.result.expr();
+
+            // fixme put definition arity in ?
+            var def = Definition.of(letEnv, scheme, arguments, exprResult);
 
             // FIXME, check for duplicate defs
             env = env.transform(Compiler.DEF, (e) -> e.put(defName, def));

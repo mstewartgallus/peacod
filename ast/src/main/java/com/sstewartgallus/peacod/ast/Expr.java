@@ -7,7092 +7,11053 @@ package com.sstewartgallus.peacod.ast;
  * <pre>
  * FIXME: Rename as Term?
  * </pre>
- *
+ * <p>
  * Protobuf type {@code peacod_ast.Expr}
  */
-public  final class Expr extends
-    com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:peacod_ast.Expr)
-    ExprOrBuilder {
-private static final long serialVersionUID = 0L;
-  // Use Expr.newBuilder() to construct.
-  private Expr(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-    super(builder);
-  }
-  private Expr() {
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
-  private Expr(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 8: {
-            int rawValue = input.readEnum();
-            valueCase_ = 1;
-            value_ = rawValue;
-            break;
-          }
-          case 18: {
-            com.sstewartgallus.peacod.ast.Expr.LitByte.Builder subBuilder = null;
-            if (valueCase_ == 2) {
-              subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LitByte) value_).toBuilder();
-            }
-            value_ =
-                input.readMessage(com.sstewartgallus.peacod.ast.Expr.LitByte.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitByte) value_);
-              value_ = subBuilder.buildPartial();
-            }
-            valueCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.sstewartgallus.peacod.ast.Expr.LitShort.Builder subBuilder = null;
-            if (valueCase_ == 3) {
-              subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LitShort) value_).toBuilder();
-            }
-            value_ =
-                input.readMessage(com.sstewartgallus.peacod.ast.Expr.LitShort.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitShort) value_);
-              value_ = subBuilder.buildPartial();
-            }
-            valueCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.sstewartgallus.peacod.ast.Expr.LitInt.Builder subBuilder = null;
-            if (valueCase_ == 4) {
-              subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LitInt) value_).toBuilder();
-            }
-            value_ =
-                input.readMessage(com.sstewartgallus.peacod.ast.Expr.LitInt.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitInt) value_);
-              value_ = subBuilder.buildPartial();
-            }
-            valueCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.sstewartgallus.peacod.ast.Expr.LitLong.Builder subBuilder = null;
-            if (valueCase_ == 5) {
-              subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LitLong) value_).toBuilder();
-            }
-            value_ =
-                input.readMessage(com.sstewartgallus.peacod.ast.Expr.LitLong.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitLong) value_);
-              value_ = subBuilder.buildPartial();
-            }
-            valueCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.sstewartgallus.peacod.ast.Expr.Get.Builder subBuilder = null;
-            if (valueCase_ == 6) {
-              subBuilder = ((com.sstewartgallus.peacod.ast.Expr.Get) value_).toBuilder();
-            }
-            value_ =
-                input.readMessage(com.sstewartgallus.peacod.ast.Expr.Get.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.Get) value_);
-              value_ = subBuilder.buildPartial();
-            }
-            valueCase_ = 6;
-            break;
-          }
-          case 58: {
-            com.sstewartgallus.peacod.ast.Expr.Apply.Builder subBuilder = null;
-            if (valueCase_ == 7) {
-              subBuilder = ((com.sstewartgallus.peacod.ast.Expr.Apply) value_).toBuilder();
-            }
-            value_ =
-                input.readMessage(com.sstewartgallus.peacod.ast.Expr.Apply.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.Apply) value_);
-              value_ = subBuilder.buildPartial();
-            }
-            valueCase_ = 7;
-            break;
-          }
-          case 106: {
-            com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder subBuilder = null;
-            if (valueCase_ == 13) {
-              subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LoadArg) value_).toBuilder();
-            }
-            value_ =
-                input.readMessage(com.sstewartgallus.peacod.ast.Expr.LoadArg.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LoadArg) value_);
-              value_ = subBuilder.buildPartial();
-            }
-            valueCase_ = 13;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
+public final class Expr extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:peacod_ast.Expr)
+        ExprOrBuilder {
+    public static final int VARIABLE_FIELD_NUMBER = 1;
+    public static final int CONSTANT_FIELD_NUMBER = 2;
+    public static final int CALL_FIELD_NUMBER = 3;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:peacod_ast.Expr)
+    private static final com.sstewartgallus.peacod.ast.Expr DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<Expr>
+            PARSER = new com.google.protobuf.AbstractParser<Expr>() {
+        @java.lang.Override
+        public Expr parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Expr(input, extensionRegistry);
         }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
+    };
+
+    static {
+        DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr();
     }
-  }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_descriptor;
-  }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-    return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.sstewartgallus.peacod.ast.Expr.class, com.sstewartgallus.peacod.ast.Expr.Builder.class);
-  }
+    private int valueCase_ = 0;
+    private java.lang.Object value_;
+    private byte memoizedIsInitialized = -1;
 
-  /**
-   * Protobuf enum {@code peacod_ast.Expr.Simple}
-   */
-  public enum Simple
-      implements com.google.protobuf.ProtocolMessageEnum {
+    // Use Expr.newBuilder() to construct.
+    private Expr(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+    }
+
+    private Expr() {
+    }
+
+    private Expr(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+            boolean done = false;
+            while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                    case 0:
+                        done = true;
+                        break;
+                    case 10: {
+                        com.sstewartgallus.peacod.ast.Expr.Variable.Builder subBuilder = null;
+                        if (valueCase_ == 1) {
+                            subBuilder = ((com.sstewartgallus.peacod.ast.Expr.Variable) value_).toBuilder();
+                        }
+                        value_ =
+                                input.readMessage(com.sstewartgallus.peacod.ast.Expr.Variable.parser(), extensionRegistry);
+                        if (subBuilder != null) {
+                            subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.Variable) value_);
+                            value_ = subBuilder.buildPartial();
+                        }
+                        valueCase_ = 1;
+                        break;
+                    }
+                    case 18: {
+                        com.sstewartgallus.peacod.ast.Expr.Constant.Builder subBuilder = null;
+                        if (valueCase_ == 2) {
+                            subBuilder = ((com.sstewartgallus.peacod.ast.Expr.Constant) value_).toBuilder();
+                        }
+                        value_ =
+                                input.readMessage(com.sstewartgallus.peacod.ast.Expr.Constant.parser(), extensionRegistry);
+                        if (subBuilder != null) {
+                            subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.Constant) value_);
+                            value_ = subBuilder.buildPartial();
+                        }
+                        valueCase_ = 2;
+                        break;
+                    }
+                    case 26: {
+                        com.sstewartgallus.peacod.ast.Expr.Call.Builder subBuilder = null;
+                        if (valueCase_ == 3) {
+                            subBuilder = ((com.sstewartgallus.peacod.ast.Expr.Call) value_).toBuilder();
+                        }
+                        value_ =
+                                input.readMessage(com.sstewartgallus.peacod.ast.Expr.Call.parser(), extensionRegistry);
+                        if (subBuilder != null) {
+                            subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.Call) value_);
+                            value_ = subBuilder.buildPartial();
+                        }
+                        valueCase_ = 3;
+                        break;
+                    }
+                    default: {
+                        if (!parseUnknownField(
+                                input, unknownFields, extensionRegistry, tag)) {
+                            done = true;
+                        }
+                        break;
+                    }
+                }
+            }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                    e).setUnfinishedMessage(this);
+        } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+        }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_descriptor;
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+                .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static com.sstewartgallus.peacod.ast.Expr getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Expr> parser() {
+        return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+        return new Expr();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+        return this.unknownFields;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.sstewartgallus.peacod.ast.Expr.class, com.sstewartgallus.peacod.ast.Expr.Builder.class);
+    }
+
+    public ValueCase
+    getValueCase() {
+        return ValueCase.forNumber(
+                valueCase_);
+    }
+
     /**
-     * <code>FALSE = 0;</code>
+     * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+     *
+     * @return Whether the variable field is set.
      */
-    FALSE(0),
-    /**
-     * <code>TRUE = 1;</code>
-     */
-    TRUE(1),
-    UNRECOGNIZED(-1),
+    public boolean hasVariable() {
+        return valueCase_ == 1;
+    }
+
     ;
 
     /**
-     * <code>FALSE = 0;</code>
+     * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+     *
+     * @return The variable.
      */
-    public static final int FALSE_VALUE = 0;
-    /**
-     * <code>TRUE = 1;</code>
-     */
-    public static final int TRUE_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Simple valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static Simple forNumber(int value) {
-      switch (value) {
-        case 0: return FALSE;
-        case 1: return TRUE;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Simple>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Simple> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Simple>() {
-            public Simple findValueByNumber(int number) {
-              return Simple.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Expr.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Simple[] VALUES = values();
-
-    public static Simple valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Simple(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:peacod_ast.Expr.Simple)
-  }
-
-  public interface LitByteOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LitByte)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 value = 1;</code>
-     */
-    int getValue();
-  }
-  /**
-   * Protobuf type {@code peacod_ast.Expr.LitByte}
-   */
-  public  static final class LitByte extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LitByte)
-      LitByteOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use LitByte.newBuilder() to construct.
-    private LitByte(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LitByte() {
-      value_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private LitByte(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              value_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+    public com.sstewartgallus.peacod.ast.Expr.Variable getVariable() {
+        if (valueCase_ == 1) {
+            return (com.sstewartgallus.peacod.ast.Expr.Variable) value_;
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitByte_descriptor;
+        return com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance();
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitByte_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.LitByte.class, com.sstewartgallus.peacod.ast.Expr.LitByte.Builder.class);
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private int value_;
     /**
-     * <code>int32 value = 1;</code>
+     * <code>.peacod_ast.Expr.Variable variable = 1;</code>
      */
-    public int getValue() {
-      return value_;
+    public com.sstewartgallus.peacod.ast.Expr.VariableOrBuilder getVariableOrBuilder() {
+        if (valueCase_ == 1) {
+            return (com.sstewartgallus.peacod.ast.Expr.Variable) value_;
+        }
+        return com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance();
     }
 
-    private byte memoizedIsInitialized = -1;
+    /**
+     * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+     *
+     * @return Whether the constant field is set.
+     */
+    public boolean hasConstant() {
+        return valueCase_ == 2;
+    }
+
+    /**
+     * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+     *
+     * @return The constant.
+     */
+    public com.sstewartgallus.peacod.ast.Expr.Constant getConstant() {
+        if (valueCase_ == 2) {
+            return (com.sstewartgallus.peacod.ast.Expr.Constant) value_;
+        }
+        return com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance();
+    }
+
+    /**
+     * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+     */
+    public com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder getConstantOrBuilder() {
+        if (valueCase_ == 2) {
+            return (com.sstewartgallus.peacod.ast.Expr.Constant) value_;
+        }
+        return com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance();
+    }
+
+    /**
+     * <code>.peacod_ast.Expr.Call call = 3;</code>
+     *
+     * @return Whether the call field is set.
+     */
+    public boolean hasCall() {
+        return valueCase_ == 3;
+    }
+
+    /**
+     * <code>.peacod_ast.Expr.Call call = 3;</code>
+     *
+     * @return The call.
+     */
+    public com.sstewartgallus.peacod.ast.Expr.Call getCall() {
+        if (valueCase_ == 3) {
+            return (com.sstewartgallus.peacod.ast.Expr.Call) value_;
+        }
+        return com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance();
+    }
+
+    /**
+     * <code>.peacod_ast.Expr.Call call = 3;</code>
+     */
+    public com.sstewartgallus.peacod.ast.Expr.CallOrBuilder getCallOrBuilder() {
+        if (valueCase_ == 3) {
+            return (com.sstewartgallus.peacod.ast.Expr.Call) value_;
+        }
+        return com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance();
+    }
+
     @java.lang.Override
     public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
-      memoizedIsInitialized = 1;
-      return true;
+        memoizedIsInitialized = 1;
+        return true;
     }
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (value_ != 0) {
-        output.writeInt32(1, value_);
-      }
-      unknownFields.writeTo(output);
+            throws java.io.IOException {
+        if (valueCase_ == 1) {
+            output.writeMessage(1, (com.sstewartgallus.peacod.ast.Expr.Variable) value_);
+        }
+        if (valueCase_ == 2) {
+            output.writeMessage(2, (com.sstewartgallus.peacod.ast.Expr.Constant) value_);
+        }
+        if (valueCase_ == 3) {
+            output.writeMessage(3, (com.sstewartgallus.peacod.ast.Expr.Call) value_);
+        }
+        unknownFields.writeTo(output);
     }
 
     @java.lang.Override
     public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
+        int size = memoizedSize;
+        if (size != -1) return size;
 
-      size = 0;
-      if (value_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, value_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
+        size = 0;
+        if (valueCase_ == 1) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(1, (com.sstewartgallus.peacod.ast.Expr.Variable) value_);
+        }
+        if (valueCase_ == 2) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(2, (com.sstewartgallus.peacod.ast.Expr.Constant) value_);
+        }
+        if (valueCase_ == 3) {
+            size += com.google.protobuf.CodedOutputStream
+                    .computeMessageSize(3, (com.sstewartgallus.peacod.ast.Expr.Call) value_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
     }
 
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LitByte)) {
-        return super.equals(obj);
-      }
-      com.sstewartgallus.peacod.ast.Expr.LitByte other = (com.sstewartgallus.peacod.ast.Expr.LitByte) obj;
-
-      boolean result = true;
-      result = result && (getValue()
-          == other.getValue());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LitByte prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code peacod_ast.Expr.LitByte}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LitByte)
-        com.sstewartgallus.peacod.ast.Expr.LitByteOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitByte_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitByte_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sstewartgallus.peacod.ast.Expr.LitByte.class, com.sstewartgallus.peacod.ast.Expr.LitByte.Builder.class);
-      }
-
-      // Construct using com.sstewartgallus.peacod.ast.Expr.LitByte.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (obj == this) {
+            return true;
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        value_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitByte_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitByte getDefaultInstanceForType() {
-        return com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitByte build() {
-        com.sstewartgallus.peacod.ast.Expr.LitByte result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr)) {
+            return super.equals(obj);
         }
-        return result;
-      }
+        com.sstewartgallus.peacod.ast.Expr other = (com.sstewartgallus.peacod.ast.Expr) obj;
 
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitByte buildPartial() {
-        com.sstewartgallus.peacod.ast.Expr.LitByte result = new com.sstewartgallus.peacod.ast.Expr.LitByte(this);
-        result.value_ = value_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sstewartgallus.peacod.ast.Expr.LitByte) {
-          return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitByte)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LitByte other) {
-        if (other == com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance()) return this;
-        if (other.getValue() != 0) {
-          setValue(other.getValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sstewartgallus.peacod.ast.Expr.LitByte parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LitByte) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int value_ ;
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public int getValue() {
-        return value_;
-      }
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public Builder setValue(int value) {
-        
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public Builder clearValue() {
-        
-        value_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LitByte)
-    }
-
-    // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LitByte)
-    private static final com.sstewartgallus.peacod.ast.Expr.LitByte DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LitByte();
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitByte getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LitByte>
-        PARSER = new com.google.protobuf.AbstractParser<LitByte>() {
-      @java.lang.Override
-      public LitByte parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LitByte(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LitByte> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LitByte> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr.LitByte getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LitShortOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LitShort)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 value = 1;</code>
-     */
-    int getValue();
-  }
-  /**
-   * Protobuf type {@code peacod_ast.Expr.LitShort}
-   */
-  public  static final class LitShort extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LitShort)
-      LitShortOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use LitShort.newBuilder() to construct.
-    private LitShort(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LitShort() {
-      value_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private LitShort(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
+        if (!getValueCase().equals(other.getValueCase())) return false;
+        switch (valueCase_) {
+            case 1:
+                if (!getVariable()
+                        .equals(other.getVariable())) return false;
+                break;
+            case 2:
+                if (!getConstant()
+                        .equals(other.getConstant())) return false;
+                break;
+            case 3:
+                if (!getCall()
+                        .equals(other.getCall())) return false;
+                break;
             case 0:
-              done = true;
-              break;
-            case 8: {
-
-              value_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+            default:
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitShort_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitShort_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.LitShort.class, com.sstewartgallus.peacod.ast.Expr.LitShort.Builder.class);
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private int value_;
-    /**
-     * <code>int32 value = 1;</code>
-     */
-    public int getValue() {
-      return value_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (value_ != 0) {
-        output.writeInt32(1, value_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (value_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, value_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LitShort)) {
-        return super.equals(obj);
-      }
-      com.sstewartgallus.peacod.ast.Expr.LitShort other = (com.sstewartgallus.peacod.ast.Expr.LitShort) obj;
-
-      boolean result = true;
-      result = result && (getValue()
-          == other.getValue());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
     }
 
     @java.lang.Override
     public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LitShort prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code peacod_ast.Expr.LitShort}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LitShort)
-        com.sstewartgallus.peacod.ast.Expr.LitShortOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitShort_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitShort_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sstewartgallus.peacod.ast.Expr.LitShort.class, com.sstewartgallus.peacod.ast.Expr.LitShort.Builder.class);
-      }
-
-      // Construct using com.sstewartgallus.peacod.ast.Expr.LitShort.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (memoizedHashCode != 0) {
+            return memoizedHashCode;
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        value_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitShort_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitShort getDefaultInstanceForType() {
-        return com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitShort build() {
-        com.sstewartgallus.peacod.ast.Expr.LitShort result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitShort buildPartial() {
-        com.sstewartgallus.peacod.ast.Expr.LitShort result = new com.sstewartgallus.peacod.ast.Expr.LitShort(this);
-        result.value_ = value_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sstewartgallus.peacod.ast.Expr.LitShort) {
-          return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitShort)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LitShort other) {
-        if (other == com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance()) return this;
-        if (other.getValue() != 0) {
-          setValue(other.getValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sstewartgallus.peacod.ast.Expr.LitShort parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LitShort) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int value_ ;
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public int getValue() {
-        return value_;
-      }
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public Builder setValue(int value) {
-        
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public Builder clearValue() {
-        
-        value_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LitShort)
-    }
-
-    // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LitShort)
-    private static final com.sstewartgallus.peacod.ast.Expr.LitShort DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LitShort();
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitShort getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LitShort>
-        PARSER = new com.google.protobuf.AbstractParser<LitShort>() {
-      @java.lang.Override
-      public LitShort parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LitShort(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LitShort> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LitShort> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr.LitShort getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LitIntOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LitInt)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 value = 1;</code>
-     */
-    int getValue();
-  }
-  /**
-   * Protobuf type {@code peacod_ast.Expr.LitInt}
-   */
-  public  static final class LitInt extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LitInt)
-      LitIntOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use LitInt.newBuilder() to construct.
-    private LitInt(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LitInt() {
-      value_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private LitInt(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (valueCase_) {
+            case 1:
+                hash = (37 * hash) + VARIABLE_FIELD_NUMBER;
+                hash = (53 * hash) + getVariable().hashCode();
+                break;
+            case 2:
+                hash = (37 * hash) + CONSTANT_FIELD_NUMBER;
+                hash = (53 * hash) + getConstant().hashCode();
+                break;
+            case 3:
+                hash = (37 * hash) + CALL_FIELD_NUMBER;
+                hash = (53 * hash) + getCall().hashCode();
+                break;
             case 0:
-              done = true;
-              break;
-            case 8: {
-
-              value_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
+            default:
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitInt_descriptor;
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitInt_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.LitInt.class, com.sstewartgallus.peacod.ast.Expr.LitInt.Builder.class);
+    public Builder newBuilderForType() {
+        return newBuilder();
     }
 
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private int value_;
-    /**
-     * <code>int32 value = 1;</code>
-     */
-    public int getValue() {
-      return value_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (value_ != 0) {
-        output.writeInt32(1, value_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (value_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, value_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LitInt)) {
-        return super.equals(obj);
-      }
-      com.sstewartgallus.peacod.ast.Expr.LitInt other = (com.sstewartgallus.peacod.ast.Expr.LitInt) obj;
-
-      boolean result = true;
-      result = result && (getValue()
-          == other.getValue());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LitInt prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE
+                ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code peacod_ast.Expr.LitInt}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LitInt)
-        com.sstewartgallus.peacod.ast.Expr.LitIntOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitInt_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitInt_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sstewartgallus.peacod.ast.Expr.LitInt.class, com.sstewartgallus.peacod.ast.Expr.LitInt.Builder.class);
-      }
-
-      // Construct using com.sstewartgallus.peacod.ast.Expr.LitInt.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        value_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitInt_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitInt getDefaultInstanceForType() {
-        return com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitInt build() {
-        com.sstewartgallus.peacod.ast.Expr.LitInt result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitInt buildPartial() {
-        com.sstewartgallus.peacod.ast.Expr.LitInt result = new com.sstewartgallus.peacod.ast.Expr.LitInt(this);
-        result.value_ = value_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sstewartgallus.peacod.ast.Expr.LitInt) {
-          return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitInt)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LitInt other) {
-        if (other == com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance()) return this;
-        if (other.getValue() != 0) {
-          setValue(other.getValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sstewartgallus.peacod.ast.Expr.LitInt parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LitInt) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int value_ ;
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public int getValue() {
-        return value_;
-      }
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public Builder setValue(int value) {
-        
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 value = 1;</code>
-       */
-      public Builder clearValue() {
-        
-        value_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LitInt)
-    }
-
-    // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LitInt)
-    private static final com.sstewartgallus.peacod.ast.Expr.LitInt DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LitInt();
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitInt getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LitInt>
-        PARSER = new com.google.protobuf.AbstractParser<LitInt>() {
-      @java.lang.Override
-      public LitInt parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LitInt(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LitInt> parser() {
-      return PARSER;
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<LitInt> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr.LitInt getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LitLongOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LitLong)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int64 value = 1;</code>
-     */
-    long getValue();
-  }
-  /**
-   * Protobuf type {@code peacod_ast.Expr.LitLong}
-   */
-  public  static final class LitLong extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LitLong)
-      LitLongOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use LitLong.newBuilder() to construct.
-    private LitLong(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LitLong() {
-      value_ = 0L;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private LitLong(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              value_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitLong_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitLong_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.LitLong.class, com.sstewartgallus.peacod.ast.Expr.LitLong.Builder.class);
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private long value_;
-    /**
-     * <code>int64 value = 1;</code>
-     */
-    public long getValue() {
-      return value_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (value_ != 0L) {
-        output.writeInt64(1, value_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (value_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, value_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LitLong)) {
-        return super.equals(obj);
-      }
-      com.sstewartgallus.peacod.ast.Expr.LitLong other = (com.sstewartgallus.peacod.ast.Expr.LitLong) obj;
-
-      boolean result = true;
-      result = result && (getValue()
-          == other.getValue());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getValue());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LitLong prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code peacod_ast.Expr.LitLong}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LitLong)
-        com.sstewartgallus.peacod.ast.Expr.LitLongOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitLong_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitLong_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sstewartgallus.peacod.ast.Expr.LitLong.class, com.sstewartgallus.peacod.ast.Expr.LitLong.Builder.class);
-      }
-
-      // Construct using com.sstewartgallus.peacod.ast.Expr.LitLong.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        value_ = 0L;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LitLong_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitLong getDefaultInstanceForType() {
-        return com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitLong build() {
-        com.sstewartgallus.peacod.ast.Expr.LitLong result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LitLong buildPartial() {
-        com.sstewartgallus.peacod.ast.Expr.LitLong result = new com.sstewartgallus.peacod.ast.Expr.LitLong(this);
-        result.value_ = value_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sstewartgallus.peacod.ast.Expr.LitLong) {
-          return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LitLong)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LitLong other) {
-        if (other == com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance()) return this;
-        if (other.getValue() != 0L) {
-          setValue(other.getValue());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sstewartgallus.peacod.ast.Expr.LitLong parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LitLong) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private long value_ ;
-      /**
-       * <code>int64 value = 1;</code>
-       */
-      public long getValue() {
-        return value_;
-      }
-      /**
-       * <code>int64 value = 1;</code>
-       */
-      public Builder setValue(long value) {
-        
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 value = 1;</code>
-       */
-      public Builder clearValue() {
-        
-        value_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LitLong)
-    }
-
-    // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LitLong)
-    private static final com.sstewartgallus.peacod.ast.Expr.LitLong DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LitLong();
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LitLong getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LitLong>
-        PARSER = new com.google.protobuf.AbstractParser<LitLong>() {
-      @java.lang.Override
-      public LitLong parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LitLong(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LitLong> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LitLong> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr.LitLong getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface GetOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.Get)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string library = 1;</code>
-     */
-    java.lang.String getLibrary();
-    /**
-     * <code>string library = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getLibraryBytes();
-
-    /**
-     * <code>string name = 2;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <code>string name = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <code>.peacod_ast.TypeExpr type = 3;</code>
-     */
-    boolean hasType();
-    /**
-     * <code>.peacod_ast.TypeExpr type = 3;</code>
-     */
-    com.sstewartgallus.peacod.ast.TypeExpr getType();
-    /**
-     * <code>.peacod_ast.TypeExpr type = 3;</code>
-     */
-    com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder();
-
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> 
-        getTypeArgumentList();
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    com.sstewartgallus.peacod.ast.TypeExpr getTypeArgument(int index);
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    int getTypeArgumentCount();
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    java.util.List<? extends com.sstewartgallus.peacod.ast.TypeExprOrBuilder> 
-        getTypeArgumentOrBuilderList();
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeArgumentOrBuilder(
-        int index);
-  }
-  /**
-   * Protobuf type {@code peacod_ast.Expr.Get}
-   */
-  public  static final class Get extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:peacod_ast.Expr.Get)
-      GetOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Get.newBuilder() to construct.
-    private Get(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Get() {
-      library_ = "";
-      name_ = "";
-      typeArgument_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Get(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              library_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 26: {
-              com.sstewartgallus.peacod.ast.TypeExpr.Builder subBuilder = null;
-              if (type_ != null) {
-                subBuilder = type_.toBuilder();
-              }
-              type_ = input.readMessage(com.sstewartgallus.peacod.ast.TypeExpr.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(type_);
-                type_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                typeArgument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.TypeExpr>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              typeArgument_.add(
-                  input.readMessage(com.sstewartgallus.peacod.ast.TypeExpr.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          typeArgument_ = java.util.Collections.unmodifiableList(typeArgument_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Get_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Get_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.Get.class, com.sstewartgallus.peacod.ast.Expr.Get.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int LIBRARY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object library_;
-    /**
-     * <code>string library = 1;</code>
-     */
-    public java.lang.String getLibrary() {
-      java.lang.Object ref = library_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        library_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string library = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getLibraryBytes() {
-      java.lang.Object ref = library_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        library_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
-    /**
-     * <code>string name = 2;</code>
-     */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 3;
-    private com.sstewartgallus.peacod.ast.TypeExpr type_;
-    /**
-     * <code>.peacod_ast.TypeExpr type = 3;</code>
-     */
-    public boolean hasType() {
-      return type_ != null;
-    }
-    /**
-     * <code>.peacod_ast.TypeExpr type = 3;</code>
-     */
-    public com.sstewartgallus.peacod.ast.TypeExpr getType() {
-      return type_ == null ? com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
-    }
-    /**
-     * <code>.peacod_ast.TypeExpr type = 3;</code>
-     */
-    public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder() {
-      return getType();
-    }
-
-    public static final int TYPE_ARGUMENT_FIELD_NUMBER = 5;
-    private java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> typeArgument_;
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    public java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> getTypeArgumentList() {
-      return typeArgument_;
-    }
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    public java.util.List<? extends com.sstewartgallus.peacod.ast.TypeExprOrBuilder> 
-        getTypeArgumentOrBuilderList() {
-      return typeArgument_;
-    }
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    public int getTypeArgumentCount() {
-      return typeArgument_.size();
-    }
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    public com.sstewartgallus.peacod.ast.TypeExpr getTypeArgument(int index) {
-      return typeArgument_.get(index);
-    }
-    /**
-     * <pre>
-     * FIXME delay?
-     * </pre>
-     *
-     * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-     */
-    public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeArgumentOrBuilder(
-        int index) {
-      return typeArgument_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getLibraryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, library_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
-      if (type_ != null) {
-        output.writeMessage(3, getType());
-      }
-      for (int i = 0; i < typeArgument_.size(); i++) {
-        output.writeMessage(5, typeArgument_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getLibraryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, library_);
-      }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-      }
-      if (type_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getType());
-      }
-      for (int i = 0; i < typeArgument_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, typeArgument_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.Get)) {
-        return super.equals(obj);
-      }
-      com.sstewartgallus.peacod.ast.Expr.Get other = (com.sstewartgallus.peacod.ast.Expr.Get) obj;
-
-      boolean result = true;
-      result = result && getLibrary()
-          .equals(other.getLibrary());
-      result = result && getName()
-          .equals(other.getName());
-      result = result && (hasType() == other.hasType());
-      if (hasType()) {
-        result = result && getType()
-            .equals(other.getType());
-      }
-      result = result && getTypeArgumentList()
-          .equals(other.getTypeArgumentList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
-      hash = (53 * hash) + getLibrary().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      if (hasType()) {
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getType().hashCode();
-      }
-      if (getTypeArgumentCount() > 0) {
-        hash = (37 * hash) + TYPE_ARGUMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getTypeArgumentList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Get parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.Get prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code peacod_ast.Expr.Get}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.Get)
-        com.sstewartgallus.peacod.ast.Expr.GetOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Get_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Get_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sstewartgallus.peacod.ast.Expr.Get.class, com.sstewartgallus.peacod.ast.Expr.Get.Builder.class);
-      }
-
-      // Construct using com.sstewartgallus.peacod.ast.Expr.Get.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTypeArgumentFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        library_ = "";
-
-        name_ = "";
-
-        if (typeBuilder_ == null) {
-          type_ = null;
-        } else {
-          type_ = null;
-          typeBuilder_ = null;
-        }
-        if (typeArgumentBuilder_ == null) {
-          typeArgument_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          typeArgumentBuilder_.clear();
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Get_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.Get getDefaultInstanceForType() {
-        return com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.Get build() {
-        com.sstewartgallus.peacod.ast.Expr.Get result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.Get buildPartial() {
-        com.sstewartgallus.peacod.ast.Expr.Get result = new com.sstewartgallus.peacod.ast.Expr.Get(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.library_ = library_;
-        result.name_ = name_;
-        if (typeBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = typeBuilder_.build();
-        }
-        if (typeArgumentBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            typeArgument_ = java.util.Collections.unmodifiableList(typeArgument_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.typeArgument_ = typeArgument_;
-        } else {
-          result.typeArgument_ = typeArgumentBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sstewartgallus.peacod.ast.Expr.Get) {
-          return mergeFrom((com.sstewartgallus.peacod.ast.Expr.Get)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.Get other) {
-        if (other == com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance()) return this;
-        if (!other.getLibrary().isEmpty()) {
-          library_ = other.library_;
-          onChanged();
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (other.hasType()) {
-          mergeType(other.getType());
-        }
-        if (typeArgumentBuilder_ == null) {
-          if (!other.typeArgument_.isEmpty()) {
-            if (typeArgument_.isEmpty()) {
-              typeArgument_ = other.typeArgument_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureTypeArgumentIsMutable();
-              typeArgument_.addAll(other.typeArgument_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.typeArgument_.isEmpty()) {
-            if (typeArgumentBuilder_.isEmpty()) {
-              typeArgumentBuilder_.dispose();
-              typeArgumentBuilder_ = null;
-              typeArgument_ = other.typeArgument_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              typeArgumentBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTypeArgumentFieldBuilder() : null;
-            } else {
-              typeArgumentBuilder_.addAllMessages(other.typeArgument_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sstewartgallus.peacod.ast.Expr.Get parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sstewartgallus.peacod.ast.Expr.Get) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object library_ = "";
-      /**
-       * <code>string library = 1;</code>
-       */
-      public java.lang.String getLibrary() {
-        java.lang.Object ref = library_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          library_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string library = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getLibraryBytes() {
-        java.lang.Object ref = library_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          library_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string library = 1;</code>
-       */
-      public Builder setLibrary(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        library_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string library = 1;</code>
-       */
-      public Builder clearLibrary() {
-        
-        library_ = getDefaultInstance().getLibrary();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string library = 1;</code>
-       */
-      public Builder setLibraryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        library_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 2;</code>
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.sstewartgallus.peacod.ast.TypeExpr type_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> typeBuilder_;
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public boolean hasType() {
-        return typeBuilder_ != null || type_ != null;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr getType() {
-        if (typeBuilder_ == null) {
-          return type_ == null ? com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
-        } else {
-          return typeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public Builder setType(com.sstewartgallus.peacod.ast.TypeExpr value) {
-        if (typeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          typeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public Builder setType(
-          com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
-        if (typeBuilder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          typeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public Builder mergeType(com.sstewartgallus.peacod.ast.TypeExpr value) {
-        if (typeBuilder_ == null) {
-          if (type_ != null) {
-            type_ =
-              com.sstewartgallus.peacod.ast.TypeExpr.newBuilder(type_).mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          typeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public Builder clearType() {
-        if (typeBuilder_ == null) {
-          type_ = null;
-          onChanged();
-        } else {
-          type_ = null;
-          typeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr.Builder getTypeBuilder() {
-        
-        onChanged();
-        return getTypeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder() {
-        if (typeBuilder_ != null) {
-          return typeBuilder_.getMessageOrBuilder();
-        } else {
-          return type_ == null ?
-              com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
-        }
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> 
-          getTypeFieldBuilder() {
-        if (typeBuilder_ == null) {
-          typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder>(
-                  getType(),
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        return typeBuilder_;
-      }
-
-      private java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> typeArgument_ =
-        java.util.Collections.emptyList();
-      private void ensureTypeArgumentIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          typeArgument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.TypeExpr>(typeArgument_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> typeArgumentBuilder_;
-
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> getTypeArgumentList() {
-        if (typeArgumentBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(typeArgument_);
-        } else {
-          return typeArgumentBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public int getTypeArgumentCount() {
-        if (typeArgumentBuilder_ == null) {
-          return typeArgument_.size();
-        } else {
-          return typeArgumentBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr getTypeArgument(int index) {
-        if (typeArgumentBuilder_ == null) {
-          return typeArgument_.get(index);
-        } else {
-          return typeArgumentBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder setTypeArgument(
-          int index, com.sstewartgallus.peacod.ast.TypeExpr value) {
-        if (typeArgumentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTypeArgumentIsMutable();
-          typeArgument_.set(index, value);
-          onChanged();
-        } else {
-          typeArgumentBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder setTypeArgument(
-          int index, com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
-        if (typeArgumentBuilder_ == null) {
-          ensureTypeArgumentIsMutable();
-          typeArgument_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          typeArgumentBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder addTypeArgument(com.sstewartgallus.peacod.ast.TypeExpr value) {
-        if (typeArgumentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTypeArgumentIsMutable();
-          typeArgument_.add(value);
-          onChanged();
-        } else {
-          typeArgumentBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder addTypeArgument(
-          int index, com.sstewartgallus.peacod.ast.TypeExpr value) {
-        if (typeArgumentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTypeArgumentIsMutable();
-          typeArgument_.add(index, value);
-          onChanged();
-        } else {
-          typeArgumentBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder addTypeArgument(
-          com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
-        if (typeArgumentBuilder_ == null) {
-          ensureTypeArgumentIsMutable();
-          typeArgument_.add(builderForValue.build());
-          onChanged();
-        } else {
-          typeArgumentBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder addTypeArgument(
-          int index, com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
-        if (typeArgumentBuilder_ == null) {
-          ensureTypeArgumentIsMutable();
-          typeArgument_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          typeArgumentBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder addAllTypeArgument(
-          java.lang.Iterable<? extends com.sstewartgallus.peacod.ast.TypeExpr> values) {
-        if (typeArgumentBuilder_ == null) {
-          ensureTypeArgumentIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, typeArgument_);
-          onChanged();
-        } else {
-          typeArgumentBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder clearTypeArgument() {
-        if (typeArgumentBuilder_ == null) {
-          typeArgument_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          typeArgumentBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public Builder removeTypeArgument(int index) {
-        if (typeArgumentBuilder_ == null) {
-          ensureTypeArgumentIsMutable();
-          typeArgument_.remove(index);
-          onChanged();
-        } else {
-          typeArgumentBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr.Builder getTypeArgumentBuilder(
-          int index) {
-        return getTypeArgumentFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeArgumentOrBuilder(
-          int index) {
-        if (typeArgumentBuilder_ == null) {
-          return typeArgument_.get(index);  } else {
-          return typeArgumentBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public java.util.List<? extends com.sstewartgallus.peacod.ast.TypeExprOrBuilder> 
-           getTypeArgumentOrBuilderList() {
-        if (typeArgumentBuilder_ != null) {
-          return typeArgumentBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(typeArgument_);
-        }
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr.Builder addTypeArgumentBuilder() {
-        return getTypeArgumentFieldBuilder().addBuilder(
-            com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr.Builder addTypeArgumentBuilder(
-          int index) {
-        return getTypeArgumentFieldBuilder().addBuilder(
-            index, com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * FIXME delay?
-       * </pre>
-       *
-       * <code>repeated .peacod_ast.TypeExpr type_argument = 5;</code>
-       */
-      public java.util.List<com.sstewartgallus.peacod.ast.TypeExpr.Builder> 
-           getTypeArgumentBuilderList() {
-        return getTypeArgumentFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> 
-          getTypeArgumentFieldBuilder() {
-        if (typeArgumentBuilder_ == null) {
-          typeArgumentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder>(
-                  typeArgument_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
-                  getParentForChildren(),
-                  isClean());
-          typeArgument_ = null;
-        }
-        return typeArgumentBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.Get)
-    }
-
-    // @@protoc_insertion_point(class_scope:peacod_ast.Expr.Get)
-    private static final com.sstewartgallus.peacod.ast.Expr.Get DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.Get();
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.Get getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Get>
-        PARSER = new com.google.protobuf.AbstractParser<Get>() {
-      @java.lang.Override
-      public Get parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Get(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Get> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Get> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr.Get getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ApplyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.Apply)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.peacod_ast.Expr function = 1;</code>
-     */
-    boolean hasFunction();
-    /**
-     * <code>.peacod_ast.Expr function = 1;</code>
-     */
-    com.sstewartgallus.peacod.ast.Expr getFunction();
-    /**
-     * <code>.peacod_ast.Expr function = 1;</code>
-     */
-    com.sstewartgallus.peacod.ast.ExprOrBuilder getFunctionOrBuilder();
-
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    java.util.List<com.sstewartgallus.peacod.ast.Expr> 
-        getArgumentList();
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    com.sstewartgallus.peacod.ast.Expr getArgument(int index);
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    int getArgumentCount();
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    java.util.List<? extends com.sstewartgallus.peacod.ast.ExprOrBuilder> 
-        getArgumentOrBuilderList();
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    com.sstewartgallus.peacod.ast.ExprOrBuilder getArgumentOrBuilder(
-        int index);
-  }
-  /**
-   * <pre>
-   * FIXME consider types?
-   * </pre>
-   *
-   * Protobuf type {@code peacod_ast.Expr.Apply}
-   */
-  public  static final class Apply extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:peacod_ast.Expr.Apply)
-      ApplyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Apply.newBuilder() to construct.
-    private Apply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Apply() {
-      argument_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Apply(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.sstewartgallus.peacod.ast.Expr.Builder subBuilder = null;
-              if (function_ != null) {
-                subBuilder = function_.toBuilder();
-              }
-              function_ = input.readMessage(com.sstewartgallus.peacod.ast.Expr.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(function_);
-                function_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                argument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.Expr>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              argument_.add(
-                  input.readMessage(com.sstewartgallus.peacod.ast.Expr.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          argument_ = java.util.Collections.unmodifiableList(argument_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Apply_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Apply_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.Apply.class, com.sstewartgallus.peacod.ast.Expr.Apply.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int FUNCTION_FIELD_NUMBER = 1;
-    private com.sstewartgallus.peacod.ast.Expr function_;
-    /**
-     * <code>.peacod_ast.Expr function = 1;</code>
-     */
-    public boolean hasFunction() {
-      return function_ != null;
-    }
-    /**
-     * <code>.peacod_ast.Expr function = 1;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr getFunction() {
-      return function_ == null ? com.sstewartgallus.peacod.ast.Expr.getDefaultInstance() : function_;
-    }
-    /**
-     * <code>.peacod_ast.Expr function = 1;</code>
-     */
-    public com.sstewartgallus.peacod.ast.ExprOrBuilder getFunctionOrBuilder() {
-      return getFunction();
-    }
-
-    public static final int ARGUMENT_FIELD_NUMBER = 2;
-    private java.util.List<com.sstewartgallus.peacod.ast.Expr> argument_;
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    public java.util.List<com.sstewartgallus.peacod.ast.Expr> getArgumentList() {
-      return argument_;
-    }
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    public java.util.List<? extends com.sstewartgallus.peacod.ast.ExprOrBuilder> 
-        getArgumentOrBuilderList() {
-      return argument_;
-    }
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    public int getArgumentCount() {
-      return argument_.size();
-    }
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr getArgument(int index) {
-      return argument_.get(index);
-    }
-    /**
-     * <code>repeated .peacod_ast.Expr argument = 2;</code>
-     */
-    public com.sstewartgallus.peacod.ast.ExprOrBuilder getArgumentOrBuilder(
-        int index) {
-      return argument_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (function_ != null) {
-        output.writeMessage(1, getFunction());
-      }
-      for (int i = 0; i < argument_.size(); i++) {
-        output.writeMessage(2, argument_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (function_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getFunction());
-      }
-      for (int i = 0; i < argument_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, argument_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.Apply)) {
-        return super.equals(obj);
-      }
-      com.sstewartgallus.peacod.ast.Expr.Apply other = (com.sstewartgallus.peacod.ast.Expr.Apply) obj;
-
-      boolean result = true;
-      result = result && (hasFunction() == other.hasFunction());
-      if (hasFunction()) {
-        result = result && getFunction()
-            .equals(other.getFunction());
-      }
-      result = result && getArgumentList()
-          .equals(other.getArgumentList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasFunction()) {
-        hash = (37 * hash) + FUNCTION_FIELD_NUMBER;
-        hash = (53 * hash) + getFunction().hashCode();
-      }
-      if (getArgumentCount() > 0) {
-        hash = (37 * hash) + ARGUMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getArgumentList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.Apply parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.Apply prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * FIXME consider types?
-     * </pre>
-     *
-     * Protobuf type {@code peacod_ast.Expr.Apply}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.Apply)
-        com.sstewartgallus.peacod.ast.Expr.ApplyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Apply_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Apply_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sstewartgallus.peacod.ast.Expr.Apply.class, com.sstewartgallus.peacod.ast.Expr.Apply.Builder.class);
-      }
-
-      // Construct using com.sstewartgallus.peacod.ast.Expr.Apply.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getArgumentFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (functionBuilder_ == null) {
-          function_ = null;
-        } else {
-          function_ = null;
-          functionBuilder_ = null;
-        }
-        if (argumentBuilder_ == null) {
-          argument_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          argumentBuilder_.clear();
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Apply_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.Apply getDefaultInstanceForType() {
-        return com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.Apply build() {
-        com.sstewartgallus.peacod.ast.Expr.Apply result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.Apply buildPartial() {
-        com.sstewartgallus.peacod.ast.Expr.Apply result = new com.sstewartgallus.peacod.ast.Expr.Apply(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (functionBuilder_ == null) {
-          result.function_ = function_;
-        } else {
-          result.function_ = functionBuilder_.build();
-        }
-        if (argumentBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            argument_ = java.util.Collections.unmodifiableList(argument_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.argument_ = argument_;
-        } else {
-          result.argument_ = argumentBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sstewartgallus.peacod.ast.Expr.Apply) {
-          return mergeFrom((com.sstewartgallus.peacod.ast.Expr.Apply)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.Apply other) {
-        if (other == com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance()) return this;
-        if (other.hasFunction()) {
-          mergeFunction(other.getFunction());
-        }
-        if (argumentBuilder_ == null) {
-          if (!other.argument_.isEmpty()) {
-            if (argument_.isEmpty()) {
-              argument_ = other.argument_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureArgumentIsMutable();
-              argument_.addAll(other.argument_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.argument_.isEmpty()) {
-            if (argumentBuilder_.isEmpty()) {
-              argumentBuilder_.dispose();
-              argumentBuilder_ = null;
-              argument_ = other.argument_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              argumentBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getArgumentFieldBuilder() : null;
-            } else {
-              argumentBuilder_.addAllMessages(other.argument_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sstewartgallus.peacod.ast.Expr.Apply parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sstewartgallus.peacod.ast.Expr.Apply) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.sstewartgallus.peacod.ast.Expr function_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder> functionBuilder_;
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public boolean hasFunction() {
-        return functionBuilder_ != null || function_ != null;
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public com.sstewartgallus.peacod.ast.Expr getFunction() {
-        if (functionBuilder_ == null) {
-          return function_ == null ? com.sstewartgallus.peacod.ast.Expr.getDefaultInstance() : function_;
-        } else {
-          return functionBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public Builder setFunction(com.sstewartgallus.peacod.ast.Expr value) {
-        if (functionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          function_ = value;
-          onChanged();
-        } else {
-          functionBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public Builder setFunction(
-          com.sstewartgallus.peacod.ast.Expr.Builder builderForValue) {
-        if (functionBuilder_ == null) {
-          function_ = builderForValue.build();
-          onChanged();
-        } else {
-          functionBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public Builder mergeFunction(com.sstewartgallus.peacod.ast.Expr value) {
-        if (functionBuilder_ == null) {
-          if (function_ != null) {
-            function_ =
-              com.sstewartgallus.peacod.ast.Expr.newBuilder(function_).mergeFrom(value).buildPartial();
-          } else {
-            function_ = value;
-          }
-          onChanged();
-        } else {
-          functionBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public Builder clearFunction() {
-        if (functionBuilder_ == null) {
-          function_ = null;
-          onChanged();
-        } else {
-          function_ = null;
-          functionBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public com.sstewartgallus.peacod.ast.Expr.Builder getFunctionBuilder() {
-        
-        onChanged();
-        return getFunctionFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      public com.sstewartgallus.peacod.ast.ExprOrBuilder getFunctionOrBuilder() {
-        if (functionBuilder_ != null) {
-          return functionBuilder_.getMessageOrBuilder();
-        } else {
-          return function_ == null ?
-              com.sstewartgallus.peacod.ast.Expr.getDefaultInstance() : function_;
-        }
-      }
-      /**
-       * <code>.peacod_ast.Expr function = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder> 
-          getFunctionFieldBuilder() {
-        if (functionBuilder_ == null) {
-          functionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder>(
-                  getFunction(),
-                  getParentForChildren(),
-                  isClean());
-          function_ = null;
-        }
-        return functionBuilder_;
-      }
-
-      private java.util.List<com.sstewartgallus.peacod.ast.Expr> argument_ =
-        java.util.Collections.emptyList();
-      private void ensureArgumentIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          argument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.Expr>(argument_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder> argumentBuilder_;
-
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public java.util.List<com.sstewartgallus.peacod.ast.Expr> getArgumentList() {
-        if (argumentBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(argument_);
-        } else {
-          return argumentBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public int getArgumentCount() {
-        if (argumentBuilder_ == null) {
-          return argument_.size();
-        } else {
-          return argumentBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public com.sstewartgallus.peacod.ast.Expr getArgument(int index) {
-        if (argumentBuilder_ == null) {
-          return argument_.get(index);
-        } else {
-          return argumentBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder setArgument(
-          int index, com.sstewartgallus.peacod.ast.Expr value) {
-        if (argumentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureArgumentIsMutable();
-          argument_.set(index, value);
-          onChanged();
-        } else {
-          argumentBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder setArgument(
-          int index, com.sstewartgallus.peacod.ast.Expr.Builder builderForValue) {
-        if (argumentBuilder_ == null) {
-          ensureArgumentIsMutable();
-          argument_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          argumentBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder addArgument(com.sstewartgallus.peacod.ast.Expr value) {
-        if (argumentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureArgumentIsMutable();
-          argument_.add(value);
-          onChanged();
-        } else {
-          argumentBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder addArgument(
-          int index, com.sstewartgallus.peacod.ast.Expr value) {
-        if (argumentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureArgumentIsMutable();
-          argument_.add(index, value);
-          onChanged();
-        } else {
-          argumentBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder addArgument(
-          com.sstewartgallus.peacod.ast.Expr.Builder builderForValue) {
-        if (argumentBuilder_ == null) {
-          ensureArgumentIsMutable();
-          argument_.add(builderForValue.build());
-          onChanged();
-        } else {
-          argumentBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder addArgument(
-          int index, com.sstewartgallus.peacod.ast.Expr.Builder builderForValue) {
-        if (argumentBuilder_ == null) {
-          ensureArgumentIsMutable();
-          argument_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          argumentBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder addAllArgument(
-          java.lang.Iterable<? extends com.sstewartgallus.peacod.ast.Expr> values) {
-        if (argumentBuilder_ == null) {
-          ensureArgumentIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, argument_);
-          onChanged();
-        } else {
-          argumentBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder clearArgument() {
-        if (argumentBuilder_ == null) {
-          argument_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          argumentBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public Builder removeArgument(int index) {
-        if (argumentBuilder_ == null) {
-          ensureArgumentIsMutable();
-          argument_.remove(index);
-          onChanged();
-        } else {
-          argumentBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public com.sstewartgallus.peacod.ast.Expr.Builder getArgumentBuilder(
-          int index) {
-        return getArgumentFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public com.sstewartgallus.peacod.ast.ExprOrBuilder getArgumentOrBuilder(
-          int index) {
-        if (argumentBuilder_ == null) {
-          return argument_.get(index);  } else {
-          return argumentBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public java.util.List<? extends com.sstewartgallus.peacod.ast.ExprOrBuilder> 
-           getArgumentOrBuilderList() {
-        if (argumentBuilder_ != null) {
-          return argumentBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(argument_);
-        }
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public com.sstewartgallus.peacod.ast.Expr.Builder addArgumentBuilder() {
-        return getArgumentFieldBuilder().addBuilder(
-            com.sstewartgallus.peacod.ast.Expr.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public com.sstewartgallus.peacod.ast.Expr.Builder addArgumentBuilder(
-          int index) {
-        return getArgumentFieldBuilder().addBuilder(
-            index, com.sstewartgallus.peacod.ast.Expr.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .peacod_ast.Expr argument = 2;</code>
-       */
-      public java.util.List<com.sstewartgallus.peacod.ast.Expr.Builder> 
-           getArgumentBuilderList() {
-        return getArgumentFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder> 
-          getArgumentFieldBuilder() {
-        if (argumentBuilder_ == null) {
-          argumentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder>(
-                  argument_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          argument_ = null;
-        }
-        return argumentBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.Apply)
-    }
-
-    // @@protoc_insertion_point(class_scope:peacod_ast.Expr.Apply)
-    private static final com.sstewartgallus.peacod.ast.Expr.Apply DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.Apply();
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.Apply getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Apply>
-        PARSER = new com.google.protobuf.AbstractParser<Apply>() {
-      @java.lang.Override
-      public Apply parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Apply(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Apply> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Apply> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr.Apply getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface LoadArgOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LoadArg)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.peacod_ast.TypeExpr type = 1;</code>
-     */
-    boolean hasType();
-    /**
-     * <code>.peacod_ast.TypeExpr type = 1;</code>
-     */
-    com.sstewartgallus.peacod.ast.TypeExpr getType();
-    /**
-     * <code>.peacod_ast.TypeExpr type = 1;</code>
-     */
-    com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder();
-
-    /**
-     * <code>uint32 index = 2;</code>
-     */
-    int getIndex();
-  }
-  /**
-   * Protobuf type {@code peacod_ast.Expr.LoadArg}
-   */
-  public  static final class LoadArg extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LoadArg)
-      LoadArgOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use LoadArg.newBuilder() to construct.
-    private LoadArg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private LoadArg() {
-      index_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private LoadArg(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.sstewartgallus.peacod.ast.TypeExpr.Builder subBuilder = null;
-              if (type_ != null) {
-                subBuilder = type_.toBuilder();
-              }
-              type_ = input.readMessage(com.sstewartgallus.peacod.ast.TypeExpr.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(type_);
-                type_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LoadArg_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LoadArg_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.LoadArg.class, com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder.class);
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private com.sstewartgallus.peacod.ast.TypeExpr type_;
-    /**
-     * <code>.peacod_ast.TypeExpr type = 1;</code>
-     */
-    public boolean hasType() {
-      return type_ != null;
-    }
-    /**
-     * <code>.peacod_ast.TypeExpr type = 1;</code>
-     */
-    public com.sstewartgallus.peacod.ast.TypeExpr getType() {
-      return type_ == null ? com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
-    }
-    /**
-     * <code>.peacod_ast.TypeExpr type = 1;</code>
-     */
-    public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder() {
-      return getType();
-    }
-
-    public static final int INDEX_FIELD_NUMBER = 2;
-    private int index_;
-    /**
-     * <code>uint32 index = 2;</code>
-     */
-    public int getIndex() {
-      return index_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (type_ != null) {
-        output.writeMessage(1, getType());
-      }
-      if (index_ != 0) {
-        output.writeUInt32(2, index_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (type_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getType());
-      }
-      if (index_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, index_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LoadArg)) {
-        return super.equals(obj);
-      }
-      com.sstewartgallus.peacod.ast.Expr.LoadArg other = (com.sstewartgallus.peacod.ast.Expr.LoadArg) obj;
-
-      boolean result = true;
-      result = result && (hasType() == other.hasType());
-      if (hasType()) {
-        result = result && getType()
-            .equals(other.getType());
-      }
-      result = result && (getIndex()
-          == other.getIndex());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasType()) {
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getType().hashCode();
-      }
-      hash = (37 * hash) + INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LoadArg prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code peacod_ast.Expr.LoadArg}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LoadArg)
-        com.sstewartgallus.peacod.ast.Expr.LoadArgOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LoadArg_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LoadArg_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.sstewartgallus.peacod.ast.Expr.LoadArg.class, com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder.class);
-      }
-
-      // Construct using com.sstewartgallus.peacod.ast.Expr.LoadArg.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (typeBuilder_ == null) {
-          type_ = null;
-        } else {
-          type_ = null;
-          typeBuilder_ = null;
-        }
-        index_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LoadArg_descriptor;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LoadArg getDefaultInstanceForType() {
-        return com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LoadArg build() {
-        com.sstewartgallus.peacod.ast.Expr.LoadArg result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.sstewartgallus.peacod.ast.Expr.LoadArg buildPartial() {
-        com.sstewartgallus.peacod.ast.Expr.LoadArg result = new com.sstewartgallus.peacod.ast.Expr.LoadArg(this);
-        if (typeBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = typeBuilder_.build();
-        }
-        result.index_ = index_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.sstewartgallus.peacod.ast.Expr.LoadArg) {
-          return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LoadArg)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LoadArg other) {
-        if (other == com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance()) return this;
-        if (other.hasType()) {
-          mergeType(other.getType());
-        }
-        if (other.getIndex() != 0) {
-          setIndex(other.getIndex());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.sstewartgallus.peacod.ast.Expr.LoadArg parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LoadArg) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.sstewartgallus.peacod.ast.TypeExpr type_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> typeBuilder_;
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public boolean hasType() {
-        return typeBuilder_ != null || type_ != null;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr getType() {
-        if (typeBuilder_ == null) {
-          return type_ == null ? com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
-        } else {
-          return typeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public Builder setType(com.sstewartgallus.peacod.ast.TypeExpr value) {
-        if (typeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          type_ = value;
-          onChanged();
-        } else {
-          typeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public Builder setType(
-          com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
-        if (typeBuilder_ == null) {
-          type_ = builderForValue.build();
-          onChanged();
-        } else {
-          typeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public Builder mergeType(com.sstewartgallus.peacod.ast.TypeExpr value) {
-        if (typeBuilder_ == null) {
-          if (type_ != null) {
-            type_ =
-              com.sstewartgallus.peacod.ast.TypeExpr.newBuilder(type_).mergeFrom(value).buildPartial();
-          } else {
-            type_ = value;
-          }
-          onChanged();
-        } else {
-          typeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public Builder clearType() {
-        if (typeBuilder_ == null) {
-          type_ = null;
-          onChanged();
-        } else {
-          type_ = null;
-          typeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExpr.Builder getTypeBuilder() {
-        
-        onChanged();
-        return getTypeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder() {
-        if (typeBuilder_ != null) {
-          return typeBuilder_.getMessageOrBuilder();
-        } else {
-          return type_ == null ?
-              com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
-        }
-      }
-      /**
-       * <code>.peacod_ast.TypeExpr type = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> 
-          getTypeFieldBuilder() {
-        if (typeBuilder_ == null) {
-          typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder>(
-                  getType(),
-                  getParentForChildren(),
-                  isClean());
-          type_ = null;
-        }
-        return typeBuilder_;
-      }
-
-      private int index_ ;
-      /**
-       * <code>uint32 index = 2;</code>
-       */
-      public int getIndex() {
-        return index_;
-      }
-      /**
-       * <code>uint32 index = 2;</code>
-       */
-      public Builder setIndex(int value) {
-        
-        index_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 index = 2;</code>
-       */
-      public Builder clearIndex() {
-        
-        index_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LoadArg)
-    }
-
-    // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LoadArg)
-    private static final com.sstewartgallus.peacod.ast.Expr.LoadArg DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LoadArg();
-    }
-
-    public static com.sstewartgallus.peacod.ast.Expr.LoadArg getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<LoadArg>
-        PARSER = new com.google.protobuf.AbstractParser<LoadArg>() {
-      @java.lang.Override
-      public LoadArg parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LoadArg(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<LoadArg> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<LoadArg> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr.LoadArg getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private int valueCase_ = 0;
-  private java.lang.Object value_;
-  public enum ValueCase
-      implements com.google.protobuf.Internal.EnumLite {
-    SIMPLE(1),
-    LIT_BYTE(2),
-    LIT_SHORT(3),
-    LIT_INT(4),
-    LIT_LONG(5),
-    GET(6),
-    APPLY(7),
-    LOAD_ARG(13),
-    VALUE_NOT_SET(0);
-    private final int value;
-    private ValueCase(int value) {
-      this.value = value;
-    }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ValueCase valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ValueCase forNumber(int value) {
-      switch (value) {
-        case 1: return SIMPLE;
-        case 2: return LIT_BYTE;
-        case 3: return LIT_SHORT;
-        case 4: return LIT_INT;
-        case 5: return LIT_LONG;
-        case 6: return GET;
-        case 7: return APPLY;
-        case 13: return LOAD_ARG;
-        case 0: return VALUE_NOT_SET;
-        default: return null;
-      }
-    }
-    public int getNumber() {
-      return this.value;
-    }
-  };
-
-  public ValueCase
-  getValueCase() {
-    return ValueCase.forNumber(
-        valueCase_);
-  }
-
-  public static final int SIMPLE_FIELD_NUMBER = 1;
-  /**
-   * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-   */
-  public int getSimpleValue() {
-    if (valueCase_ == 1) {
-      return (java.lang.Integer) value_;
-    }
-    return 0;
-  }
-  /**
-   * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.Simple getSimple() {
-    if (valueCase_ == 1) {
-      @SuppressWarnings("deprecation")
-      com.sstewartgallus.peacod.ast.Expr.Simple result = com.sstewartgallus.peacod.ast.Expr.Simple.valueOf(
-          (java.lang.Integer) value_);
-      return result == null ? com.sstewartgallus.peacod.ast.Expr.Simple.UNRECOGNIZED : result;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.Simple.FALSE;
-  }
-
-  public static final int LIT_BYTE_FIELD_NUMBER = 2;
-  /**
-   * <pre>
-   * FIXME spell out fully as LiteralByte ?
-   * </pre>
-   *
-   * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-   */
-  public boolean hasLitByte() {
-    return valueCase_ == 2;
-  }
-  /**
-   * <pre>
-   * FIXME spell out fully as LiteralByte ?
-   * </pre>
-   *
-   * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitByte getLitByte() {
-    if (valueCase_ == 2) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitByte) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * FIXME spell out fully as LiteralByte ?
-   * </pre>
-   *
-   * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitByteOrBuilder getLitByteOrBuilder() {
-    if (valueCase_ == 2) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitByte) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance();
-  }
-
-  public static final int LIT_SHORT_FIELD_NUMBER = 3;
-  /**
-   * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-   */
-  public boolean hasLitShort() {
-    return valueCase_ == 3;
-  }
-  /**
-   * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitShort getLitShort() {
-    if (valueCase_ == 3) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitShort) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance();
-  }
-  /**
-   * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitShortOrBuilder getLitShortOrBuilder() {
-    if (valueCase_ == 3) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitShort) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance();
-  }
-
-  public static final int LIT_INT_FIELD_NUMBER = 4;
-  /**
-   * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-   */
-  public boolean hasLitInt() {
-    return valueCase_ == 4;
-  }
-  /**
-   * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitInt getLitInt() {
-    if (valueCase_ == 4) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitInt) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance();
-  }
-  /**
-   * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitIntOrBuilder getLitIntOrBuilder() {
-    if (valueCase_ == 4) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitInt) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance();
-  }
-
-  public static final int LIT_LONG_FIELD_NUMBER = 5;
-  /**
-   * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-   */
-  public boolean hasLitLong() {
-    return valueCase_ == 5;
-  }
-  /**
-   * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitLong getLitLong() {
-    if (valueCase_ == 5) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitLong) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance();
-  }
-  /**
-   * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LitLongOrBuilder getLitLongOrBuilder() {
-    if (valueCase_ == 5) {
-       return (com.sstewartgallus.peacod.ast.Expr.LitLong) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance();
-  }
-
-  public static final int GET_FIELD_NUMBER = 6;
-  /**
-   * <code>.peacod_ast.Expr.Get get = 6;</code>
-   */
-  public boolean hasGet() {
-    return valueCase_ == 6;
-  }
-  /**
-   * <code>.peacod_ast.Expr.Get get = 6;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.Get getGet() {
-    if (valueCase_ == 6) {
-       return (com.sstewartgallus.peacod.ast.Expr.Get) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance();
-  }
-  /**
-   * <code>.peacod_ast.Expr.Get get = 6;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.GetOrBuilder getGetOrBuilder() {
-    if (valueCase_ == 6) {
-       return (com.sstewartgallus.peacod.ast.Expr.Get) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance();
-  }
-
-  public static final int APPLY_FIELD_NUMBER = 7;
-  /**
-   * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-   */
-  public boolean hasApply() {
-    return valueCase_ == 7;
-  }
-  /**
-   * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.Apply getApply() {
-    if (valueCase_ == 7) {
-       return (com.sstewartgallus.peacod.ast.Expr.Apply) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance();
-  }
-  /**
-   * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.ApplyOrBuilder getApplyOrBuilder() {
-    if (valueCase_ == 7) {
-       return (com.sstewartgallus.peacod.ast.Expr.Apply) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance();
-  }
-
-  public static final int LOAD_ARG_FIELD_NUMBER = 13;
-  /**
-   * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-   */
-  public boolean hasLoadArg() {
-    return valueCase_ == 13;
-  }
-  /**
-   * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LoadArg getLoadArg() {
-    if (valueCase_ == 13) {
-       return (com.sstewartgallus.peacod.ast.Expr.LoadArg) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance();
-  }
-  /**
-   * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-   */
-  public com.sstewartgallus.peacod.ast.Expr.LoadArgOrBuilder getLoadArgOrBuilder() {
-    if (valueCase_ == 13) {
-       return (com.sstewartgallus.peacod.ast.Expr.LoadArg) value_;
-    }
-    return com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance();
-  }
-
-  private byte memoizedIsInitialized = -1;
-  @java.lang.Override
-  public final boolean isInitialized() {
-    byte isInitialized = memoizedIsInitialized;
-    if (isInitialized == 1) return true;
-    if (isInitialized == 0) return false;
-
-    memoizedIsInitialized = 1;
-    return true;
-  }
-
-  @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (valueCase_ == 1) {
-      output.writeEnum(1, ((java.lang.Integer) value_));
-    }
-    if (valueCase_ == 2) {
-      output.writeMessage(2, (com.sstewartgallus.peacod.ast.Expr.LitByte) value_);
-    }
-    if (valueCase_ == 3) {
-      output.writeMessage(3, (com.sstewartgallus.peacod.ast.Expr.LitShort) value_);
-    }
-    if (valueCase_ == 4) {
-      output.writeMessage(4, (com.sstewartgallus.peacod.ast.Expr.LitInt) value_);
-    }
-    if (valueCase_ == 5) {
-      output.writeMessage(5, (com.sstewartgallus.peacod.ast.Expr.LitLong) value_);
-    }
-    if (valueCase_ == 6) {
-      output.writeMessage(6, (com.sstewartgallus.peacod.ast.Expr.Get) value_);
-    }
-    if (valueCase_ == 7) {
-      output.writeMessage(7, (com.sstewartgallus.peacod.ast.Expr.Apply) value_);
-    }
-    if (valueCase_ == 13) {
-      output.writeMessage(13, (com.sstewartgallus.peacod.ast.Expr.LoadArg) value_);
-    }
-    unknownFields.writeTo(output);
-  }
-
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
-    if (valueCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, ((java.lang.Integer) value_));
-    }
-    if (valueCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.sstewartgallus.peacod.ast.Expr.LitByte) value_);
-    }
-    if (valueCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.sstewartgallus.peacod.ast.Expr.LitShort) value_);
-    }
-    if (valueCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.sstewartgallus.peacod.ast.Expr.LitInt) value_);
-    }
-    if (valueCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.sstewartgallus.peacod.ast.Expr.LitLong) value_);
-    }
-    if (valueCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.sstewartgallus.peacod.ast.Expr.Get) value_);
-    }
-    if (valueCase_ == 7) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.sstewartgallus.peacod.ast.Expr.Apply) value_);
-    }
-    if (valueCase_ == 13) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, (com.sstewartgallus.peacod.ast.Expr.LoadArg) value_);
-    }
-    size += unknownFields.getSerializedSize();
-    memoizedSize = size;
-    return size;
-  }
-
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
-    if (obj == this) {
-     return true;
-    }
-    if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr)) {
-      return super.equals(obj);
-    }
-    com.sstewartgallus.peacod.ast.Expr other = (com.sstewartgallus.peacod.ast.Expr) obj;
-
-    boolean result = true;
-    result = result && getValueCase().equals(
-        other.getValueCase());
-    if (!result) return false;
-    switch (valueCase_) {
-      case 1:
-        result = result && getSimpleValue()
-            == other.getSimpleValue();
-        break;
-      case 2:
-        result = result && getLitByte()
-            .equals(other.getLitByte());
-        break;
-      case 3:
-        result = result && getLitShort()
-            .equals(other.getLitShort());
-        break;
-      case 4:
-        result = result && getLitInt()
-            .equals(other.getLitInt());
-        break;
-      case 5:
-        result = result && getLitLong()
-            .equals(other.getLitLong());
-        break;
-      case 6:
-        result = result && getGet()
-            .equals(other.getGet());
-        break;
-      case 7:
-        result = result && getApply()
-            .equals(other.getApply());
-        break;
-      case 13:
-        result = result && getLoadArg()
-            .equals(other.getLoadArg());
-        break;
-      case 0:
-      default:
-    }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
-  }
-
-  @java.lang.Override
-  public int hashCode() {
-    if (memoizedHashCode != 0) {
-      return memoizedHashCode;
-    }
-    int hash = 41;
-    hash = (19 * hash) + getDescriptor().hashCode();
-    switch (valueCase_) {
-      case 1:
-        hash = (37 * hash) + SIMPLE_FIELD_NUMBER;
-        hash = (53 * hash) + getSimpleValue();
-        break;
-      case 2:
-        hash = (37 * hash) + LIT_BYTE_FIELD_NUMBER;
-        hash = (53 * hash) + getLitByte().hashCode();
-        break;
-      case 3:
-        hash = (37 * hash) + LIT_SHORT_FIELD_NUMBER;
-        hash = (53 * hash) + getLitShort().hashCode();
-        break;
-      case 4:
-        hash = (37 * hash) + LIT_INT_FIELD_NUMBER;
-        hash = (53 * hash) + getLitInt().hashCode();
-        break;
-      case 5:
-        hash = (37 * hash) + LIT_LONG_FIELD_NUMBER;
-        hash = (53 * hash) + getLitLong().hashCode();
-        break;
-      case 6:
-        hash = (37 * hash) + GET_FIELD_NUMBER;
-        hash = (53 * hash) + getGet().hashCode();
-        break;
-      case 7:
-        hash = (37 * hash) + APPLY_FIELD_NUMBER;
-        hash = (53 * hash) + getApply().hashCode();
-        break;
-      case 13:
-        hash = (37 * hash) + LOAD_ARG_FIELD_NUMBER;
-        hash = (53 * hash) + getLoadArg().hashCode();
-        break;
-      case 0:
-      default:
-    }
-    hash = (29 * hash) + unknownFields.hashCode();
-    memoizedHashCode = hash;
-    return hash;
-  }
-
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      com.google.protobuf.ByteString data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      com.google.protobuf.ByteString data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
-  public static com.sstewartgallus.peacod.ast.Expr parseFrom(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
-  }
-
-  @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-    Builder builder = new Builder(parent);
-    return builder;
-  }
-  /**
-   * <pre>
-   * FIXME: Rename as Term?
-   * </pre>
-   *
-   * Protobuf type {@code peacod_ast.Expr}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:peacod_ast.Expr)
-      com.sstewartgallus.peacod.ast.ExprOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.sstewartgallus.peacod.ast.Expr.class, com.sstewartgallus.peacod.ast.Expr.Builder.class);
-    }
-
-    // Construct using com.sstewartgallus.peacod.ast.Expr.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
-    }
-    @java.lang.Override
-    public Builder clear() {
-      super.clear();
-      valueCase_ = 0;
-      value_ = null;
-      return this;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_descriptor;
+    public com.google.protobuf.Parser<Expr> getParserForType() {
+        return PARSER;
     }
 
     @java.lang.Override
     public com.sstewartgallus.peacod.ast.Expr getDefaultInstanceForType() {
-      return com.sstewartgallus.peacod.ast.Expr.getDefaultInstance();
+        return DEFAULT_INSTANCE;
     }
 
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr build() {
-      com.sstewartgallus.peacod.ast.Expr result = buildPartial();
-      if (!result.isInitialized()) {
-        throw newUninitializedMessageException(result);
-      }
-      return result;
+    public enum ValueCase
+            implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        VARIABLE(1),
+        CONSTANT(2),
+        CALL(3),
+        VALUE_NOT_SET(0);
+        private final int value;
+
+        private ValueCase(int value) {
+            this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ValueCase valueOf(int value) {
+            return forNumber(value);
+        }
+
+        public static ValueCase forNumber(int value) {
+            switch (value) {
+                case 1:
+                    return VARIABLE;
+                case 2:
+                    return CONSTANT;
+                case 3:
+                    return CALL;
+                case 0:
+                    return VALUE_NOT_SET;
+                default:
+                    return null;
+            }
+        }
+
+        public int getNumber() {
+            return this.value;
+        }
     }
 
-    @java.lang.Override
-    public com.sstewartgallus.peacod.ast.Expr buildPartial() {
-      com.sstewartgallus.peacod.ast.Expr result = new com.sstewartgallus.peacod.ast.Expr(this);
-      if (valueCase_ == 1) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 2) {
-        if (litByteBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = litByteBuilder_.build();
-        }
-      }
-      if (valueCase_ == 3) {
-        if (litShortBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = litShortBuilder_.build();
-        }
-      }
-      if (valueCase_ == 4) {
-        if (litIntBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = litIntBuilder_.build();
-        }
-      }
-      if (valueCase_ == 5) {
-        if (litLongBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = litLongBuilder_.build();
-        }
-      }
-      if (valueCase_ == 6) {
-        if (getBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = getBuilder_.build();
-        }
-      }
-      if (valueCase_ == 7) {
-        if (applyBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = applyBuilder_.build();
-        }
-      }
-      if (valueCase_ == 13) {
-        if (loadArgBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = loadArgBuilder_.build();
-        }
-      }
-      result.valueCase_ = valueCase_;
-      onBuilt();
-      return result;
+    public interface LiteralOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.Literal)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+         *
+         * @return Whether the literalFalse field is set.
+         */
+        boolean hasLiteralFalse();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+         *
+         * @return The literalFalse.
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralFalse getLiteralFalse();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralFalseOrBuilder getLiteralFalseOrBuilder();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+         *
+         * @return Whether the literalTrue field is set.
+         */
+        boolean hasLiteralTrue();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+         *
+         * @return The literalTrue.
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralTrue getLiteralTrue();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralTrueOrBuilder getLiteralTrueOrBuilder();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+         *
+         * @return Whether the literalByte field is set.
+         */
+        boolean hasLiteralByte();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+         *
+         * @return The literalByte.
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralByte getLiteralByte();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralByteOrBuilder getLiteralByteOrBuilder();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+         *
+         * @return Whether the literalShort field is set.
+         */
+        boolean hasLiteralShort();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+         *
+         * @return The literalShort.
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralShort getLiteralShort();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralShortOrBuilder getLiteralShortOrBuilder();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+         *
+         * @return Whether the literalInt field is set.
+         */
+        boolean hasLiteralInt();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+         *
+         * @return The literalInt.
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralInteger getLiteralInt();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralIntegerOrBuilder getLiteralIntOrBuilder();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+         *
+         * @return Whether the literalLong field is set.
+         */
+        boolean hasLiteralLong();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+         *
+         * @return The literalLong.
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralLong getLiteralLong();
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralLongOrBuilder getLiteralLongOrBuilder();
+
+        public com.sstewartgallus.peacod.ast.Expr.Literal.ValueCase getValueCase();
     }
 
-    @java.lang.Override
-    public Builder clone() {
-      return (Builder) super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
-    }
-    @java.lang.Override
-    public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.sstewartgallus.peacod.ast.Expr) {
-        return mergeFrom((com.sstewartgallus.peacod.ast.Expr)other);
-      } else {
-        super.mergeFrom(other);
-        return this;
-      }
+    public interface ConstantOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.Constant)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+         *
+         * @return Whether the reference field is set.
+         */
+        boolean hasReference();
+
+        /**
+         * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+         *
+         * @return The reference.
+         */
+        com.sstewartgallus.peacod.ast.Expr.TermReference getReference();
+
+        /**
+         * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.TermReferenceOrBuilder getReferenceOrBuilder();
+
+        /**
+         * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+         *
+         * @return Whether the literal field is set.
+         */
+        boolean hasLiteral();
+
+        /**
+         * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+         *
+         * @return The literal.
+         */
+        com.sstewartgallus.peacod.ast.Expr.Literal getLiteral();
+
+        /**
+         * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.LiteralOrBuilder getLiteralOrBuilder();
+
+        public com.sstewartgallus.peacod.ast.Expr.Constant.ValueCase getValueCase();
     }
 
-    public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr other) {
-      if (other == com.sstewartgallus.peacod.ast.Expr.getDefaultInstance()) return this;
-      switch (other.getValueCase()) {
-        case SIMPLE: {
-          setSimpleValue(other.getSimpleValue());
-          break;
-        }
-        case LIT_BYTE: {
-          mergeLitByte(other.getLitByte());
-          break;
-        }
-        case LIT_SHORT: {
-          mergeLitShort(other.getLitShort());
-          break;
-        }
-        case LIT_INT: {
-          mergeLitInt(other.getLitInt());
-          break;
-        }
-        case LIT_LONG: {
-          mergeLitLong(other.getLitLong());
-          break;
-        }
-        case GET: {
-          mergeGet(other.getGet());
-          break;
-        }
-        case APPLY: {
-          mergeApply(other.getApply());
-          break;
-        }
-        case LOAD_ARG: {
-          mergeLoadArg(other.getLoadArg());
-          break;
-        }
-        case VALUE_NOT_SET: {
-          break;
-        }
-      }
-      this.mergeUnknownFields(other.unknownFields);
-      onChanged();
-      return this;
+    public interface CallOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.Call)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>.peacod_ast.Expr.Constant function = 1;</code>
+         *
+         * @return Whether the function field is set.
+         */
+        boolean hasFunction();
+
+        /**
+         * <code>.peacod_ast.Expr.Constant function = 1;</code>
+         *
+         * @return The function.
+         */
+        com.sstewartgallus.peacod.ast.Expr.Constant getFunction();
+
+        /**
+         * <code>.peacod_ast.Expr.Constant function = 1;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder getFunctionOrBuilder();
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        java.util.List<com.sstewartgallus.peacod.ast.TypeExpr>
+        getTypeArgumentList();
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        com.sstewartgallus.peacod.ast.TypeExpr getTypeArgument(int index);
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        int getTypeArgumentCount();
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        java.util.List<? extends com.sstewartgallus.peacod.ast.TypeExprOrBuilder>
+        getTypeArgumentOrBuilderList();
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeArgumentOrBuilder(
+                int index);
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        java.util.List<com.sstewartgallus.peacod.ast.Expr>
+        getArgumentList();
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr getArgument(int index);
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        int getArgumentCount();
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        java.util.List<? extends com.sstewartgallus.peacod.ast.ExprOrBuilder>
+        getArgumentOrBuilderList();
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        com.sstewartgallus.peacod.ast.ExprOrBuilder getArgumentOrBuilder(
+                int index);
     }
 
-    @java.lang.Override
-    public final boolean isInitialized() {
-      return true;
+    public interface TermReferenceOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.TermReference)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+         *
+         * @return Whether the reference field is set.
+         */
+        boolean hasReference();
+
+        /**
+         * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+         *
+         * @return The reference.
+         */
+        com.sstewartgallus.peacod.ast.Expr.Reference getReference();
+
+        /**
+         * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+         */
+        com.sstewartgallus.peacod.ast.Expr.ReferenceOrBuilder getReferenceOrBuilder();
+
+        /**
+         * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+         *
+         * @return Whether the scheme field is set.
+         */
+        boolean hasScheme();
+
+        /**
+         * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+         *
+         * @return The scheme.
+         */
+        com.sstewartgallus.peacod.ast.TypeSchemeExpr getScheme();
+
+        /**
+         * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+         */
+        com.sstewartgallus.peacod.ast.TypeSchemeExprOrBuilder getSchemeOrBuilder();
     }
 
-    @java.lang.Override
-    public Builder mergeFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      com.sstewartgallus.peacod.ast.Expr parsedMessage = null;
-      try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.sstewartgallus.peacod.ast.Expr) e.getUnfinishedMessage();
-        throw e.unwrapIOException();
-      } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
-      return this;
+    public interface ReferenceOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.Reference)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>string library = 1;</code>
+         *
+         * @return The library.
+         */
+        java.lang.String getLibrary();
+
+        /**
+         * <code>string library = 1;</code>
+         *
+         * @return The bytes for library.
+         */
+        com.google.protobuf.ByteString
+        getLibraryBytes();
+
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The name.
+         */
+        java.lang.String getName();
+
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The bytes for name.
+         */
+        com.google.protobuf.ByteString
+        getNameBytes();
     }
-    private int valueCase_ = 0;
-    private java.lang.Object value_;
-    public ValueCase
+
+    public interface VariableOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.Variable)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>.peacod_ast.TypeExpr type = 1;</code>
+         *
+         * @return Whether the type field is set.
+         */
+        boolean hasType();
+
+        /**
+         * <code>.peacod_ast.TypeExpr type = 1;</code>
+         *
+         * @return The type.
+         */
+        com.sstewartgallus.peacod.ast.TypeExpr getType();
+
+        /**
+         * <code>.peacod_ast.TypeExpr type = 1;</code>
+         */
+        com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder();
+
+        /**
+         * <code>uint32 index = 2;</code>
+         *
+         * @return The index.
+         */
+        int getIndex();
+    }
+
+    public interface LiteralFalseOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LiteralFalse)
+            com.google.protobuf.MessageOrBuilder {
+    }
+
+    public interface LiteralTrueOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LiteralTrue)
+            com.google.protobuf.MessageOrBuilder {
+    }
+
+    public interface LiteralByteOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LiteralByte)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int32 value = 1;</code>
+         *
+         * @return The value.
+         */
+        int getValue();
+    }
+
+    public interface LiteralShortOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LiteralShort)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int32 value = 1;</code>
+         *
+         * @return The value.
+         */
+        int getValue();
+    }
+
+    public interface LiteralIntegerOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LiteralInteger)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int32 value = 1;</code>
+         *
+         * @return The value.
+         */
+        int getValue();
+    }
+
+    public interface LiteralLongOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:peacod_ast.Expr.LiteralLong)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int64 value = 1;</code>
+         *
+         * @return The value.
+         */
+        long getValue();
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.Literal}
+     */
+    public static final class Literal extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.Literal)
+            LiteralOrBuilder {
+        public static final int LITERAL_FALSE_FIELD_NUMBER = 2;
+        public static final int LITERAL_TRUE_FIELD_NUMBER = 3;
+        public static final int LITERAL_BYTE_FIELD_NUMBER = 4;
+        public static final int LITERAL_SHORT_FIELD_NUMBER = 5;
+        public static final int LITERAL_INT_FIELD_NUMBER = 6;
+        public static final int LITERAL_LONG_FIELD_NUMBER = 7;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.Literal)
+        private static final com.sstewartgallus.peacod.ast.Expr.Literal DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<Literal>
+                PARSER = new com.google.protobuf.AbstractParser<Literal>() {
+            @java.lang.Override
+            public Literal parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Literal(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.Literal();
+        }
+
+        private int valueCase_ = 0;
+
+        ;
+        private java.lang.Object value_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use Literal.newBuilder() to construct.
+        private Literal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private Literal() {
+        }
+
+        private Literal(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 18: {
+                            com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder subBuilder = null;
+                            if (valueCase_ == 2) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.LiteralFalse.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 2;
+                            break;
+                        }
+                        case 26: {
+                            com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder subBuilder = null;
+                            if (valueCase_ == 3) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.LiteralTrue.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 3;
+                            break;
+                        }
+                        case 34: {
+                            com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder subBuilder = null;
+                            if (valueCase_ == 4) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.LiteralByte.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 4;
+                            break;
+                        }
+                        case 42: {
+                            com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder subBuilder = null;
+                            if (valueCase_ == 5) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.LiteralShort.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 5;
+                            break;
+                        }
+                        case 50: {
+                            com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder subBuilder = null;
+                            if (valueCase_ == 6) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.LiteralInteger.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 6;
+                            break;
+                        }
+                        case 58: {
+                            com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder subBuilder = null;
+                            if (valueCase_ == 7) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.LiteralLong.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 7;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Literal_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.Literal prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Literal getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<Literal> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Literal();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Literal_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.Literal.class, com.sstewartgallus.peacod.ast.Expr.Literal.Builder.class);
+        }
+
+        public ValueCase
         getValueCase() {
-      return ValueCase.forNumber(
-          valueCase_);
+            return ValueCase.forNumber(
+                    valueCase_);
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+         *
+         * @return Whether the literalFalse field is set.
+         */
+        public boolean hasLiteralFalse() {
+            return valueCase_ == 2;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+         *
+         * @return The literalFalse.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralFalse getLiteralFalse() {
+            if (valueCase_ == 2) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralFalseOrBuilder getLiteralFalseOrBuilder() {
+            if (valueCase_ == 2) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+         *
+         * @return Whether the literalTrue field is set.
+         */
+        public boolean hasLiteralTrue() {
+            return valueCase_ == 3;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+         *
+         * @return The literalTrue.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralTrue getLiteralTrue() {
+            if (valueCase_ == 3) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralTrueOrBuilder getLiteralTrueOrBuilder() {
+            if (valueCase_ == 3) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+         *
+         * @return Whether the literalByte field is set.
+         */
+        public boolean hasLiteralByte() {
+            return valueCase_ == 4;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+         *
+         * @return The literalByte.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralByte getLiteralByte() {
+            if (valueCase_ == 4) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralByteOrBuilder getLiteralByteOrBuilder() {
+            if (valueCase_ == 4) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+         *
+         * @return Whether the literalShort field is set.
+         */
+        public boolean hasLiteralShort() {
+            return valueCase_ == 5;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+         *
+         * @return The literalShort.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralShort getLiteralShort() {
+            if (valueCase_ == 5) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralShortOrBuilder getLiteralShortOrBuilder() {
+            if (valueCase_ == 5) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+         *
+         * @return Whether the literalInt field is set.
+         */
+        public boolean hasLiteralInt() {
+            return valueCase_ == 6;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+         *
+         * @return The literalInt.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralInteger getLiteralInt() {
+            if (valueCase_ == 6) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralIntegerOrBuilder getLiteralIntOrBuilder() {
+            if (valueCase_ == 6) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+         *
+         * @return Whether the literalLong field is set.
+         */
+        public boolean hasLiteralLong() {
+            return valueCase_ == 7;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+         *
+         * @return The literalLong.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralLong getLiteralLong() {
+            if (valueCase_ == 7) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralLongOrBuilder getLiteralLongOrBuilder() {
+            if (valueCase_ == 7) {
+                return (com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (valueCase_ == 2) {
+                output.writeMessage(2, (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_);
+            }
+            if (valueCase_ == 3) {
+                output.writeMessage(3, (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_);
+            }
+            if (valueCase_ == 4) {
+                output.writeMessage(4, (com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_);
+            }
+            if (valueCase_ == 5) {
+                output.writeMessage(5, (com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_);
+            }
+            if (valueCase_ == 6) {
+                output.writeMessage(6, (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_);
+            }
+            if (valueCase_ == 7) {
+                output.writeMessage(7, (com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (valueCase_ == 2) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(2, (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_);
+            }
+            if (valueCase_ == 3) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(3, (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_);
+            }
+            if (valueCase_ == 4) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(4, (com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_);
+            }
+            if (valueCase_ == 5) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(5, (com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_);
+            }
+            if (valueCase_ == 6) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(6, (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_);
+            }
+            if (valueCase_ == 7) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(7, (com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.Literal)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.Literal other = (com.sstewartgallus.peacod.ast.Expr.Literal) obj;
+
+            if (!getValueCase().equals(other.getValueCase())) return false;
+            switch (valueCase_) {
+                case 2:
+                    if (!getLiteralFalse()
+                            .equals(other.getLiteralFalse())) return false;
+                    break;
+                case 3:
+                    if (!getLiteralTrue()
+                            .equals(other.getLiteralTrue())) return false;
+                    break;
+                case 4:
+                    if (!getLiteralByte()
+                            .equals(other.getLiteralByte())) return false;
+                    break;
+                case 5:
+                    if (!getLiteralShort()
+                            .equals(other.getLiteralShort())) return false;
+                    break;
+                case 6:
+                    if (!getLiteralInt()
+                            .equals(other.getLiteralInt())) return false;
+                    break;
+                case 7:
+                    if (!getLiteralLong()
+                            .equals(other.getLiteralLong())) return false;
+                    break;
+                case 0:
+                default:
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            switch (valueCase_) {
+                case 2:
+                    hash = (37 * hash) + LITERAL_FALSE_FIELD_NUMBER;
+                    hash = (53 * hash) + getLiteralFalse().hashCode();
+                    break;
+                case 3:
+                    hash = (37 * hash) + LITERAL_TRUE_FIELD_NUMBER;
+                    hash = (53 * hash) + getLiteralTrue().hashCode();
+                    break;
+                case 4:
+                    hash = (37 * hash) + LITERAL_BYTE_FIELD_NUMBER;
+                    hash = (53 * hash) + getLiteralByte().hashCode();
+                    break;
+                case 5:
+                    hash = (37 * hash) + LITERAL_SHORT_FIELD_NUMBER;
+                    hash = (53 * hash) + getLiteralShort().hashCode();
+                    break;
+                case 6:
+                    hash = (37 * hash) + LITERAL_INT_FIELD_NUMBER;
+                    hash = (53 * hash) + getLiteralInt().hashCode();
+                    break;
+                case 7:
+                    hash = (37 * hash) + LITERAL_LONG_FIELD_NUMBER;
+                    hash = (53 * hash) + getLiteralLong().hashCode();
+                    break;
+                case 0:
+                default:
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Literal> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.Literal getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public enum ValueCase
+                implements com.google.protobuf.Internal.EnumLite,
+                com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+            LITERAL_FALSE(2),
+            LITERAL_TRUE(3),
+            LITERAL_BYTE(4),
+            LITERAL_SHORT(5),
+            LITERAL_INT(6),
+            LITERAL_LONG(7),
+            VALUE_NOT_SET(0);
+            private final int value;
+
+            private ValueCase(int value) {
+                this.value = value;
+            }
+
+            /**
+             * @param value The number of the enum to look for.
+             * @return The enum associated with the given number.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static ValueCase valueOf(int value) {
+                return forNumber(value);
+            }
+
+            public static ValueCase forNumber(int value) {
+                switch (value) {
+                    case 2:
+                        return LITERAL_FALSE;
+                    case 3:
+                        return LITERAL_TRUE;
+                    case 4:
+                        return LITERAL_BYTE;
+                    case 5:
+                        return LITERAL_SHORT;
+                    case 6:
+                        return LITERAL_INT;
+                    case 7:
+                        return LITERAL_LONG;
+                    case 0:
+                        return VALUE_NOT_SET;
+                    default:
+                        return null;
+                }
+            }
+
+            public int getNumber() {
+                return this.value;
+            }
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.Literal}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.Literal)
+                com.sstewartgallus.peacod.ast.Expr.LiteralOrBuilder {
+            private int valueCase_ = 0;
+            private java.lang.Object value_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralFalse, com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralFalseOrBuilder> literalFalseBuilder_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralTrue, com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralTrueOrBuilder> literalTrueBuilder_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralByte, com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralByteOrBuilder> literalByteBuilder_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralShort, com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralShortOrBuilder> literalShortBuilder_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralInteger, com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralIntegerOrBuilder> literalIntBuilder_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralLong, com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralLongOrBuilder> literalLongBuilder_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.Literal.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Literal_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Literal_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.Literal.class, com.sstewartgallus.peacod.ast.Expr.Literal.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                valueCase_ = 0;
+                value_ = null;
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Literal_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Literal getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Literal build() {
+                com.sstewartgallus.peacod.ast.Expr.Literal result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Literal buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.Literal result = new com.sstewartgallus.peacod.ast.Expr.Literal(this);
+                if (valueCase_ == 2) {
+                    if (literalFalseBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = literalFalseBuilder_.build();
+                    }
+                }
+                if (valueCase_ == 3) {
+                    if (literalTrueBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = literalTrueBuilder_.build();
+                    }
+                }
+                if (valueCase_ == 4) {
+                    if (literalByteBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = literalByteBuilder_.build();
+                    }
+                }
+                if (valueCase_ == 5) {
+                    if (literalShortBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = literalShortBuilder_.build();
+                    }
+                }
+                if (valueCase_ == 6) {
+                    if (literalIntBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = literalIntBuilder_.build();
+                    }
+                }
+                if (valueCase_ == 7) {
+                    if (literalLongBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = literalLongBuilder_.build();
+                    }
+                }
+                result.valueCase_ = valueCase_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.Literal) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.Literal) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.Literal other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance()) return this;
+                switch (other.getValueCase()) {
+                    case LITERAL_FALSE: {
+                        mergeLiteralFalse(other.getLiteralFalse());
+                        break;
+                    }
+                    case LITERAL_TRUE: {
+                        mergeLiteralTrue(other.getLiteralTrue());
+                        break;
+                    }
+                    case LITERAL_BYTE: {
+                        mergeLiteralByte(other.getLiteralByte());
+                        break;
+                    }
+                    case LITERAL_SHORT: {
+                        mergeLiteralShort(other.getLiteralShort());
+                        break;
+                    }
+                    case LITERAL_INT: {
+                        mergeLiteralInt(other.getLiteralInt());
+                        break;
+                    }
+                    case LITERAL_LONG: {
+                        mergeLiteralLong(other.getLiteralLong());
+                        break;
+                    }
+                    case VALUE_NOT_SET: {
+                        break;
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.Literal parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.Literal) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            public ValueCase
+            getValueCase() {
+                return ValueCase.forNumber(
+                        valueCase_);
+            }
+
+            public Builder clearValue() {
+                valueCase_ = 0;
+                value_ = null;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             *
+             * @return Whether the literalFalse field is set.
+             */
+            public boolean hasLiteralFalse() {
+                return valueCase_ == 2;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             *
+             * @return The literalFalse.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralFalse getLiteralFalse() {
+                if (literalFalseBuilder_ == null) {
+                    if (valueCase_ == 2) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 2) {
+                        return literalFalseBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             */
+            public Builder setLiteralFalse(com.sstewartgallus.peacod.ast.Expr.LiteralFalse value) {
+                if (literalFalseBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    literalFalseBuilder_.setMessage(value);
+                }
+                valueCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             */
+            public Builder setLiteralFalse(
+                    com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder builderForValue) {
+                if (literalFalseBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    literalFalseBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             */
+            public Builder mergeLiteralFalse(com.sstewartgallus.peacod.ast.Expr.LiteralFalse value) {
+                if (literalFalseBuilder_ == null) {
+                    if (valueCase_ == 2 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralFalse.newBuilder((com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 2) {
+                        literalFalseBuilder_.mergeFrom(value);
+                    }
+                    literalFalseBuilder_.setMessage(value);
+                }
+                valueCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             */
+            public Builder clearLiteralFalse() {
+                if (literalFalseBuilder_ == null) {
+                    if (valueCase_ == 2) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 2) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    literalFalseBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder getLiteralFalseBuilder() {
+                return getLiteralFalseFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralFalseOrBuilder getLiteralFalseOrBuilder() {
+                if ((valueCase_ == 2) && (literalFalseBuilder_ != null)) {
+                    return literalFalseBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 2) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralFalse literal_false = 2;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralFalse, com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralFalseOrBuilder>
+            getLiteralFalseFieldBuilder() {
+                if (literalFalseBuilder_ == null) {
+                    if (!(valueCase_ == 2)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance();
+                    }
+                    literalFalseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.LiteralFalse, com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralFalseOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 2;
+                onChanged();
+                ;
+                return literalFalseBuilder_;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             *
+             * @return Whether the literalTrue field is set.
+             */
+            public boolean hasLiteralTrue() {
+                return valueCase_ == 3;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             *
+             * @return The literalTrue.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralTrue getLiteralTrue() {
+                if (literalTrueBuilder_ == null) {
+                    if (valueCase_ == 3) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 3) {
+                        return literalTrueBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             */
+            public Builder setLiteralTrue(com.sstewartgallus.peacod.ast.Expr.LiteralTrue value) {
+                if (literalTrueBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    literalTrueBuilder_.setMessage(value);
+                }
+                valueCase_ = 3;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             */
+            public Builder setLiteralTrue(
+                    com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder builderForValue) {
+                if (literalTrueBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    literalTrueBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 3;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             */
+            public Builder mergeLiteralTrue(com.sstewartgallus.peacod.ast.Expr.LiteralTrue value) {
+                if (literalTrueBuilder_ == null) {
+                    if (valueCase_ == 3 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralTrue.newBuilder((com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 3) {
+                        literalTrueBuilder_.mergeFrom(value);
+                    }
+                    literalTrueBuilder_.setMessage(value);
+                }
+                valueCase_ = 3;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             */
+            public Builder clearLiteralTrue() {
+                if (literalTrueBuilder_ == null) {
+                    if (valueCase_ == 3) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 3) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    literalTrueBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder getLiteralTrueBuilder() {
+                return getLiteralTrueFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralTrueOrBuilder getLiteralTrueOrBuilder() {
+                if ((valueCase_ == 3) && (literalTrueBuilder_ != null)) {
+                    return literalTrueBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 3) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralTrue literal_true = 3;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralTrue, com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralTrueOrBuilder>
+            getLiteralTrueFieldBuilder() {
+                if (literalTrueBuilder_ == null) {
+                    if (!(valueCase_ == 3)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance();
+                    }
+                    literalTrueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.LiteralTrue, com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralTrueOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 3;
+                onChanged();
+                ;
+                return literalTrueBuilder_;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             *
+             * @return Whether the literalByte field is set.
+             */
+            public boolean hasLiteralByte() {
+                return valueCase_ == 4;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             *
+             * @return The literalByte.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralByte getLiteralByte() {
+                if (literalByteBuilder_ == null) {
+                    if (valueCase_ == 4) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 4) {
+                        return literalByteBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             */
+            public Builder setLiteralByte(com.sstewartgallus.peacod.ast.Expr.LiteralByte value) {
+                if (literalByteBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    literalByteBuilder_.setMessage(value);
+                }
+                valueCase_ = 4;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             */
+            public Builder setLiteralByte(
+                    com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder builderForValue) {
+                if (literalByteBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    literalByteBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 4;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             */
+            public Builder mergeLiteralByte(com.sstewartgallus.peacod.ast.Expr.LiteralByte value) {
+                if (literalByteBuilder_ == null) {
+                    if (valueCase_ == 4 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralByte.newBuilder((com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 4) {
+                        literalByteBuilder_.mergeFrom(value);
+                    }
+                    literalByteBuilder_.setMessage(value);
+                }
+                valueCase_ = 4;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             */
+            public Builder clearLiteralByte() {
+                if (literalByteBuilder_ == null) {
+                    if (valueCase_ == 4) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 4) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    literalByteBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder getLiteralByteBuilder() {
+                return getLiteralByteFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralByteOrBuilder getLiteralByteOrBuilder() {
+                if ((valueCase_ == 4) && (literalByteBuilder_ != null)) {
+                    return literalByteBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 4) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralByte literal_byte = 4;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralByte, com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralByteOrBuilder>
+            getLiteralByteFieldBuilder() {
+                if (literalByteBuilder_ == null) {
+                    if (!(valueCase_ == 4)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance();
+                    }
+                    literalByteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.LiteralByte, com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralByteOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.LiteralByte) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 4;
+                onChanged();
+                ;
+                return literalByteBuilder_;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             *
+             * @return Whether the literalShort field is set.
+             */
+            public boolean hasLiteralShort() {
+                return valueCase_ == 5;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             *
+             * @return The literalShort.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralShort getLiteralShort() {
+                if (literalShortBuilder_ == null) {
+                    if (valueCase_ == 5) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 5) {
+                        return literalShortBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             */
+            public Builder setLiteralShort(com.sstewartgallus.peacod.ast.Expr.LiteralShort value) {
+                if (literalShortBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    literalShortBuilder_.setMessage(value);
+                }
+                valueCase_ = 5;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             */
+            public Builder setLiteralShort(
+                    com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder builderForValue) {
+                if (literalShortBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    literalShortBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 5;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             */
+            public Builder mergeLiteralShort(com.sstewartgallus.peacod.ast.Expr.LiteralShort value) {
+                if (literalShortBuilder_ == null) {
+                    if (valueCase_ == 5 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralShort.newBuilder((com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 5) {
+                        literalShortBuilder_.mergeFrom(value);
+                    }
+                    literalShortBuilder_.setMessage(value);
+                }
+                valueCase_ = 5;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             */
+            public Builder clearLiteralShort() {
+                if (literalShortBuilder_ == null) {
+                    if (valueCase_ == 5) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 5) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    literalShortBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder getLiteralShortBuilder() {
+                return getLiteralShortFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralShortOrBuilder getLiteralShortOrBuilder() {
+                if ((valueCase_ == 5) && (literalShortBuilder_ != null)) {
+                    return literalShortBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 5) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralShort literal_short = 5;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralShort, com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralShortOrBuilder>
+            getLiteralShortFieldBuilder() {
+                if (literalShortBuilder_ == null) {
+                    if (!(valueCase_ == 5)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance();
+                    }
+                    literalShortBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.LiteralShort, com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralShortOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.LiteralShort) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 5;
+                onChanged();
+                ;
+                return literalShortBuilder_;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             *
+             * @return Whether the literalInt field is set.
+             */
+            public boolean hasLiteralInt() {
+                return valueCase_ == 6;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             *
+             * @return The literalInt.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralInteger getLiteralInt() {
+                if (literalIntBuilder_ == null) {
+                    if (valueCase_ == 6) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 6) {
+                        return literalIntBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             */
+            public Builder setLiteralInt(com.sstewartgallus.peacod.ast.Expr.LiteralInteger value) {
+                if (literalIntBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    literalIntBuilder_.setMessage(value);
+                }
+                valueCase_ = 6;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             */
+            public Builder setLiteralInt(
+                    com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder builderForValue) {
+                if (literalIntBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    literalIntBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 6;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             */
+            public Builder mergeLiteralInt(com.sstewartgallus.peacod.ast.Expr.LiteralInteger value) {
+                if (literalIntBuilder_ == null) {
+                    if (valueCase_ == 6 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralInteger.newBuilder((com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 6) {
+                        literalIntBuilder_.mergeFrom(value);
+                    }
+                    literalIntBuilder_.setMessage(value);
+                }
+                valueCase_ = 6;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             */
+            public Builder clearLiteralInt() {
+                if (literalIntBuilder_ == null) {
+                    if (valueCase_ == 6) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 6) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    literalIntBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder getLiteralIntBuilder() {
+                return getLiteralIntFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralIntegerOrBuilder getLiteralIntOrBuilder() {
+                if ((valueCase_ == 6) && (literalIntBuilder_ != null)) {
+                    return literalIntBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 6) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralInteger literal_int = 6;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralInteger, com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralIntegerOrBuilder>
+            getLiteralIntFieldBuilder() {
+                if (literalIntBuilder_ == null) {
+                    if (!(valueCase_ == 6)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance();
+                    }
+                    literalIntBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.LiteralInteger, com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralIntegerOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 6;
+                onChanged();
+                ;
+                return literalIntBuilder_;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             *
+             * @return Whether the literalLong field is set.
+             */
+            public boolean hasLiteralLong() {
+                return valueCase_ == 7;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             *
+             * @return The literalLong.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralLong getLiteralLong() {
+                if (literalLongBuilder_ == null) {
+                    if (valueCase_ == 7) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 7) {
+                        return literalLongBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             */
+            public Builder setLiteralLong(com.sstewartgallus.peacod.ast.Expr.LiteralLong value) {
+                if (literalLongBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    literalLongBuilder_.setMessage(value);
+                }
+                valueCase_ = 7;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             */
+            public Builder setLiteralLong(
+                    com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder builderForValue) {
+                if (literalLongBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    literalLongBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 7;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             */
+            public Builder mergeLiteralLong(com.sstewartgallus.peacod.ast.Expr.LiteralLong value) {
+                if (literalLongBuilder_ == null) {
+                    if (valueCase_ == 7 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralLong.newBuilder((com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 7) {
+                        literalLongBuilder_.mergeFrom(value);
+                    }
+                    literalLongBuilder_.setMessage(value);
+                }
+                valueCase_ = 7;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             */
+            public Builder clearLiteralLong() {
+                if (literalLongBuilder_ == null) {
+                    if (valueCase_ == 7) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 7) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    literalLongBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder getLiteralLongBuilder() {
+                return getLiteralLongFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralLongOrBuilder getLiteralLongOrBuilder() {
+                if ((valueCase_ == 7) && (literalLongBuilder_ != null)) {
+                    return literalLongBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 7) {
+                        return (com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.LiteralLong literal_long = 7;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.LiteralLong, com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralLongOrBuilder>
+            getLiteralLongFieldBuilder() {
+                if (literalLongBuilder_ == null) {
+                    if (!(valueCase_ == 7)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance();
+                    }
+                    literalLongBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.LiteralLong, com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralLongOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.LiteralLong) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 7;
+                onChanged();
+                ;
+                return literalLongBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.Literal)
+        }
+
     }
 
-    public Builder clearValue() {
-      valueCase_ = 0;
-      value_ = null;
-      onChanged();
-      return this;
-    }
+    /**
+     * Protobuf type {@code peacod_ast.Expr.Constant}
+     */
+    public static final class Constant extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.Constant)
+            ConstantOrBuilder {
+        public static final int REFERENCE_FIELD_NUMBER = 1;
+        public static final int LITERAL_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.Constant)
+        private static final com.sstewartgallus.peacod.ast.Expr.Constant DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<Constant>
+                PARSER = new com.google.protobuf.AbstractParser<Constant>() {
+            @java.lang.Override
+            public Constant parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Constant(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.Constant();
+        }
+
+        private int valueCase_ = 0;
+        private java.lang.Object value_;
+        private byte memoizedIsInitialized = -1;
+        // Use Constant.newBuilder() to construct.
+        private Constant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private Constant() {
+        }
+
+        ;
+
+        private Constant(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.sstewartgallus.peacod.ast.Expr.TermReference.Builder subBuilder = null;
+                            if (valueCase_ == 1) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.TermReference) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.TermReference.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.TermReference) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 1;
+                            break;
+                        }
+                        case 18: {
+                            com.sstewartgallus.peacod.ast.Expr.Literal.Builder subBuilder = null;
+                            if (valueCase_ == 2) {
+                                subBuilder = ((com.sstewartgallus.peacod.ast.Expr.Literal) value_).toBuilder();
+                            }
+                            value_ =
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.Literal.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((com.sstewartgallus.peacod.ast.Expr.Literal) value_);
+                                value_ = subBuilder.buildPartial();
+                            }
+                            valueCase_ = 2;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Constant_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.Constant prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Constant getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<Constant> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Constant();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Constant_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.Constant.class, com.sstewartgallus.peacod.ast.Expr.Constant.Builder.class);
+        }
+
+        public ValueCase
+        getValueCase() {
+            return ValueCase.forNumber(
+                    valueCase_);
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+         *
+         * @return Whether the reference field is set.
+         */
+        public boolean hasReference() {
+            return valueCase_ == 1;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+         *
+         * @return The reference.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.TermReference getReference() {
+            if (valueCase_ == 1) {
+                return (com.sstewartgallus.peacod.ast.Expr.TermReference) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.TermReferenceOrBuilder getReferenceOrBuilder() {
+            if (valueCase_ == 1) {
+                return (com.sstewartgallus.peacod.ast.Expr.TermReference) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+         *
+         * @return Whether the literal field is set.
+         */
+        public boolean hasLiteral() {
+            return valueCase_ == 2;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+         *
+         * @return The literal.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Literal getLiteral() {
+            if (valueCase_ == 2) {
+                return (com.sstewartgallus.peacod.ast.Expr.Literal) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.LiteralOrBuilder getLiteralOrBuilder() {
+            if (valueCase_ == 2) {
+                return (com.sstewartgallus.peacod.ast.Expr.Literal) value_;
+            }
+            return com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (valueCase_ == 1) {
+                output.writeMessage(1, (com.sstewartgallus.peacod.ast.Expr.TermReference) value_);
+            }
+            if (valueCase_ == 2) {
+                output.writeMessage(2, (com.sstewartgallus.peacod.ast.Expr.Literal) value_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (valueCase_ == 1) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(1, (com.sstewartgallus.peacod.ast.Expr.TermReference) value_);
+            }
+            if (valueCase_ == 2) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(2, (com.sstewartgallus.peacod.ast.Expr.Literal) value_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.Constant)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.Constant other = (com.sstewartgallus.peacod.ast.Expr.Constant) obj;
+
+            if (!getValueCase().equals(other.getValueCase())) return false;
+            switch (valueCase_) {
+                case 1:
+                    if (!getReference()
+                            .equals(other.getReference())) return false;
+                    break;
+                case 2:
+                    if (!getLiteral()
+                            .equals(other.getLiteral())) return false;
+                    break;
+                case 0:
+                default:
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            switch (valueCase_) {
+                case 1:
+                    hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+                    hash = (53 * hash) + getReference().hashCode();
+                    break;
+                case 2:
+                    hash = (37 * hash) + LITERAL_FIELD_NUMBER;
+                    hash = (53 * hash) + getLiteral().hashCode();
+                    break;
+                case 0:
+                default:
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Constant> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.Constant getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public enum ValueCase
+                implements com.google.protobuf.Internal.EnumLite,
+                com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+            REFERENCE(1),
+            LITERAL(2),
+            VALUE_NOT_SET(0);
+            private final int value;
+
+            private ValueCase(int value) {
+                this.value = value;
+            }
+
+            /**
+             * @param value The number of the enum to look for.
+             * @return The enum associated with the given number.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static ValueCase valueOf(int value) {
+                return forNumber(value);
+            }
+
+            public static ValueCase forNumber(int value) {
+                switch (value) {
+                    case 1:
+                        return REFERENCE;
+                    case 2:
+                        return LITERAL;
+                    case 0:
+                        return VALUE_NOT_SET;
+                    default:
+                        return null;
+                }
+            }
+
+            public int getNumber() {
+                return this.value;
+            }
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.Constant}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.Constant)
+                com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder {
+            private int valueCase_ = 0;
+            private java.lang.Object value_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.TermReference, com.sstewartgallus.peacod.ast.Expr.TermReference.Builder, com.sstewartgallus.peacod.ast.Expr.TermReferenceOrBuilder> referenceBuilder_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.Literal, com.sstewartgallus.peacod.ast.Expr.Literal.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralOrBuilder> literalBuilder_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.Constant.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Constant_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Constant_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.Constant.class, com.sstewartgallus.peacod.ast.Expr.Constant.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                valueCase_ = 0;
+                value_ = null;
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Constant_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Constant getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Constant build() {
+                com.sstewartgallus.peacod.ast.Expr.Constant result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Constant buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.Constant result = new com.sstewartgallus.peacod.ast.Expr.Constant(this);
+                if (valueCase_ == 1) {
+                    if (referenceBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = referenceBuilder_.build();
+                    }
+                }
+                if (valueCase_ == 2) {
+                    if (literalBuilder_ == null) {
+                        result.value_ = value_;
+                    } else {
+                        result.value_ = literalBuilder_.build();
+                    }
+                }
+                result.valueCase_ = valueCase_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.Constant) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.Constant) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.Constant other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance()) return this;
+                switch (other.getValueCase()) {
+                    case REFERENCE: {
+                        mergeReference(other.getReference());
+                        break;
+                    }
+                    case LITERAL: {
+                        mergeLiteral(other.getLiteral());
+                        break;
+                    }
+                    case VALUE_NOT_SET: {
+                        break;
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.Constant parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.Constant) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            public ValueCase
+            getValueCase() {
+                return ValueCase.forNumber(
+                        valueCase_);
+            }
+
+            public Builder clearValue() {
+                valueCase_ = 0;
+                value_ = null;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             *
+             * @return Whether the reference field is set.
+             */
+            public boolean hasReference() {
+                return valueCase_ == 1;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             *
+             * @return The reference.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.TermReference getReference() {
+                if (referenceBuilder_ == null) {
+                    if (valueCase_ == 1) {
+                        return (com.sstewartgallus.peacod.ast.Expr.TermReference) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 1) {
+                        return referenceBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             */
+            public Builder setReference(com.sstewartgallus.peacod.ast.Expr.TermReference value) {
+                if (referenceBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    referenceBuilder_.setMessage(value);
+                }
+                valueCase_ = 1;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             */
+            public Builder setReference(
+                    com.sstewartgallus.peacod.ast.Expr.TermReference.Builder builderForValue) {
+                if (referenceBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    referenceBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 1;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             */
+            public Builder mergeReference(com.sstewartgallus.peacod.ast.Expr.TermReference value) {
+                if (referenceBuilder_ == null) {
+                    if (valueCase_ == 1 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.TermReference.newBuilder((com.sstewartgallus.peacod.ast.Expr.TermReference) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 1) {
+                        referenceBuilder_.mergeFrom(value);
+                    }
+                    referenceBuilder_.setMessage(value);
+                }
+                valueCase_ = 1;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             */
+            public Builder clearReference() {
+                if (referenceBuilder_ == null) {
+                    if (valueCase_ == 1) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 1) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    referenceBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.TermReference.Builder getReferenceBuilder() {
+                return getReferenceFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.TermReferenceOrBuilder getReferenceOrBuilder() {
+                if ((valueCase_ == 1) && (referenceBuilder_ != null)) {
+                    return referenceBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 1) {
+                        return (com.sstewartgallus.peacod.ast.Expr.TermReference) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.TermReference reference = 1;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.TermReference, com.sstewartgallus.peacod.ast.Expr.TermReference.Builder, com.sstewartgallus.peacod.ast.Expr.TermReferenceOrBuilder>
+            getReferenceFieldBuilder() {
+                if (referenceBuilder_ == null) {
+                    if (!(valueCase_ == 1)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance();
+                    }
+                    referenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.TermReference, com.sstewartgallus.peacod.ast.Expr.TermReference.Builder, com.sstewartgallus.peacod.ast.Expr.TermReferenceOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.TermReference) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 1;
+                onChanged();
+                ;
+                return referenceBuilder_;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             *
+             * @return Whether the literal field is set.
+             */
+            public boolean hasLiteral() {
+                return valueCase_ == 2;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             *
+             * @return The literal.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Literal getLiteral() {
+                if (literalBuilder_ == null) {
+                    if (valueCase_ == 2) {
+                        return (com.sstewartgallus.peacod.ast.Expr.Literal) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance();
+                } else {
+                    if (valueCase_ == 2) {
+                        return literalBuilder_.getMessage();
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             */
+            public Builder setLiteral(com.sstewartgallus.peacod.ast.Expr.Literal value) {
+                if (literalBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    value_ = value;
+                    onChanged();
+                } else {
+                    literalBuilder_.setMessage(value);
+                }
+                valueCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             */
+            public Builder setLiteral(
+                    com.sstewartgallus.peacod.ast.Expr.Literal.Builder builderForValue) {
+                if (literalBuilder_ == null) {
+                    value_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    literalBuilder_.setMessage(builderForValue.build());
+                }
+                valueCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             */
+            public Builder mergeLiteral(com.sstewartgallus.peacod.ast.Expr.Literal value) {
+                if (literalBuilder_ == null) {
+                    if (valueCase_ == 2 &&
+                            value_ != com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance()) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.Literal.newBuilder((com.sstewartgallus.peacod.ast.Expr.Literal) value_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        value_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (valueCase_ == 2) {
+                        literalBuilder_.mergeFrom(value);
+                    }
+                    literalBuilder_.setMessage(value);
+                }
+                valueCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             */
+            public Builder clearLiteral() {
+                if (literalBuilder_ == null) {
+                    if (valueCase_ == 2) {
+                        valueCase_ = 0;
+                        value_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (valueCase_ == 2) {
+                        valueCase_ = 0;
+                        value_ = null;
+                    }
+                    literalBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Literal.Builder getLiteralBuilder() {
+                return getLiteralFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.LiteralOrBuilder getLiteralOrBuilder() {
+                if ((valueCase_ == 2) && (literalBuilder_ != null)) {
+                    return literalBuilder_.getMessageOrBuilder();
+                } else {
+                    if (valueCase_ == 2) {
+                        return (com.sstewartgallus.peacod.ast.Expr.Literal) value_;
+                    }
+                    return com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Literal literal = 2;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.Literal, com.sstewartgallus.peacod.ast.Expr.Literal.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralOrBuilder>
+            getLiteralFieldBuilder() {
+                if (literalBuilder_ == null) {
+                    if (!(valueCase_ == 2)) {
+                        value_ = com.sstewartgallus.peacod.ast.Expr.Literal.getDefaultInstance();
+                    }
+                    literalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.Literal, com.sstewartgallus.peacod.ast.Expr.Literal.Builder, com.sstewartgallus.peacod.ast.Expr.LiteralOrBuilder>(
+                            (com.sstewartgallus.peacod.ast.Expr.Literal) value_,
+                            getParentForChildren(),
+                            isClean());
+                    value_ = null;
+                }
+                valueCase_ = 2;
+                onChanged();
+                ;
+                return literalBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-    /**
-     * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-     */
-    public int getSimpleValue() {
-      if (valueCase_ == 1) {
-        return ((java.lang.Integer) value_).intValue();
-      }
-      return 0;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-     */
-    public Builder setSimpleValue(int value) {
-      valueCase_ = 1;
-      value_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.Simple getSimple() {
-      if (valueCase_ == 1) {
-        @SuppressWarnings("deprecation")
-        com.sstewartgallus.peacod.ast.Expr.Simple result = com.sstewartgallus.peacod.ast.Expr.Simple.valueOf(
-            (java.lang.Integer) value_);
-        return result == null ? com.sstewartgallus.peacod.ast.Expr.Simple.UNRECOGNIZED : result;
-      }
-      return com.sstewartgallus.peacod.ast.Expr.Simple.FALSE;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-     */
-    public Builder setSimple(com.sstewartgallus.peacod.ast.Expr.Simple value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      valueCase_ = 1;
-      value_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-     */
-    public Builder clearSimple() {
-      if (valueCase_ == 1) {
-        valueCase_ = 0;
-        value_ = null;
-        onChanged();
-      }
-      return this;
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.Constant)
+        }
+
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitByte, com.sstewartgallus.peacod.ast.Expr.LitByte.Builder, com.sstewartgallus.peacod.ast.Expr.LitByteOrBuilder> litByteBuilder_;
+    /**
+     * Protobuf type {@code peacod_ast.Expr.Call}
+     */
+    public static final class Call extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.Call)
+            CallOrBuilder {
+        public static final int FUNCTION_FIELD_NUMBER = 1;
+        public static final int TYPE_ARGUMENT_FIELD_NUMBER = 2;
+        public static final int ARGUMENT_FIELD_NUMBER = 3;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.Call)
+        private static final com.sstewartgallus.peacod.ast.Expr.Call DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<Call>
+                PARSER = new com.google.protobuf.AbstractParser<Call>() {
+            @java.lang.Override
+            public Call parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Call(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.Call();
+        }
+
+        private com.sstewartgallus.peacod.ast.Expr.Constant function_;
+        private java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> typeArgument_;
+        private java.util.List<com.sstewartgallus.peacod.ast.Expr> argument_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use Call.newBuilder() to construct.
+        private Call(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private Call() {
+            typeArgument_ = java.util.Collections.emptyList();
+            argument_ = java.util.Collections.emptyList();
+        }
+
+        private Call(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.sstewartgallus.peacod.ast.Expr.Constant.Builder subBuilder = null;
+                            if (function_ != null) {
+                                subBuilder = function_.toBuilder();
+                            }
+                            function_ = input.readMessage(com.sstewartgallus.peacod.ast.Expr.Constant.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(function_);
+                                function_ = subBuilder.buildPartial();
+                            }
+
+                            break;
+                        }
+                        case 18: {
+                            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                typeArgument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.TypeExpr>();
+                                mutable_bitField0_ |= 0x00000001;
+                            }
+                            typeArgument_.add(
+                                    input.readMessage(com.sstewartgallus.peacod.ast.TypeExpr.parser(), extensionRegistry));
+                            break;
+                        }
+                        case 26: {
+                            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                argument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.Expr>();
+                                mutable_bitField0_ |= 0x00000002;
+                            }
+                            argument_.add(
+                                    input.readMessage(com.sstewartgallus.peacod.ast.Expr.parser(), extensionRegistry));
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    typeArgument_ = java.util.Collections.unmodifiableList(typeArgument_);
+                }
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
+                    argument_ = java.util.Collections.unmodifiableList(argument_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Call_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.Call prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Call getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<Call> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Call();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Call_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.Call.class, com.sstewartgallus.peacod.ast.Expr.Call.Builder.class);
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant function = 1;</code>
+         *
+         * @return Whether the function field is set.
+         */
+        public boolean hasFunction() {
+            return function_ != null;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant function = 1;</code>
+         *
+         * @return The function.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Constant getFunction() {
+            return function_ == null ? com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance() : function_;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant function = 1;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder getFunctionOrBuilder() {
+            return getFunction();
+        }
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        public java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> getTypeArgumentList() {
+            return typeArgument_;
+        }
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        public java.util.List<? extends com.sstewartgallus.peacod.ast.TypeExprOrBuilder>
+        getTypeArgumentOrBuilderList() {
+            return typeArgument_;
+        }
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        public int getTypeArgumentCount() {
+            return typeArgument_.size();
+        }
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        public com.sstewartgallus.peacod.ast.TypeExpr getTypeArgument(int index) {
+            return typeArgument_.get(index);
+        }
+
+        /**
+         * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+         */
+        public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeArgumentOrBuilder(
+                int index) {
+            return typeArgument_.get(index);
+        }
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        public java.util.List<com.sstewartgallus.peacod.ast.Expr> getArgumentList() {
+            return argument_;
+        }
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        public java.util.List<? extends com.sstewartgallus.peacod.ast.ExprOrBuilder>
+        getArgumentOrBuilderList() {
+            return argument_;
+        }
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        public int getArgumentCount() {
+            return argument_.size();
+        }
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr getArgument(int index) {
+            return argument_.get(index);
+        }
+
+        /**
+         * <code>repeated .peacod_ast.Expr argument = 3;</code>
+         */
+        public com.sstewartgallus.peacod.ast.ExprOrBuilder getArgumentOrBuilder(
+                int index) {
+            return argument_.get(index);
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (function_ != null) {
+                output.writeMessage(1, getFunction());
+            }
+            for (int i = 0; i < typeArgument_.size(); i++) {
+                output.writeMessage(2, typeArgument_.get(i));
+            }
+            for (int i = 0; i < argument_.size(); i++) {
+                output.writeMessage(3, argument_.get(i));
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (function_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(1, getFunction());
+            }
+            for (int i = 0; i < typeArgument_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(2, typeArgument_.get(i));
+            }
+            for (int i = 0; i < argument_.size(); i++) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(3, argument_.get(i));
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.Call)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.Call other = (com.sstewartgallus.peacod.ast.Expr.Call) obj;
+
+            if (hasFunction() != other.hasFunction()) return false;
+            if (hasFunction()) {
+                if (!getFunction()
+                        .equals(other.getFunction())) return false;
+            }
+            if (!getTypeArgumentList()
+                    .equals(other.getTypeArgumentList())) return false;
+            if (!getArgumentList()
+                    .equals(other.getArgumentList())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasFunction()) {
+                hash = (37 * hash) + FUNCTION_FIELD_NUMBER;
+                hash = (53 * hash) + getFunction().hashCode();
+            }
+            if (getTypeArgumentCount() > 0) {
+                hash = (37 * hash) + TYPE_ARGUMENT_FIELD_NUMBER;
+                hash = (53 * hash) + getTypeArgumentList().hashCode();
+            }
+            if (getArgumentCount() > 0) {
+                hash = (37 * hash) + ARGUMENT_FIELD_NUMBER;
+                hash = (53 * hash) + getArgumentList().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Call> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.Call getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.Call}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.Call)
+                com.sstewartgallus.peacod.ast.Expr.CallOrBuilder {
+            private int bitField0_;
+            private com.sstewartgallus.peacod.ast.Expr.Constant function_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.Constant, com.sstewartgallus.peacod.ast.Expr.Constant.Builder, com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder> functionBuilder_;
+            private java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> typeArgument_ =
+                    java.util.Collections.emptyList();
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> typeArgumentBuilder_;
+            private java.util.List<com.sstewartgallus.peacod.ast.Expr> argument_ =
+                    java.util.Collections.emptyList();
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder> argumentBuilder_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.Call.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Call_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Call_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.Call.class, com.sstewartgallus.peacod.ast.Expr.Call.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                    getTypeArgumentFieldBuilder();
+                    getArgumentFieldBuilder();
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                if (functionBuilder_ == null) {
+                    function_ = null;
+                } else {
+                    function_ = null;
+                    functionBuilder_ = null;
+                }
+                if (typeArgumentBuilder_ == null) {
+                    typeArgument_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                    typeArgumentBuilder_.clear();
+                }
+                if (argumentBuilder_ == null) {
+                    argument_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                } else {
+                    argumentBuilder_.clear();
+                }
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Call_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Call getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Call build() {
+                com.sstewartgallus.peacod.ast.Expr.Call result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Call buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.Call result = new com.sstewartgallus.peacod.ast.Expr.Call(this);
+                int from_bitField0_ = bitField0_;
+                if (functionBuilder_ == null) {
+                    result.function_ = function_;
+                } else {
+                    result.function_ = functionBuilder_.build();
+                }
+                if (typeArgumentBuilder_ == null) {
+                    if (((bitField0_ & 0x00000001) != 0)) {
+                        typeArgument_ = java.util.Collections.unmodifiableList(typeArgument_);
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    }
+                    result.typeArgument_ = typeArgument_;
+                } else {
+                    result.typeArgument_ = typeArgumentBuilder_.build();
+                }
+                if (argumentBuilder_ == null) {
+                    if (((bitField0_ & 0x00000002) != 0)) {
+                        argument_ = java.util.Collections.unmodifiableList(argument_);
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    }
+                    result.argument_ = argument_;
+                } else {
+                    result.argument_ = argumentBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.Call) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.Call) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.Call other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance()) return this;
+                if (other.hasFunction()) {
+                    mergeFunction(other.getFunction());
+                }
+                if (typeArgumentBuilder_ == null) {
+                    if (!other.typeArgument_.isEmpty()) {
+                        if (typeArgument_.isEmpty()) {
+                            typeArgument_ = other.typeArgument_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                        } else {
+                            ensureTypeArgumentIsMutable();
+                            typeArgument_.addAll(other.typeArgument_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.typeArgument_.isEmpty()) {
+                        if (typeArgumentBuilder_.isEmpty()) {
+                            typeArgumentBuilder_.dispose();
+                            typeArgumentBuilder_ = null;
+                            typeArgument_ = other.typeArgument_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                            typeArgumentBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                            getTypeArgumentFieldBuilder() : null;
+                        } else {
+                            typeArgumentBuilder_.addAllMessages(other.typeArgument_);
+                        }
+                    }
+                }
+                if (argumentBuilder_ == null) {
+                    if (!other.argument_.isEmpty()) {
+                        if (argument_.isEmpty()) {
+                            argument_ = other.argument_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                        } else {
+                            ensureArgumentIsMutable();
+                            argument_.addAll(other.argument_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.argument_.isEmpty()) {
+                        if (argumentBuilder_.isEmpty()) {
+                            argumentBuilder_.dispose();
+                            argumentBuilder_ = null;
+                            argument_ = other.argument_;
+                            bitField0_ = (bitField0_ & ~0x00000002);
+                            argumentBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                                            getArgumentFieldBuilder() : null;
+                        } else {
+                            argumentBuilder_.addAllMessages(other.argument_);
+                        }
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.Call parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.Call) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             *
+             * @return Whether the function field is set.
+             */
+            public boolean hasFunction() {
+                return functionBuilder_ != null || function_ != null;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             *
+             * @return The function.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Constant getFunction() {
+                if (functionBuilder_ == null) {
+                    return function_ == null ? com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance() : function_;
+                } else {
+                    return functionBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             */
+            public Builder setFunction(com.sstewartgallus.peacod.ast.Expr.Constant value) {
+                if (functionBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    function_ = value;
+                    onChanged();
+                } else {
+                    functionBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             */
+            public Builder setFunction(
+                    com.sstewartgallus.peacod.ast.Expr.Constant.Builder builderForValue) {
+                if (functionBuilder_ == null) {
+                    function_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    functionBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             */
+            public Builder mergeFunction(com.sstewartgallus.peacod.ast.Expr.Constant value) {
+                if (functionBuilder_ == null) {
+                    if (function_ != null) {
+                        function_ =
+                                com.sstewartgallus.peacod.ast.Expr.Constant.newBuilder(function_).mergeFrom(value).buildPartial();
+                    } else {
+                        function_ = value;
+                    }
+                    onChanged();
+                } else {
+                    functionBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             */
+            public Builder clearFunction() {
+                if (functionBuilder_ == null) {
+                    function_ = null;
+                    onChanged();
+                } else {
+                    function_ = null;
+                    functionBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Constant.Builder getFunctionBuilder() {
+
+                onChanged();
+                return getFunctionFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder getFunctionOrBuilder() {
+                if (functionBuilder_ != null) {
+                    return functionBuilder_.getMessageOrBuilder();
+                } else {
+                    return function_ == null ?
+                            com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance() : function_;
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Constant function = 1;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.Constant, com.sstewartgallus.peacod.ast.Expr.Constant.Builder, com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder>
+            getFunctionFieldBuilder() {
+                if (functionBuilder_ == null) {
+                    functionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.Constant, com.sstewartgallus.peacod.ast.Expr.Constant.Builder, com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder>(
+                            getFunction(),
+                            getParentForChildren(),
+                            isClean());
+                    function_ = null;
+                }
+                return functionBuilder_;
+            }
+
+            private void ensureTypeArgumentIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    typeArgument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.TypeExpr>(typeArgument_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public java.util.List<com.sstewartgallus.peacod.ast.TypeExpr> getTypeArgumentList() {
+                if (typeArgumentBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(typeArgument_);
+                } else {
+                    return typeArgumentBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public int getTypeArgumentCount() {
+                if (typeArgumentBuilder_ == null) {
+                    return typeArgument_.size();
+                } else {
+                    return typeArgumentBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeExpr getTypeArgument(int index) {
+                if (typeArgumentBuilder_ == null) {
+                    return typeArgument_.get(index);
+                } else {
+                    return typeArgumentBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder setTypeArgument(
+                    int index, com.sstewartgallus.peacod.ast.TypeExpr value) {
+                if (typeArgumentBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureTypeArgumentIsMutable();
+                    typeArgument_.set(index, value);
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder setTypeArgument(
+                    int index, com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
+                if (typeArgumentBuilder_ == null) {
+                    ensureTypeArgumentIsMutable();
+                    typeArgument_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder addTypeArgument(com.sstewartgallus.peacod.ast.TypeExpr value) {
+                if (typeArgumentBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureTypeArgumentIsMutable();
+                    typeArgument_.add(value);
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder addTypeArgument(
+                    int index, com.sstewartgallus.peacod.ast.TypeExpr value) {
+                if (typeArgumentBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureTypeArgumentIsMutable();
+                    typeArgument_.add(index, value);
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder addTypeArgument(
+                    com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
+                if (typeArgumentBuilder_ == null) {
+                    ensureTypeArgumentIsMutable();
+                    typeArgument_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder addTypeArgument(
+                    int index, com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
+                if (typeArgumentBuilder_ == null) {
+                    ensureTypeArgumentIsMutable();
+                    typeArgument_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder addAllTypeArgument(
+                    java.lang.Iterable<? extends com.sstewartgallus.peacod.ast.TypeExpr> values) {
+                if (typeArgumentBuilder_ == null) {
+                    ensureTypeArgumentIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, typeArgument_);
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder clearTypeArgument() {
+                if (typeArgumentBuilder_ == null) {
+                    typeArgument_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public Builder removeTypeArgument(int index) {
+                if (typeArgumentBuilder_ == null) {
+                    ensureTypeArgumentIsMutable();
+                    typeArgument_.remove(index);
+                    onChanged();
+                } else {
+                    typeArgumentBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeExpr.Builder getTypeArgumentBuilder(
+                    int index) {
+                return getTypeArgumentFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeArgumentOrBuilder(
+                    int index) {
+                if (typeArgumentBuilder_ == null) {
+                    return typeArgument_.get(index);
+                } else {
+                    return typeArgumentBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public java.util.List<? extends com.sstewartgallus.peacod.ast.TypeExprOrBuilder>
+            getTypeArgumentOrBuilderList() {
+                if (typeArgumentBuilder_ != null) {
+                    return typeArgumentBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(typeArgument_);
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeExpr.Builder addTypeArgumentBuilder() {
+                return getTypeArgumentFieldBuilder().addBuilder(
+                        com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance());
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeExpr.Builder addTypeArgumentBuilder(
+                    int index) {
+                return getTypeArgumentFieldBuilder().addBuilder(
+                        index, com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance());
+            }
+
+            /**
+             * <code>repeated .peacod_ast.TypeExpr type_argument = 2;</code>
+             */
+            public java.util.List<com.sstewartgallus.peacod.ast.TypeExpr.Builder>
+            getTypeArgumentBuilderList() {
+                return getTypeArgumentFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder>
+            getTypeArgumentFieldBuilder() {
+                if (typeArgumentBuilder_ == null) {
+                    typeArgumentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder>(
+                            typeArgument_,
+                            ((bitField0_ & 0x00000001) != 0),
+                            getParentForChildren(),
+                            isClean());
+                    typeArgument_ = null;
+                }
+                return typeArgumentBuilder_;
+            }
+
+            private void ensureArgumentIsMutable() {
+                if (!((bitField0_ & 0x00000002) != 0)) {
+                    argument_ = new java.util.ArrayList<com.sstewartgallus.peacod.ast.Expr>(argument_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public java.util.List<com.sstewartgallus.peacod.ast.Expr> getArgumentList() {
+                if (argumentBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(argument_);
+                } else {
+                    return argumentBuilder_.getMessageList();
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public int getArgumentCount() {
+                if (argumentBuilder_ == null) {
+                    return argument_.size();
+                } else {
+                    return argumentBuilder_.getCount();
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr getArgument(int index) {
+                if (argumentBuilder_ == null) {
+                    return argument_.get(index);
+                } else {
+                    return argumentBuilder_.getMessage(index);
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder setArgument(
+                    int index, com.sstewartgallus.peacod.ast.Expr value) {
+                if (argumentBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureArgumentIsMutable();
+                    argument_.set(index, value);
+                    onChanged();
+                } else {
+                    argumentBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder setArgument(
+                    int index, com.sstewartgallus.peacod.ast.Expr.Builder builderForValue) {
+                if (argumentBuilder_ == null) {
+                    ensureArgumentIsMutable();
+                    argument_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    argumentBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder addArgument(com.sstewartgallus.peacod.ast.Expr value) {
+                if (argumentBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureArgumentIsMutable();
+                    argument_.add(value);
+                    onChanged();
+                } else {
+                    argumentBuilder_.addMessage(value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder addArgument(
+                    int index, com.sstewartgallus.peacod.ast.Expr value) {
+                if (argumentBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureArgumentIsMutable();
+                    argument_.add(index, value);
+                    onChanged();
+                } else {
+                    argumentBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder addArgument(
+                    com.sstewartgallus.peacod.ast.Expr.Builder builderForValue) {
+                if (argumentBuilder_ == null) {
+                    ensureArgumentIsMutable();
+                    argument_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    argumentBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder addArgument(
+                    int index, com.sstewartgallus.peacod.ast.Expr.Builder builderForValue) {
+                if (argumentBuilder_ == null) {
+                    ensureArgumentIsMutable();
+                    argument_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    argumentBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder addAllArgument(
+                    java.lang.Iterable<? extends com.sstewartgallus.peacod.ast.Expr> values) {
+                if (argumentBuilder_ == null) {
+                    ensureArgumentIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, argument_);
+                    onChanged();
+                } else {
+                    argumentBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder clearArgument() {
+                if (argumentBuilder_ == null) {
+                    argument_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                    onChanged();
+                } else {
+                    argumentBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public Builder removeArgument(int index) {
+                if (argumentBuilder_ == null) {
+                    ensureArgumentIsMutable();
+                    argument_.remove(index);
+                    onChanged();
+                } else {
+                    argumentBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Builder getArgumentBuilder(
+                    int index) {
+                return getArgumentFieldBuilder().getBuilder(index);
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public com.sstewartgallus.peacod.ast.ExprOrBuilder getArgumentOrBuilder(
+                    int index) {
+                if (argumentBuilder_ == null) {
+                    return argument_.get(index);
+                } else {
+                    return argumentBuilder_.getMessageOrBuilder(index);
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public java.util.List<? extends com.sstewartgallus.peacod.ast.ExprOrBuilder>
+            getArgumentOrBuilderList() {
+                if (argumentBuilder_ != null) {
+                    return argumentBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(argument_);
+                }
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Builder addArgumentBuilder() {
+                return getArgumentFieldBuilder().addBuilder(
+                        com.sstewartgallus.peacod.ast.Expr.getDefaultInstance());
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Builder addArgumentBuilder(
+                    int index) {
+                return getArgumentFieldBuilder().addBuilder(
+                        index, com.sstewartgallus.peacod.ast.Expr.getDefaultInstance());
+            }
+
+            /**
+             * <code>repeated .peacod_ast.Expr argument = 3;</code>
+             */
+            public java.util.List<com.sstewartgallus.peacod.ast.Expr.Builder>
+            getArgumentBuilderList() {
+                return getArgumentFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder>
+            getArgumentFieldBuilder() {
+                if (argumentBuilder_ == null) {
+                    argumentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr, com.sstewartgallus.peacod.ast.Expr.Builder, com.sstewartgallus.peacod.ast.ExprOrBuilder>(
+                            argument_,
+                            ((bitField0_ & 0x00000002) != 0),
+                            getParentForChildren(),
+                            isClean());
+                    argument_ = null;
+                }
+                return argumentBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.Call)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.TermReference}
+     */
+    public static final class TermReference extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.TermReference)
+            TermReferenceOrBuilder {
+        public static final int REFERENCE_FIELD_NUMBER = 1;
+        public static final int SCHEME_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.TermReference)
+        private static final com.sstewartgallus.peacod.ast.Expr.TermReference DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<TermReference>
+                PARSER = new com.google.protobuf.AbstractParser<TermReference>() {
+            @java.lang.Override
+            public TermReference parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new TermReference(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.TermReference();
+        }
+
+        private com.sstewartgallus.peacod.ast.Expr.Reference reference_;
+        private com.sstewartgallus.peacod.ast.TypeSchemeExpr scheme_;
+        private byte memoizedIsInitialized = -1;
+        // Use TermReference.newBuilder() to construct.
+        private TermReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private TermReference() {
+        }
+
+        private TermReference(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.sstewartgallus.peacod.ast.Expr.Reference.Builder subBuilder = null;
+                            if (reference_ != null) {
+                                subBuilder = reference_.toBuilder();
+                            }
+                            reference_ = input.readMessage(com.sstewartgallus.peacod.ast.Expr.Reference.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(reference_);
+                                reference_ = subBuilder.buildPartial();
+                            }
+
+                            break;
+                        }
+                        case 18: {
+                            com.sstewartgallus.peacod.ast.TypeSchemeExpr.Builder subBuilder = null;
+                            if (scheme_ != null) {
+                                subBuilder = scheme_.toBuilder();
+                            }
+                            scheme_ = input.readMessage(com.sstewartgallus.peacod.ast.TypeSchemeExpr.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(scheme_);
+                                scheme_ = subBuilder.buildPartial();
+                            }
+
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_TermReference_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.TermReference prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.TermReference getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<TermReference> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new TermReference();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_TermReference_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.TermReference.class, com.sstewartgallus.peacod.ast.Expr.TermReference.Builder.class);
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+         *
+         * @return Whether the reference field is set.
+         */
+        public boolean hasReference() {
+            return reference_ != null;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+         *
+         * @return The reference.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Reference getReference() {
+            return reference_ == null ? com.sstewartgallus.peacod.ast.Expr.Reference.getDefaultInstance() : reference_;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.ReferenceOrBuilder getReferenceOrBuilder() {
+            return getReference();
+        }
+
+        /**
+         * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+         *
+         * @return Whether the scheme field is set.
+         */
+        public boolean hasScheme() {
+            return scheme_ != null;
+        }
+
+        /**
+         * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+         *
+         * @return The scheme.
+         */
+        public com.sstewartgallus.peacod.ast.TypeSchemeExpr getScheme() {
+            return scheme_ == null ? com.sstewartgallus.peacod.ast.TypeSchemeExpr.getDefaultInstance() : scheme_;
+        }
+
+        /**
+         * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+         */
+        public com.sstewartgallus.peacod.ast.TypeSchemeExprOrBuilder getSchemeOrBuilder() {
+            return getScheme();
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (reference_ != null) {
+                output.writeMessage(1, getReference());
+            }
+            if (scheme_ != null) {
+                output.writeMessage(2, getScheme());
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (reference_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(1, getReference());
+            }
+            if (scheme_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(2, getScheme());
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.TermReference)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.TermReference other = (com.sstewartgallus.peacod.ast.Expr.TermReference) obj;
+
+            if (hasReference() != other.hasReference()) return false;
+            if (hasReference()) {
+                if (!getReference()
+                        .equals(other.getReference())) return false;
+            }
+            if (hasScheme() != other.hasScheme()) return false;
+            if (hasScheme()) {
+                if (!getScheme()
+                        .equals(other.getScheme())) return false;
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasReference()) {
+                hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+                hash = (53 * hash) + getReference().hashCode();
+            }
+            if (hasScheme()) {
+                hash = (37 * hash) + SCHEME_FIELD_NUMBER;
+                hash = (53 * hash) + getScheme().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<TermReference> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.TermReference getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.TermReference}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.TermReference)
+                com.sstewartgallus.peacod.ast.Expr.TermReferenceOrBuilder {
+            private com.sstewartgallus.peacod.ast.Expr.Reference reference_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.Reference, com.sstewartgallus.peacod.ast.Expr.Reference.Builder, com.sstewartgallus.peacod.ast.Expr.ReferenceOrBuilder> referenceBuilder_;
+            private com.sstewartgallus.peacod.ast.TypeSchemeExpr scheme_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.TypeSchemeExpr, com.sstewartgallus.peacod.ast.TypeSchemeExpr.Builder, com.sstewartgallus.peacod.ast.TypeSchemeExprOrBuilder> schemeBuilder_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.TermReference.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_TermReference_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_TermReference_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.TermReference.class, com.sstewartgallus.peacod.ast.Expr.TermReference.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                if (referenceBuilder_ == null) {
+                    reference_ = null;
+                } else {
+                    reference_ = null;
+                    referenceBuilder_ = null;
+                }
+                if (schemeBuilder_ == null) {
+                    scheme_ = null;
+                } else {
+                    scheme_ = null;
+                    schemeBuilder_ = null;
+                }
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_TermReference_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.TermReference getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.TermReference build() {
+                com.sstewartgallus.peacod.ast.Expr.TermReference result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.TermReference buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.TermReference result = new com.sstewartgallus.peacod.ast.Expr.TermReference(this);
+                if (referenceBuilder_ == null) {
+                    result.reference_ = reference_;
+                } else {
+                    result.reference_ = referenceBuilder_.build();
+                }
+                if (schemeBuilder_ == null) {
+                    result.scheme_ = scheme_;
+                } else {
+                    result.scheme_ = schemeBuilder_.build();
+                }
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.TermReference) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.TermReference) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.TermReference other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.TermReference.getDefaultInstance()) return this;
+                if (other.hasReference()) {
+                    mergeReference(other.getReference());
+                }
+                if (other.hasScheme()) {
+                    mergeScheme(other.getScheme());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.TermReference parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.TermReference) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             *
+             * @return Whether the reference field is set.
+             */
+            public boolean hasReference() {
+                return referenceBuilder_ != null || reference_ != null;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             *
+             * @return The reference.
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Reference getReference() {
+                if (referenceBuilder_ == null) {
+                    return reference_ == null ? com.sstewartgallus.peacod.ast.Expr.Reference.getDefaultInstance() : reference_;
+                } else {
+                    return referenceBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             */
+            public Builder setReference(com.sstewartgallus.peacod.ast.Expr.Reference value) {
+                if (referenceBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    reference_ = value;
+                    onChanged();
+                } else {
+                    referenceBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             */
+            public Builder setReference(
+                    com.sstewartgallus.peacod.ast.Expr.Reference.Builder builderForValue) {
+                if (referenceBuilder_ == null) {
+                    reference_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    referenceBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             */
+            public Builder mergeReference(com.sstewartgallus.peacod.ast.Expr.Reference value) {
+                if (referenceBuilder_ == null) {
+                    if (reference_ != null) {
+                        reference_ =
+                                com.sstewartgallus.peacod.ast.Expr.Reference.newBuilder(reference_).mergeFrom(value).buildPartial();
+                    } else {
+                        reference_ = value;
+                    }
+                    onChanged();
+                } else {
+                    referenceBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             */
+            public Builder clearReference() {
+                if (referenceBuilder_ == null) {
+                    reference_ = null;
+                    onChanged();
+                } else {
+                    reference_ = null;
+                    referenceBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.Reference.Builder getReferenceBuilder() {
+
+                onChanged();
+                return getReferenceFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.Expr.ReferenceOrBuilder getReferenceOrBuilder() {
+                if (referenceBuilder_ != null) {
+                    return referenceBuilder_.getMessageOrBuilder();
+                } else {
+                    return reference_ == null ?
+                            com.sstewartgallus.peacod.ast.Expr.Reference.getDefaultInstance() : reference_;
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.Expr.Reference reference = 1;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.Expr.Reference, com.sstewartgallus.peacod.ast.Expr.Reference.Builder, com.sstewartgallus.peacod.ast.Expr.ReferenceOrBuilder>
+            getReferenceFieldBuilder() {
+                if (referenceBuilder_ == null) {
+                    referenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.Expr.Reference, com.sstewartgallus.peacod.ast.Expr.Reference.Builder, com.sstewartgallus.peacod.ast.Expr.ReferenceOrBuilder>(
+                            getReference(),
+                            getParentForChildren(),
+                            isClean());
+                    reference_ = null;
+                }
+                return referenceBuilder_;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             *
+             * @return Whether the scheme field is set.
+             */
+            public boolean hasScheme() {
+                return schemeBuilder_ != null || scheme_ != null;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             *
+             * @return The scheme.
+             */
+            public com.sstewartgallus.peacod.ast.TypeSchemeExpr getScheme() {
+                if (schemeBuilder_ == null) {
+                    return scheme_ == null ? com.sstewartgallus.peacod.ast.TypeSchemeExpr.getDefaultInstance() : scheme_;
+                } else {
+                    return schemeBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             */
+            public Builder setScheme(com.sstewartgallus.peacod.ast.TypeSchemeExpr value) {
+                if (schemeBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    scheme_ = value;
+                    onChanged();
+                } else {
+                    schemeBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             */
+            public Builder setScheme(
+                    com.sstewartgallus.peacod.ast.TypeSchemeExpr.Builder builderForValue) {
+                if (schemeBuilder_ == null) {
+                    scheme_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    schemeBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             */
+            public Builder mergeScheme(com.sstewartgallus.peacod.ast.TypeSchemeExpr value) {
+                if (schemeBuilder_ == null) {
+                    if (scheme_ != null) {
+                        scheme_ =
+                                com.sstewartgallus.peacod.ast.TypeSchemeExpr.newBuilder(scheme_).mergeFrom(value).buildPartial();
+                    } else {
+                        scheme_ = value;
+                    }
+                    onChanged();
+                } else {
+                    schemeBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             */
+            public Builder clearScheme() {
+                if (schemeBuilder_ == null) {
+                    scheme_ = null;
+                    onChanged();
+                } else {
+                    scheme_ = null;
+                    schemeBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeSchemeExpr.Builder getSchemeBuilder() {
+
+                onChanged();
+                return getSchemeFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeSchemeExprOrBuilder getSchemeOrBuilder() {
+                if (schemeBuilder_ != null) {
+                    return schemeBuilder_.getMessageOrBuilder();
+                } else {
+                    return scheme_ == null ?
+                            com.sstewartgallus.peacod.ast.TypeSchemeExpr.getDefaultInstance() : scheme_;
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.TypeSchemeExpr scheme = 2;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.TypeSchemeExpr, com.sstewartgallus.peacod.ast.TypeSchemeExpr.Builder, com.sstewartgallus.peacod.ast.TypeSchemeExprOrBuilder>
+            getSchemeFieldBuilder() {
+                if (schemeBuilder_ == null) {
+                    schemeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.TypeSchemeExpr, com.sstewartgallus.peacod.ast.TypeSchemeExpr.Builder, com.sstewartgallus.peacod.ast.TypeSchemeExprOrBuilder>(
+                            getScheme(),
+                            getParentForChildren(),
+                            isClean());
+                    scheme_ = null;
+                }
+                return schemeBuilder_;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.TermReference)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.Reference}
+     */
+    public static final class Reference extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.Reference)
+            ReferenceOrBuilder {
+        public static final int LIBRARY_FIELD_NUMBER = 1;
+        public static final int NAME_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.Reference)
+        private static final com.sstewartgallus.peacod.ast.Expr.Reference DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<Reference>
+                PARSER = new com.google.protobuf.AbstractParser<Reference>() {
+            @java.lang.Override
+            public Reference parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Reference(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.Reference();
+        }
+
+        private volatile java.lang.Object library_;
+        private volatile java.lang.Object name_;
+        private byte memoizedIsInitialized = -1;
+        // Use Reference.newBuilder() to construct.
+        private Reference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private Reference() {
+            library_ = "";
+            name_ = "";
+        }
+
+        private Reference(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            library_ = s;
+                            break;
+                        }
+                        case 18: {
+                            java.lang.String s = input.readStringRequireUtf8();
+
+                            name_ = s;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Reference_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.Reference prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Reference getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<Reference> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Reference();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Reference_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.Reference.class, com.sstewartgallus.peacod.ast.Expr.Reference.Builder.class);
+        }
+
+        /**
+         * <code>string library = 1;</code>
+         *
+         * @return The library.
+         */
+        public java.lang.String getLibrary() {
+            java.lang.Object ref = library_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                library_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string library = 1;</code>
+         *
+         * @return The bytes for library.
+         */
+        public com.google.protobuf.ByteString
+        getLibraryBytes() {
+            java.lang.Object ref = library_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                library_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The name.
+         */
+        public java.lang.String getName() {
+            java.lang.Object ref = name_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
+            } else {
+                com.google.protobuf.ByteString bs =
+                        (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                name_ = s;
+                return s;
+            }
+        }
+
+        /**
+         * <code>string name = 2;</code>
+         *
+         * @return The bytes for name.
+         */
+        public com.google.protobuf.ByteString
+        getNameBytes() {
+            java.lang.Object ref = name_;
+            if (ref instanceof java.lang.String) {
+                com.google.protobuf.ByteString b =
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return (com.google.protobuf.ByteString) ref;
+            }
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (!getLibraryBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, library_);
+            }
+            if (!getNameBytes().isEmpty()) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (!getLibraryBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, library_);
+            }
+            if (!getNameBytes().isEmpty()) {
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.Reference)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.Reference other = (com.sstewartgallus.peacod.ast.Expr.Reference) obj;
+
+            if (!getLibrary()
+                    .equals(other.getLibrary())) return false;
+            if (!getName()
+                    .equals(other.getName())) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + LIBRARY_FIELD_NUMBER;
+            hash = (53 * hash) + getLibrary().hashCode();
+            hash = (37 * hash) + NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getName().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Reference> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.Reference getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.Reference}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.Reference)
+                com.sstewartgallus.peacod.ast.Expr.ReferenceOrBuilder {
+            private java.lang.Object library_ = "";
+            private java.lang.Object name_ = "";
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.Reference.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Reference_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Reference_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.Reference.class, com.sstewartgallus.peacod.ast.Expr.Reference.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                library_ = "";
+
+                name_ = "";
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Reference_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Reference getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.Reference.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Reference build() {
+                com.sstewartgallus.peacod.ast.Expr.Reference result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Reference buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.Reference result = new com.sstewartgallus.peacod.ast.Expr.Reference(this);
+                result.library_ = library_;
+                result.name_ = name_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.Reference) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.Reference) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.Reference other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.Reference.getDefaultInstance()) return this;
+                if (!other.getLibrary().isEmpty()) {
+                    library_ = other.library_;
+                    onChanged();
+                }
+                if (!other.getName().isEmpty()) {
+                    name_ = other.name_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.Reference parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.Reference) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>string library = 1;</code>
+             *
+             * @return The library.
+             */
+            public java.lang.String getLibrary() {
+                java.lang.Object ref = library_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    library_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string library = 1;</code>
+             *
+             * @param value The library to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLibrary(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                library_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string library = 1;</code>
+             *
+             * @return The bytes for library.
+             */
+            public com.google.protobuf.ByteString
+            getLibraryBytes() {
+                java.lang.Object ref = library_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    library_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string library = 1;</code>
+             *
+             * @param value The bytes for library to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLibraryBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                library_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string library = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLibrary() {
+
+                library_ = getDefaultInstance().getLibrary();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @return The name.
+             */
+            public java.lang.String getName() {
+                java.lang.Object ref = name_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    name_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @param value The name to set.
+             * @return This builder for chaining.
+             */
+            public Builder setName(
+                    java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @return The bytes for name.
+             */
+            public com.google.protobuf.ByteString
+            getNameBytes() {
+                java.lang.Object ref = name_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @param value The bytes for name to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>string name = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearName() {
+
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.Reference)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.Variable}
+     */
+    public static final class Variable extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.Variable)
+            VariableOrBuilder {
+        public static final int TYPE_FIELD_NUMBER = 1;
+        public static final int INDEX_FIELD_NUMBER = 2;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.Variable)
+        private static final com.sstewartgallus.peacod.ast.Expr.Variable DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<Variable>
+                PARSER = new com.google.protobuf.AbstractParser<Variable>() {
+            @java.lang.Override
+            public Variable parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Variable(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.Variable();
+        }
+
+        private com.sstewartgallus.peacod.ast.TypeExpr type_;
+        private int index_;
+        private byte memoizedIsInitialized = -1;
+        // Use Variable.newBuilder() to construct.
+        private Variable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private Variable() {
+        }
+
+        private Variable(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                            com.sstewartgallus.peacod.ast.TypeExpr.Builder subBuilder = null;
+                            if (type_ != null) {
+                                subBuilder = type_.toBuilder();
+                            }
+                            type_ = input.readMessage(com.sstewartgallus.peacod.ast.TypeExpr.parser(), extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(type_);
+                                type_ = subBuilder.buildPartial();
+                            }
+
+                            break;
+                        }
+                        case 16: {
+
+                            index_ = input.readUInt32();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Variable_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.Variable prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.Variable getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<Variable> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Variable();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Variable_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.Variable.class, com.sstewartgallus.peacod.ast.Expr.Variable.Builder.class);
+        }
+
+        /**
+         * <code>.peacod_ast.TypeExpr type = 1;</code>
+         *
+         * @return Whether the type field is set.
+         */
+        public boolean hasType() {
+            return type_ != null;
+        }
+
+        /**
+         * <code>.peacod_ast.TypeExpr type = 1;</code>
+         *
+         * @return The type.
+         */
+        public com.sstewartgallus.peacod.ast.TypeExpr getType() {
+            return type_ == null ? com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
+        }
+
+        /**
+         * <code>.peacod_ast.TypeExpr type = 1;</code>
+         */
+        public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder() {
+            return getType();
+        }
+
+        /**
+         * <code>uint32 index = 2;</code>
+         *
+         * @return The index.
+         */
+        public int getIndex() {
+            return index_;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (type_ != null) {
+                output.writeMessage(1, getType());
+            }
+            if (index_ != 0) {
+                output.writeUInt32(2, index_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (type_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(1, getType());
+            }
+            if (index_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeUInt32Size(2, index_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.Variable)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.Variable other = (com.sstewartgallus.peacod.ast.Expr.Variable) obj;
+
+            if (hasType() != other.hasType()) return false;
+            if (hasType()) {
+                if (!getType()
+                        .equals(other.getType())) return false;
+            }
+            if (getIndex()
+                    != other.getIndex()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasType()) {
+                hash = (37 * hash) + TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + getType().hashCode();
+            }
+            hash = (37 * hash) + INDEX_FIELD_NUMBER;
+            hash = (53 * hash) + getIndex();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Variable> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.Variable getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.Variable}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.Variable)
+                com.sstewartgallus.peacod.ast.Expr.VariableOrBuilder {
+            private com.sstewartgallus.peacod.ast.TypeExpr type_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder> typeBuilder_;
+            private int index_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.Variable.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Variable_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Variable_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.Variable.class, com.sstewartgallus.peacod.ast.Expr.Variable.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                if (typeBuilder_ == null) {
+                    type_ = null;
+                } else {
+                    type_ = null;
+                    typeBuilder_ = null;
+                }
+                index_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_Variable_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Variable getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Variable build() {
+                com.sstewartgallus.peacod.ast.Expr.Variable result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.Variable buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.Variable result = new com.sstewartgallus.peacod.ast.Expr.Variable(this);
+                if (typeBuilder_ == null) {
+                    result.type_ = type_;
+                } else {
+                    result.type_ = typeBuilder_.build();
+                }
+                result.index_ = index_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.Variable) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.Variable) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.Variable other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance()) return this;
+                if (other.hasType()) {
+                    mergeType(other.getType());
+                }
+                if (other.getIndex() != 0) {
+                    setIndex(other.getIndex());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.Variable parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.Variable) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             *
+             * @return Whether the type field is set.
+             */
+            public boolean hasType() {
+                return typeBuilder_ != null || type_ != null;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             *
+             * @return The type.
+             */
+            public com.sstewartgallus.peacod.ast.TypeExpr getType() {
+                if (typeBuilder_ == null) {
+                    return type_ == null ? com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
+                } else {
+                    return typeBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             */
+            public Builder setType(com.sstewartgallus.peacod.ast.TypeExpr value) {
+                if (typeBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    type_ = value;
+                    onChanged();
+                } else {
+                    typeBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             */
+            public Builder setType(
+                    com.sstewartgallus.peacod.ast.TypeExpr.Builder builderForValue) {
+                if (typeBuilder_ == null) {
+                    type_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    typeBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             */
+            public Builder mergeType(com.sstewartgallus.peacod.ast.TypeExpr value) {
+                if (typeBuilder_ == null) {
+                    if (type_ != null) {
+                        type_ =
+                                com.sstewartgallus.peacod.ast.TypeExpr.newBuilder(type_).mergeFrom(value).buildPartial();
+                    } else {
+                        type_ = value;
+                    }
+                    onChanged();
+                } else {
+                    typeBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             */
+            public Builder clearType() {
+                if (typeBuilder_ == null) {
+                    type_ = null;
+                    onChanged();
+                } else {
+                    type_ = null;
+                    typeBuilder_ = null;
+                }
+
+                return this;
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeExpr.Builder getTypeBuilder() {
+
+                onChanged();
+                return getTypeFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             */
+            public com.sstewartgallus.peacod.ast.TypeExprOrBuilder getTypeOrBuilder() {
+                if (typeBuilder_ != null) {
+                    return typeBuilder_.getMessageOrBuilder();
+                } else {
+                    return type_ == null ?
+                            com.sstewartgallus.peacod.ast.TypeExpr.getDefaultInstance() : type_;
+                }
+            }
+
+            /**
+             * <code>.peacod_ast.TypeExpr type = 1;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                    com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder>
+            getTypeFieldBuilder() {
+                if (typeBuilder_ == null) {
+                    typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                            com.sstewartgallus.peacod.ast.TypeExpr, com.sstewartgallus.peacod.ast.TypeExpr.Builder, com.sstewartgallus.peacod.ast.TypeExprOrBuilder>(
+                            getType(),
+                            getParentForChildren(),
+                            isClean());
+                    type_ = null;
+                }
+                return typeBuilder_;
+            }
+
+            /**
+             * <code>uint32 index = 2;</code>
+             *
+             * @return The index.
+             */
+            public int getIndex() {
+                return index_;
+            }
+
+            /**
+             * <code>uint32 index = 2;</code>
+             *
+             * @param value The index to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIndex(int value) {
+
+                index_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>uint32 index = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIndex() {
+
+                index_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.Variable)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.LiteralFalse}
+     */
+    public static final class LiteralFalse extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LiteralFalse)
+            LiteralFalseOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LiteralFalse)
+        private static final com.sstewartgallus.peacod.ast.Expr.LiteralFalse DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<LiteralFalse>
+                PARSER = new com.google.protobuf.AbstractParser<LiteralFalse>() {
+            @java.lang.Override
+            public LiteralFalse parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LiteralFalse(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LiteralFalse();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        // Use LiteralFalse.newBuilder() to construct.
+        private LiteralFalse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private LiteralFalse() {
+        }
+
+        private LiteralFalse(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralFalse_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LiteralFalse prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralFalse getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<LiteralFalse> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new LiteralFalse();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralFalse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.LiteralFalse.class, com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder.class);
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LiteralFalse)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.LiteralFalse other = (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) obj;
+
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LiteralFalse> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.LiteralFalse getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.LiteralFalse}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LiteralFalse)
+                com.sstewartgallus.peacod.ast.Expr.LiteralFalseOrBuilder {
+            // Construct using com.sstewartgallus.peacod.ast.Expr.LiteralFalse.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralFalse_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralFalse_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.LiteralFalse.class, com.sstewartgallus.peacod.ast.Expr.LiteralFalse.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralFalse_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralFalse getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralFalse build() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralFalse result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralFalse buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralFalse result = new com.sstewartgallus.peacod.ast.Expr.LiteralFalse(this);
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.LiteralFalse) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralFalse) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LiteralFalse other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.LiteralFalse.getDefaultInstance()) return this;
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.LiteralFalse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LiteralFalse) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LiteralFalse)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.LiteralTrue}
+     */
+    public static final class LiteralTrue extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LiteralTrue)
+            LiteralTrueOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LiteralTrue)
+        private static final com.sstewartgallus.peacod.ast.Expr.LiteralTrue DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<LiteralTrue>
+                PARSER = new com.google.protobuf.AbstractParser<LiteralTrue>() {
+            @java.lang.Override
+            public LiteralTrue parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LiteralTrue(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LiteralTrue();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        // Use LiteralTrue.newBuilder() to construct.
+        private LiteralTrue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private LiteralTrue() {
+        }
+
+        private LiteralTrue(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralTrue_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LiteralTrue prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralTrue getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<LiteralTrue> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new LiteralTrue();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralTrue_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.LiteralTrue.class, com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder.class);
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LiteralTrue)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.LiteralTrue other = (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) obj;
+
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LiteralTrue> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.LiteralTrue getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.LiteralTrue}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LiteralTrue)
+                com.sstewartgallus.peacod.ast.Expr.LiteralTrueOrBuilder {
+            // Construct using com.sstewartgallus.peacod.ast.Expr.LiteralTrue.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralTrue_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralTrue_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.LiteralTrue.class, com.sstewartgallus.peacod.ast.Expr.LiteralTrue.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralTrue_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralTrue getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralTrue build() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralTrue result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralTrue buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralTrue result = new com.sstewartgallus.peacod.ast.Expr.LiteralTrue(this);
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.LiteralTrue) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralTrue) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LiteralTrue other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.LiteralTrue.getDefaultInstance()) return this;
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.LiteralTrue parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LiteralTrue) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LiteralTrue)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.LiteralByte}
+     */
+    public static final class LiteralByte extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LiteralByte)
+            LiteralByteOrBuilder {
+        public static final int VALUE_FIELD_NUMBER = 1;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LiteralByte)
+        private static final com.sstewartgallus.peacod.ast.Expr.LiteralByte DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<LiteralByte>
+                PARSER = new com.google.protobuf.AbstractParser<LiteralByte>() {
+            @java.lang.Override
+            public LiteralByte parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LiteralByte(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LiteralByte();
+        }
+
+        private int value_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use LiteralByte.newBuilder() to construct.
+        private LiteralByte(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private LiteralByte() {
+        }
+        private LiteralByte(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            value_ = input.readInt32();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralByte_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LiteralByte prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralByte getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<LiteralByte> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new LiteralByte();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralByte_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.LiteralByte.class, com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder.class);
+        }
+
+        /**
+         * <code>int32 value = 1;</code>
+         *
+         * @return The value.
+         */
+        public int getValue() {
+            return value_;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (value_ != 0) {
+                output.writeInt32(1, value_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (value_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, value_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LiteralByte)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.LiteralByte other = (com.sstewartgallus.peacod.ast.Expr.LiteralByte) obj;
+
+            if (getValue()
+                    != other.getValue()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getValue();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LiteralByte> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.LiteralByte getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.LiteralByte}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LiteralByte)
+                com.sstewartgallus.peacod.ast.Expr.LiteralByteOrBuilder {
+            private int value_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.LiteralByte.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralByte_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralByte_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.LiteralByte.class, com.sstewartgallus.peacod.ast.Expr.LiteralByte.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                value_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralByte_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralByte getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralByte build() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralByte result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralByte buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralByte result = new com.sstewartgallus.peacod.ast.Expr.LiteralByte(this);
+                result.value_ = value_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.LiteralByte) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralByte) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LiteralByte other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.LiteralByte.getDefaultInstance()) return this;
+                if (other.getValue() != 0) {
+                    setValue(other.getValue());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.LiteralByte parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LiteralByte) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @return The value.
+             */
+            public int getValue() {
+                return value_;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @param value The value to set.
+             * @return This builder for chaining.
+             */
+            public Builder setValue(int value) {
+
+                value_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearValue() {
+
+                value_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LiteralByte)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.LiteralShort}
+     */
+    public static final class LiteralShort extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LiteralShort)
+            LiteralShortOrBuilder {
+        public static final int VALUE_FIELD_NUMBER = 1;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LiteralShort)
+        private static final com.sstewartgallus.peacod.ast.Expr.LiteralShort DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<LiteralShort>
+                PARSER = new com.google.protobuf.AbstractParser<LiteralShort>() {
+            @java.lang.Override
+            public LiteralShort parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LiteralShort(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LiteralShort();
+        }
+
+        private int value_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use LiteralShort.newBuilder() to construct.
+        private LiteralShort(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private LiteralShort() {
+        }
+        private LiteralShort(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            value_ = input.readInt32();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralShort_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LiteralShort prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralShort getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<LiteralShort> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new LiteralShort();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralShort_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.LiteralShort.class, com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder.class);
+        }
+
+        /**
+         * <code>int32 value = 1;</code>
+         *
+         * @return The value.
+         */
+        public int getValue() {
+            return value_;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (value_ != 0) {
+                output.writeInt32(1, value_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (value_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, value_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LiteralShort)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.LiteralShort other = (com.sstewartgallus.peacod.ast.Expr.LiteralShort) obj;
+
+            if (getValue()
+                    != other.getValue()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getValue();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LiteralShort> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.LiteralShort getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.LiteralShort}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LiteralShort)
+                com.sstewartgallus.peacod.ast.Expr.LiteralShortOrBuilder {
+            private int value_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.LiteralShort.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralShort_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralShort_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.LiteralShort.class, com.sstewartgallus.peacod.ast.Expr.LiteralShort.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                value_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralShort_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralShort getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralShort build() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralShort result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralShort buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralShort result = new com.sstewartgallus.peacod.ast.Expr.LiteralShort(this);
+                result.value_ = value_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.LiteralShort) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralShort) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LiteralShort other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.LiteralShort.getDefaultInstance()) return this;
+                if (other.getValue() != 0) {
+                    setValue(other.getValue());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.LiteralShort parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LiteralShort) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @return The value.
+             */
+            public int getValue() {
+                return value_;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @param value The value to set.
+             * @return This builder for chaining.
+             */
+            public Builder setValue(int value) {
+
+                value_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearValue() {
+
+                value_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LiteralShort)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.LiteralInteger}
+     */
+    public static final class LiteralInteger extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LiteralInteger)
+            LiteralIntegerOrBuilder {
+        public static final int VALUE_FIELD_NUMBER = 1;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LiteralInteger)
+        private static final com.sstewartgallus.peacod.ast.Expr.LiteralInteger DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<LiteralInteger>
+                PARSER = new com.google.protobuf.AbstractParser<LiteralInteger>() {
+            @java.lang.Override
+            public LiteralInteger parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LiteralInteger(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LiteralInteger();
+        }
+
+        private int value_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use LiteralInteger.newBuilder() to construct.
+        private LiteralInteger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private LiteralInteger() {
+        }
+        private LiteralInteger(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            value_ = input.readInt32();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralInteger_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LiteralInteger prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralInteger getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<LiteralInteger> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new LiteralInteger();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralInteger_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.LiteralInteger.class, com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder.class);
+        }
+
+        /**
+         * <code>int32 value = 1;</code>
+         *
+         * @return The value.
+         */
+        public int getValue() {
+            return value_;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (value_ != 0) {
+                output.writeInt32(1, value_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (value_ != 0) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, value_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LiteralInteger)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.LiteralInteger other = (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) obj;
+
+            if (getValue()
+                    != other.getValue()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + getValue();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LiteralInteger> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.LiteralInteger getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.LiteralInteger}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LiteralInteger)
+                com.sstewartgallus.peacod.ast.Expr.LiteralIntegerOrBuilder {
+            private int value_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.LiteralInteger.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralInteger_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralInteger_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.LiteralInteger.class, com.sstewartgallus.peacod.ast.Expr.LiteralInteger.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                value_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralInteger_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralInteger getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralInteger build() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralInteger result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralInteger buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralInteger result = new com.sstewartgallus.peacod.ast.Expr.LiteralInteger(this);
+                result.value_ = value_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.LiteralInteger) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralInteger) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LiteralInteger other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.LiteralInteger.getDefaultInstance()) return this;
+                if (other.getValue() != 0) {
+                    setValue(other.getValue());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.LiteralInteger parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LiteralInteger) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @return The value.
+             */
+            public int getValue() {
+                return value_;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @param value The value to set.
+             * @return This builder for chaining.
+             */
+            public Builder setValue(int value) {
+
+                value_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int32 value = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearValue() {
+
+                value_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LiteralInteger)
+        }
+
+    }
+
+    /**
+     * Protobuf type {@code peacod_ast.Expr.LiteralLong}
+     */
+    public static final class LiteralLong extends
+            com.google.protobuf.GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:peacod_ast.Expr.LiteralLong)
+            LiteralLongOrBuilder {
+        public static final int VALUE_FIELD_NUMBER = 1;
+        private static final long serialVersionUID = 0L;
+        // @@protoc_insertion_point(class_scope:peacod_ast.Expr.LiteralLong)
+        private static final com.sstewartgallus.peacod.ast.Expr.LiteralLong DEFAULT_INSTANCE;
+        private static final com.google.protobuf.Parser<LiteralLong>
+                PARSER = new com.google.protobuf.AbstractParser<LiteralLong>() {
+            @java.lang.Override
+            public LiteralLong parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new LiteralLong(input, extensionRegistry);
+            }
+        };
+
+        static {
+            DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr.LiteralLong();
+        }
+
+        private long value_;
+        private byte memoizedIsInitialized = -1;
+
+        // Use LiteralLong.newBuilder() to construct.
+        private LiteralLong(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
+
+        private LiteralLong() {
+        }
+        private LiteralLong(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+
+                            value_ = input.readInt64();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralLong_descriptor;
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(com.sstewartgallus.peacod.ast.Expr.LiteralLong prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        public static com.sstewartgallus.peacod.ast.Expr.LiteralLong getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        public static com.google.protobuf.Parser<LiteralLong> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new LiteralLong();
+        }
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralLong_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.LiteralLong.class, com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder.class);
+        }
+
+        /**
+         * <code>int64 value = 1;</code>
+         *
+         * @return The value.
+         */
+        public long getValue() {
+            return value_;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            if (value_ != 0L) {
+                output.writeInt64(1, value_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (value_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt64Size(1, value_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof com.sstewartgallus.peacod.ast.Expr.LiteralLong)) {
+                return super.equals(obj);
+            }
+            com.sstewartgallus.peacod.ast.Expr.LiteralLong other = (com.sstewartgallus.peacod.ast.Expr.LiteralLong) obj;
+
+            if (getValue()
+                    != other.getValue()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+                    getValue());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LiteralLong> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr.LiteralLong getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
+        /**
+         * Protobuf type {@code peacod_ast.Expr.LiteralLong}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:peacod_ast.Expr.LiteralLong)
+                com.sstewartgallus.peacod.ast.Expr.LiteralLongOrBuilder {
+            private long value_;
+
+            // Construct using com.sstewartgallus.peacod.ast.Expr.LiteralLong.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralLong_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralLong_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.sstewartgallus.peacod.ast.Expr.LiteralLong.class, com.sstewartgallus.peacod.ast.Expr.LiteralLong.Builder.class);
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                value_ = 0L;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_LiteralLong_descriptor;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralLong getDefaultInstanceForType() {
+                return com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralLong build() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralLong result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public com.sstewartgallus.peacod.ast.Expr.LiteralLong buildPartial() {
+                com.sstewartgallus.peacod.ast.Expr.LiteralLong result = new com.sstewartgallus.peacod.ast.Expr.LiteralLong(this);
+                result.value_ = value_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(
+                    com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index, java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof com.sstewartgallus.peacod.ast.Expr.LiteralLong) {
+                    return mergeFrom((com.sstewartgallus.peacod.ast.Expr.LiteralLong) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr.LiteralLong other) {
+                if (other == com.sstewartgallus.peacod.ast.Expr.LiteralLong.getDefaultInstance()) return this;
+                if (other.getValue() != 0L) {
+                    setValue(other.getValue());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                com.sstewartgallus.peacod.ast.Expr.LiteralLong parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.sstewartgallus.peacod.ast.Expr.LiteralLong) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            /**
+             * <code>int64 value = 1;</code>
+             *
+             * @return The value.
+             */
+            public long getValue() {
+                return value_;
+            }
+
+            /**
+             * <code>int64 value = 1;</code>
+             *
+             * @param value The value to set.
+             * @return This builder for chaining.
+             */
+            public Builder setValue(long value) {
+
+                value_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>int64 value = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearValue() {
+
+                value_ = 0L;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:peacod_ast.Expr.LiteralLong)
+        }
+
+    }
+
     /**
      * <pre>
-     * FIXME spell out fully as LiteralByte ?
+     * FIXME: Rename as Term?
      * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
+     * <p>
+     * Protobuf type {@code peacod_ast.Expr}
      */
-    public boolean hasLitByte() {
-      return valueCase_ == 2;
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitByte getLitByte() {
-      if (litByteBuilder_ == null) {
-        if (valueCase_ == 2) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitByte) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance();
-      } else {
-        if (valueCase_ == 2) {
-          return litByteBuilder_.getMessage();
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    public Builder setLitByte(com.sstewartgallus.peacod.ast.Expr.LitByte value) {
-      if (litByteBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        litByteBuilder_.setMessage(value);
-      }
-      valueCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    public Builder setLitByte(
-        com.sstewartgallus.peacod.ast.Expr.LitByte.Builder builderForValue) {
-      if (litByteBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        litByteBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    public Builder mergeLitByte(com.sstewartgallus.peacod.ast.Expr.LitByte value) {
-      if (litByteBuilder_ == null) {
-        if (valueCase_ == 2 &&
-            value_ != com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance()) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitByte.newBuilder((com.sstewartgallus.peacod.ast.Expr.LitByte) value_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 2) {
-          litByteBuilder_.mergeFrom(value);
-        }
-        litByteBuilder_.setMessage(value);
-      }
-      valueCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    public Builder clearLitByte() {
-      if (litByteBuilder_ == null) {
-        if (valueCase_ == 2) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 2) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        litByteBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitByte.Builder getLitByteBuilder() {
-      return getLitByteFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitByteOrBuilder getLitByteOrBuilder() {
-      if ((valueCase_ == 2) && (litByteBuilder_ != null)) {
-        return litByteBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 2) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitByte) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * FIXME spell out fully as LiteralByte ?
-     * </pre>
-     *
-     * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitByte, com.sstewartgallus.peacod.ast.Expr.LitByte.Builder, com.sstewartgallus.peacod.ast.Expr.LitByteOrBuilder> 
-        getLitByteFieldBuilder() {
-      if (litByteBuilder_ == null) {
-        if (!(valueCase_ == 2)) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitByte.getDefaultInstance();
-        }
-        litByteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.sstewartgallus.peacod.ast.Expr.LitByte, com.sstewartgallus.peacod.ast.Expr.LitByte.Builder, com.sstewartgallus.peacod.ast.Expr.LitByteOrBuilder>(
-                (com.sstewartgallus.peacod.ast.Expr.LitByte) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 2;
-      onChanged();;
-      return litByteBuilder_;
-    }
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:peacod_ast.Expr)
+            com.sstewartgallus.peacod.ast.ExprOrBuilder {
+        private int valueCase_ = 0;
+        private java.lang.Object value_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.sstewartgallus.peacod.ast.Expr.Variable, com.sstewartgallus.peacod.ast.Expr.Variable.Builder, com.sstewartgallus.peacod.ast.Expr.VariableOrBuilder> variableBuilder_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.sstewartgallus.peacod.ast.Expr.Constant, com.sstewartgallus.peacod.ast.Expr.Constant.Builder, com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder> constantBuilder_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.sstewartgallus.peacod.ast.Expr.Call, com.sstewartgallus.peacod.ast.Expr.Call.Builder, com.sstewartgallus.peacod.ast.Expr.CallOrBuilder> callBuilder_;
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitShort, com.sstewartgallus.peacod.ast.Expr.LitShort.Builder, com.sstewartgallus.peacod.ast.Expr.LitShortOrBuilder> litShortBuilder_;
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public boolean hasLitShort() {
-      return valueCase_ == 3;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitShort getLitShort() {
-      if (litShortBuilder_ == null) {
-        if (valueCase_ == 3) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitShort) value_;
+        // Construct using com.sstewartgallus.peacod.ast.Expr.newBuilder()
+        private Builder() {
+            maybeForceBuilderInitialization();
         }
-        return com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance();
-      } else {
-        if (valueCase_ == 3) {
-          return litShortBuilder_.getMessage();
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public Builder setLitShort(com.sstewartgallus.peacod.ast.Expr.LitShort value) {
-      if (litShortBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        litShortBuilder_.setMessage(value);
-      }
-      valueCase_ = 3;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public Builder setLitShort(
-        com.sstewartgallus.peacod.ast.Expr.LitShort.Builder builderForValue) {
-      if (litShortBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        litShortBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 3;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public Builder mergeLitShort(com.sstewartgallus.peacod.ast.Expr.LitShort value) {
-      if (litShortBuilder_ == null) {
-        if (valueCase_ == 3 &&
-            value_ != com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance()) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitShort.newBuilder((com.sstewartgallus.peacod.ast.Expr.LitShort) value_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 3) {
-          litShortBuilder_.mergeFrom(value);
-        }
-        litShortBuilder_.setMessage(value);
-      }
-      valueCase_ = 3;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public Builder clearLitShort() {
-      if (litShortBuilder_ == null) {
-        if (valueCase_ == 3) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 3) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        litShortBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitShort.Builder getLitShortBuilder() {
-      return getLitShortFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitShortOrBuilder getLitShortOrBuilder() {
-      if ((valueCase_ == 3) && (litShortBuilder_ != null)) {
-        return litShortBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 3) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitShort) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitShort, com.sstewartgallus.peacod.ast.Expr.LitShort.Builder, com.sstewartgallus.peacod.ast.Expr.LitShortOrBuilder> 
-        getLitShortFieldBuilder() {
-      if (litShortBuilder_ == null) {
-        if (!(valueCase_ == 3)) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitShort.getDefaultInstance();
-        }
-        litShortBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.sstewartgallus.peacod.ast.Expr.LitShort, com.sstewartgallus.peacod.ast.Expr.LitShort.Builder, com.sstewartgallus.peacod.ast.Expr.LitShortOrBuilder>(
-                (com.sstewartgallus.peacod.ast.Expr.LitShort) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 3;
-      onChanged();;
-      return litShortBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitInt, com.sstewartgallus.peacod.ast.Expr.LitInt.Builder, com.sstewartgallus.peacod.ast.Expr.LitIntOrBuilder> litIntBuilder_;
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public boolean hasLitInt() {
-      return valueCase_ == 4;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitInt getLitInt() {
-      if (litIntBuilder_ == null) {
-        if (valueCase_ == 4) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitInt) value_;
+        private Builder(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
         }
-        return com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance();
-      } else {
-        if (valueCase_ == 4) {
-          return litIntBuilder_.getMessage();
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public Builder setLitInt(com.sstewartgallus.peacod.ast.Expr.LitInt value) {
-      if (litIntBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        litIntBuilder_.setMessage(value);
-      }
-      valueCase_ = 4;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public Builder setLitInt(
-        com.sstewartgallus.peacod.ast.Expr.LitInt.Builder builderForValue) {
-      if (litIntBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        litIntBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 4;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public Builder mergeLitInt(com.sstewartgallus.peacod.ast.Expr.LitInt value) {
-      if (litIntBuilder_ == null) {
-        if (valueCase_ == 4 &&
-            value_ != com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance()) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitInt.newBuilder((com.sstewartgallus.peacod.ast.Expr.LitInt) value_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 4) {
-          litIntBuilder_.mergeFrom(value);
-        }
-        litIntBuilder_.setMessage(value);
-      }
-      valueCase_ = 4;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public Builder clearLitInt() {
-      if (litIntBuilder_ == null) {
-        if (valueCase_ == 4) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 4) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        litIntBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitInt.Builder getLitIntBuilder() {
-      return getLitIntFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitIntOrBuilder getLitIntOrBuilder() {
-      if ((valueCase_ == 4) && (litIntBuilder_ != null)) {
-        return litIntBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 4) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitInt) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitInt, com.sstewartgallus.peacod.ast.Expr.LitInt.Builder, com.sstewartgallus.peacod.ast.Expr.LitIntOrBuilder> 
-        getLitIntFieldBuilder() {
-      if (litIntBuilder_ == null) {
-        if (!(valueCase_ == 4)) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitInt.getDefaultInstance();
-        }
-        litIntBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.sstewartgallus.peacod.ast.Expr.LitInt, com.sstewartgallus.peacod.ast.Expr.LitInt.Builder, com.sstewartgallus.peacod.ast.Expr.LitIntOrBuilder>(
-                (com.sstewartgallus.peacod.ast.Expr.LitInt) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 4;
-      onChanged();;
-      return litIntBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitLong, com.sstewartgallus.peacod.ast.Expr.LitLong.Builder, com.sstewartgallus.peacod.ast.Expr.LitLongOrBuilder> litLongBuilder_;
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public boolean hasLitLong() {
-      return valueCase_ == 5;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitLong getLitLong() {
-      if (litLongBuilder_ == null) {
-        if (valueCase_ == 5) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitLong) value_;
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_descriptor;
         }
-        return com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance();
-      } else {
-        if (valueCase_ == 5) {
-          return litLongBuilder_.getMessage();
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public Builder setLitLong(com.sstewartgallus.peacod.ast.Expr.LitLong value) {
-      if (litLongBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        litLongBuilder_.setMessage(value);
-      }
-      valueCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public Builder setLitLong(
-        com.sstewartgallus.peacod.ast.Expr.LitLong.Builder builderForValue) {
-      if (litLongBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        litLongBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public Builder mergeLitLong(com.sstewartgallus.peacod.ast.Expr.LitLong value) {
-      if (litLongBuilder_ == null) {
-        if (valueCase_ == 5 &&
-            value_ != com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance()) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitLong.newBuilder((com.sstewartgallus.peacod.ast.Expr.LitLong) value_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 5) {
-          litLongBuilder_.mergeFrom(value);
-        }
-        litLongBuilder_.setMessage(value);
-      }
-      valueCase_ = 5;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public Builder clearLitLong() {
-      if (litLongBuilder_ == null) {
-        if (valueCase_ == 5) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 5) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        litLongBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitLong.Builder getLitLongBuilder() {
-      return getLitLongFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LitLongOrBuilder getLitLongOrBuilder() {
-      if ((valueCase_ == 5) && (litLongBuilder_ != null)) {
-        return litLongBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 5) {
-          return (com.sstewartgallus.peacod.ast.Expr.LitLong) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LitLong, com.sstewartgallus.peacod.ast.Expr.LitLong.Builder, com.sstewartgallus.peacod.ast.Expr.LitLongOrBuilder> 
-        getLitLongFieldBuilder() {
-      if (litLongBuilder_ == null) {
-        if (!(valueCase_ == 5)) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LitLong.getDefaultInstance();
-        }
-        litLongBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.sstewartgallus.peacod.ast.Expr.LitLong, com.sstewartgallus.peacod.ast.Expr.LitLong.Builder, com.sstewartgallus.peacod.ast.Expr.LitLongOrBuilder>(
-                (com.sstewartgallus.peacod.ast.Expr.LitLong) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 5;
-      onChanged();;
-      return litLongBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.Get, com.sstewartgallus.peacod.ast.Expr.Get.Builder, com.sstewartgallus.peacod.ast.Expr.GetOrBuilder> getBuilder_;
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public boolean hasGet() {
-      return valueCase_ == 6;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.Get getGet() {
-      if (getBuilder_ == null) {
-        if (valueCase_ == 6) {
-          return (com.sstewartgallus.peacod.ast.Expr.Get) value_;
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.sstewartgallus.peacod.ast.Expr.class, com.sstewartgallus.peacod.ast.Expr.Builder.class);
         }
-        return com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance();
-      } else {
-        if (valueCase_ == 6) {
-          return getBuilder_.getMessage();
-        }
-        return com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public Builder setGet(com.sstewartgallus.peacod.ast.Expr.Get value) {
-      if (getBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        getBuilder_.setMessage(value);
-      }
-      valueCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public Builder setGet(
-        com.sstewartgallus.peacod.ast.Expr.Get.Builder builderForValue) {
-      if (getBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        getBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public Builder mergeGet(com.sstewartgallus.peacod.ast.Expr.Get value) {
-      if (getBuilder_ == null) {
-        if (valueCase_ == 6 &&
-            value_ != com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance()) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.Get.newBuilder((com.sstewartgallus.peacod.ast.Expr.Get) value_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 6) {
-          getBuilder_.mergeFrom(value);
-        }
-        getBuilder_.setMessage(value);
-      }
-      valueCase_ = 6;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public Builder clearGet() {
-      if (getBuilder_ == null) {
-        if (valueCase_ == 6) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 6) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        getBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.Get.Builder getGetBuilder() {
-      return getGetFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.GetOrBuilder getGetOrBuilder() {
-      if ((valueCase_ == 6) && (getBuilder_ != null)) {
-        return getBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 6) {
-          return (com.sstewartgallus.peacod.ast.Expr.Get) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.Get get = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.Get, com.sstewartgallus.peacod.ast.Expr.Get.Builder, com.sstewartgallus.peacod.ast.Expr.GetOrBuilder> 
-        getGetFieldBuilder() {
-      if (getBuilder_ == null) {
-        if (!(valueCase_ == 6)) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.Get.getDefaultInstance();
-        }
-        getBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.sstewartgallus.peacod.ast.Expr.Get, com.sstewartgallus.peacod.ast.Expr.Get.Builder, com.sstewartgallus.peacod.ast.Expr.GetOrBuilder>(
-                (com.sstewartgallus.peacod.ast.Expr.Get) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 6;
-      onChanged();;
-      return getBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.Apply, com.sstewartgallus.peacod.ast.Expr.Apply.Builder, com.sstewartgallus.peacod.ast.Expr.ApplyOrBuilder> applyBuilder_;
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public boolean hasApply() {
-      return valueCase_ == 7;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.Apply getApply() {
-      if (applyBuilder_ == null) {
-        if (valueCase_ == 7) {
-          return (com.sstewartgallus.peacod.ast.Expr.Apply) value_;
+        private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessageV3
+                    .alwaysUseFieldBuilders) {
+            }
         }
-        return com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance();
-      } else {
-        if (valueCase_ == 7) {
-          return applyBuilder_.getMessage();
-        }
-        return com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public Builder setApply(com.sstewartgallus.peacod.ast.Expr.Apply value) {
-      if (applyBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        applyBuilder_.setMessage(value);
-      }
-      valueCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public Builder setApply(
-        com.sstewartgallus.peacod.ast.Expr.Apply.Builder builderForValue) {
-      if (applyBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        applyBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public Builder mergeApply(com.sstewartgallus.peacod.ast.Expr.Apply value) {
-      if (applyBuilder_ == null) {
-        if (valueCase_ == 7 &&
-            value_ != com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance()) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.Apply.newBuilder((com.sstewartgallus.peacod.ast.Expr.Apply) value_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 7) {
-          applyBuilder_.mergeFrom(value);
-        }
-        applyBuilder_.setMessage(value);
-      }
-      valueCase_ = 7;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public Builder clearApply() {
-      if (applyBuilder_ == null) {
-        if (valueCase_ == 7) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 7) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        applyBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.Apply.Builder getApplyBuilder() {
-      return getApplyFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.ApplyOrBuilder getApplyOrBuilder() {
-      if ((valueCase_ == 7) && (applyBuilder_ != null)) {
-        return applyBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 7) {
-          return (com.sstewartgallus.peacod.ast.Expr.Apply) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.Apply, com.sstewartgallus.peacod.ast.Expr.Apply.Builder, com.sstewartgallus.peacod.ast.Expr.ApplyOrBuilder> 
-        getApplyFieldBuilder() {
-      if (applyBuilder_ == null) {
-        if (!(valueCase_ == 7)) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.Apply.getDefaultInstance();
-        }
-        applyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.sstewartgallus.peacod.ast.Expr.Apply, com.sstewartgallus.peacod.ast.Expr.Apply.Builder, com.sstewartgallus.peacod.ast.Expr.ApplyOrBuilder>(
-                (com.sstewartgallus.peacod.ast.Expr.Apply) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 7;
-      onChanged();;
-      return applyBuilder_;
-    }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LoadArg, com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder, com.sstewartgallus.peacod.ast.Expr.LoadArgOrBuilder> loadArgBuilder_;
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public boolean hasLoadArg() {
-      return valueCase_ == 13;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LoadArg getLoadArg() {
-      if (loadArgBuilder_ == null) {
-        if (valueCase_ == 13) {
-          return (com.sstewartgallus.peacod.ast.Expr.LoadArg) value_;
+        @java.lang.Override
+        public Builder clear() {
+            super.clear();
+            valueCase_ = 0;
+            value_ = null;
+            return this;
         }
-        return com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance();
-      } else {
-        if (valueCase_ == 13) {
-          return loadArgBuilder_.getMessage();
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public Builder setLoadArg(com.sstewartgallus.peacod.ast.Expr.LoadArg value) {
-      if (loadArgBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        loadArgBuilder_.setMessage(value);
-      }
-      valueCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public Builder setLoadArg(
-        com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder builderForValue) {
-      if (loadArgBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        loadArgBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public Builder mergeLoadArg(com.sstewartgallus.peacod.ast.Expr.LoadArg value) {
-      if (loadArgBuilder_ == null) {
-        if (valueCase_ == 13 &&
-            value_ != com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance()) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LoadArg.newBuilder((com.sstewartgallus.peacod.ast.Expr.LoadArg) value_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 13) {
-          loadArgBuilder_.mergeFrom(value);
-        }
-        loadArgBuilder_.setMessage(value);
-      }
-      valueCase_ = 13;
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public Builder clearLoadArg() {
-      if (loadArgBuilder_ == null) {
-        if (valueCase_ == 13) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 13) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        loadArgBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder getLoadArgBuilder() {
-      return getLoadArgFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    public com.sstewartgallus.peacod.ast.Expr.LoadArgOrBuilder getLoadArgOrBuilder() {
-      if ((valueCase_ == 13) && (loadArgBuilder_ != null)) {
-        return loadArgBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 13) {
-          return (com.sstewartgallus.peacod.ast.Expr.LoadArg) value_;
-        }
-        return com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance();
-      }
-    }
-    /**
-     * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.sstewartgallus.peacod.ast.Expr.LoadArg, com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder, com.sstewartgallus.peacod.ast.Expr.LoadArgOrBuilder> 
-        getLoadArgFieldBuilder() {
-      if (loadArgBuilder_ == null) {
-        if (!(valueCase_ == 13)) {
-          value_ = com.sstewartgallus.peacod.ast.Expr.LoadArg.getDefaultInstance();
-        }
-        loadArgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.sstewartgallus.peacod.ast.Expr.LoadArg, com.sstewartgallus.peacod.ast.Expr.LoadArg.Builder, com.sstewartgallus.peacod.ast.Expr.LoadArgOrBuilder>(
-                (com.sstewartgallus.peacod.ast.Expr.LoadArg) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 13;
-      onChanged();;
-      return loadArgBuilder_;
-    }
-    @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
-    }
 
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
-    }
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+            return com.sstewartgallus.peacod.ast.Ast.internal_static_peacod_ast_Expr_descriptor;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr getDefaultInstanceForType() {
+            return com.sstewartgallus.peacod.ast.Expr.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr build() {
+            com.sstewartgallus.peacod.ast.Expr result = buildPartial();
+            if (!result.isInitialized()) {
+                throw newUninitializedMessageException(result);
+            }
+            return result;
+        }
+
+        @java.lang.Override
+        public com.sstewartgallus.peacod.ast.Expr buildPartial() {
+            com.sstewartgallus.peacod.ast.Expr result = new com.sstewartgallus.peacod.ast.Expr(this);
+            if (valueCase_ == 1) {
+                if (variableBuilder_ == null) {
+                    result.value_ = value_;
+                } else {
+                    result.value_ = variableBuilder_.build();
+                }
+            }
+            if (valueCase_ == 2) {
+                if (constantBuilder_ == null) {
+                    result.value_ = value_;
+                } else {
+                    result.value_ = constantBuilder_.build();
+                }
+            }
+            if (valueCase_ == 3) {
+                if (callBuilder_ == null) {
+                    result.value_ = value_;
+                } else {
+                    result.value_ = callBuilder_.build();
+                }
+            }
+            result.valueCase_ = valueCase_;
+            onBuilt();
+            return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+            return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(
+                com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(
+                com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                int index, java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+                com.google.protobuf.Descriptors.FieldDescriptor field,
+                java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.sstewartgallus.peacod.ast.Expr) {
+                return mergeFrom((com.sstewartgallus.peacod.ast.Expr) other);
+            } else {
+                super.mergeFrom(other);
+                return this;
+            }
+        }
+
+        public Builder mergeFrom(com.sstewartgallus.peacod.ast.Expr other) {
+            if (other == com.sstewartgallus.peacod.ast.Expr.getDefaultInstance()) return this;
+            switch (other.getValueCase()) {
+                case VARIABLE: {
+                    mergeVariable(other.getVariable());
+                    break;
+                }
+                case CONSTANT: {
+                    mergeConstant(other.getConstant());
+                    break;
+                }
+                case CALL: {
+                    mergeCall(other.getCall());
+                    break;
+                }
+                case VALUE_NOT_SET: {
+                    break;
+                }
+            }
+            this.mergeUnknownFields(other.unknownFields);
+            onChanged();
+            return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            com.sstewartgallus.peacod.ast.Expr parsedMessage = null;
+            try {
+                parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                parsedMessage = (com.sstewartgallus.peacod.ast.Expr) e.getUnfinishedMessage();
+                throw e.unwrapIOException();
+            } finally {
+                if (parsedMessage != null) {
+                    mergeFrom(parsedMessage);
+                }
+            }
+            return this;
+        }
+
+        public ValueCase
+        getValueCase() {
+            return ValueCase.forNumber(
+                    valueCase_);
+        }
+
+        public Builder clearValue() {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         *
+         * @return Whether the variable field is set.
+         */
+        public boolean hasVariable() {
+            return valueCase_ == 1;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         *
+         * @return The variable.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Variable getVariable() {
+            if (variableBuilder_ == null) {
+                if (valueCase_ == 1) {
+                    return (com.sstewartgallus.peacod.ast.Expr.Variable) value_;
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance();
+            } else {
+                if (valueCase_ == 1) {
+                    return variableBuilder_.getMessage();
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance();
+            }
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         */
+        public Builder setVariable(com.sstewartgallus.peacod.ast.Expr.Variable value) {
+            if (variableBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                value_ = value;
+                onChanged();
+            } else {
+                variableBuilder_.setMessage(value);
+            }
+            valueCase_ = 1;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         */
+        public Builder setVariable(
+                com.sstewartgallus.peacod.ast.Expr.Variable.Builder builderForValue) {
+            if (variableBuilder_ == null) {
+                value_ = builderForValue.build();
+                onChanged();
+            } else {
+                variableBuilder_.setMessage(builderForValue.build());
+            }
+            valueCase_ = 1;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         */
+        public Builder mergeVariable(com.sstewartgallus.peacod.ast.Expr.Variable value) {
+            if (variableBuilder_ == null) {
+                if (valueCase_ == 1 &&
+                        value_ != com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance()) {
+                    value_ = com.sstewartgallus.peacod.ast.Expr.Variable.newBuilder((com.sstewartgallus.peacod.ast.Expr.Variable) value_)
+                            .mergeFrom(value).buildPartial();
+                } else {
+                    value_ = value;
+                }
+                onChanged();
+            } else {
+                if (valueCase_ == 1) {
+                    variableBuilder_.mergeFrom(value);
+                }
+                variableBuilder_.setMessage(value);
+            }
+            valueCase_ = 1;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         */
+        public Builder clearVariable() {
+            if (variableBuilder_ == null) {
+                if (valueCase_ == 1) {
+                    valueCase_ = 0;
+                    value_ = null;
+                    onChanged();
+                }
+            } else {
+                if (valueCase_ == 1) {
+                    valueCase_ = 0;
+                    value_ = null;
+                }
+                variableBuilder_.clear();
+            }
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Variable.Builder getVariableBuilder() {
+            return getVariableFieldBuilder().getBuilder();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.VariableOrBuilder getVariableOrBuilder() {
+            if ((valueCase_ == 1) && (variableBuilder_ != null)) {
+                return variableBuilder_.getMessageOrBuilder();
+            } else {
+                if (valueCase_ == 1) {
+                    return (com.sstewartgallus.peacod.ast.Expr.Variable) value_;
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance();
+            }
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.sstewartgallus.peacod.ast.Expr.Variable, com.sstewartgallus.peacod.ast.Expr.Variable.Builder, com.sstewartgallus.peacod.ast.Expr.VariableOrBuilder>
+        getVariableFieldBuilder() {
+            if (variableBuilder_ == null) {
+                if (!(valueCase_ == 1)) {
+                    value_ = com.sstewartgallus.peacod.ast.Expr.Variable.getDefaultInstance();
+                }
+                variableBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.sstewartgallus.peacod.ast.Expr.Variable, com.sstewartgallus.peacod.ast.Expr.Variable.Builder, com.sstewartgallus.peacod.ast.Expr.VariableOrBuilder>(
+                        (com.sstewartgallus.peacod.ast.Expr.Variable) value_,
+                        getParentForChildren(),
+                        isClean());
+                value_ = null;
+            }
+            valueCase_ = 1;
+            onChanged();
+            ;
+            return variableBuilder_;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         *
+         * @return Whether the constant field is set.
+         */
+        public boolean hasConstant() {
+            return valueCase_ == 2;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         *
+         * @return The constant.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Constant getConstant() {
+            if (constantBuilder_ == null) {
+                if (valueCase_ == 2) {
+                    return (com.sstewartgallus.peacod.ast.Expr.Constant) value_;
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance();
+            } else {
+                if (valueCase_ == 2) {
+                    return constantBuilder_.getMessage();
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance();
+            }
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         */
+        public Builder setConstant(com.sstewartgallus.peacod.ast.Expr.Constant value) {
+            if (constantBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                value_ = value;
+                onChanged();
+            } else {
+                constantBuilder_.setMessage(value);
+            }
+            valueCase_ = 2;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         */
+        public Builder setConstant(
+                com.sstewartgallus.peacod.ast.Expr.Constant.Builder builderForValue) {
+            if (constantBuilder_ == null) {
+                value_ = builderForValue.build();
+                onChanged();
+            } else {
+                constantBuilder_.setMessage(builderForValue.build());
+            }
+            valueCase_ = 2;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         */
+        public Builder mergeConstant(com.sstewartgallus.peacod.ast.Expr.Constant value) {
+            if (constantBuilder_ == null) {
+                if (valueCase_ == 2 &&
+                        value_ != com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance()) {
+                    value_ = com.sstewartgallus.peacod.ast.Expr.Constant.newBuilder((com.sstewartgallus.peacod.ast.Expr.Constant) value_)
+                            .mergeFrom(value).buildPartial();
+                } else {
+                    value_ = value;
+                }
+                onChanged();
+            } else {
+                if (valueCase_ == 2) {
+                    constantBuilder_.mergeFrom(value);
+                }
+                constantBuilder_.setMessage(value);
+            }
+            valueCase_ = 2;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         */
+        public Builder clearConstant() {
+            if (constantBuilder_ == null) {
+                if (valueCase_ == 2) {
+                    valueCase_ = 0;
+                    value_ = null;
+                    onChanged();
+                }
+            } else {
+                if (valueCase_ == 2) {
+                    valueCase_ = 0;
+                    value_ = null;
+                }
+                constantBuilder_.clear();
+            }
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Constant.Builder getConstantBuilder() {
+            return getConstantFieldBuilder().getBuilder();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder getConstantOrBuilder() {
+            if ((valueCase_ == 2) && (constantBuilder_ != null)) {
+                return constantBuilder_.getMessageOrBuilder();
+            } else {
+                if (valueCase_ == 2) {
+                    return (com.sstewartgallus.peacod.ast.Expr.Constant) value_;
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance();
+            }
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.sstewartgallus.peacod.ast.Expr.Constant, com.sstewartgallus.peacod.ast.Expr.Constant.Builder, com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder>
+        getConstantFieldBuilder() {
+            if (constantBuilder_ == null) {
+                if (!(valueCase_ == 2)) {
+                    value_ = com.sstewartgallus.peacod.ast.Expr.Constant.getDefaultInstance();
+                }
+                constantBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.sstewartgallus.peacod.ast.Expr.Constant, com.sstewartgallus.peacod.ast.Expr.Constant.Builder, com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder>(
+                        (com.sstewartgallus.peacod.ast.Expr.Constant) value_,
+                        getParentForChildren(),
+                        isClean());
+                value_ = null;
+            }
+            valueCase_ = 2;
+            onChanged();
+            ;
+            return constantBuilder_;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         *
+         * @return Whether the call field is set.
+         */
+        public boolean hasCall() {
+            return valueCase_ == 3;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         *
+         * @return The call.
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Call getCall() {
+            if (callBuilder_ == null) {
+                if (valueCase_ == 3) {
+                    return (com.sstewartgallus.peacod.ast.Expr.Call) value_;
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance();
+            } else {
+                if (valueCase_ == 3) {
+                    return callBuilder_.getMessage();
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance();
+            }
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         */
+        public Builder setCall(com.sstewartgallus.peacod.ast.Expr.Call value) {
+            if (callBuilder_ == null) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                value_ = value;
+                onChanged();
+            } else {
+                callBuilder_.setMessage(value);
+            }
+            valueCase_ = 3;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         */
+        public Builder setCall(
+                com.sstewartgallus.peacod.ast.Expr.Call.Builder builderForValue) {
+            if (callBuilder_ == null) {
+                value_ = builderForValue.build();
+                onChanged();
+            } else {
+                callBuilder_.setMessage(builderForValue.build());
+            }
+            valueCase_ = 3;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         */
+        public Builder mergeCall(com.sstewartgallus.peacod.ast.Expr.Call value) {
+            if (callBuilder_ == null) {
+                if (valueCase_ == 3 &&
+                        value_ != com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance()) {
+                    value_ = com.sstewartgallus.peacod.ast.Expr.Call.newBuilder((com.sstewartgallus.peacod.ast.Expr.Call) value_)
+                            .mergeFrom(value).buildPartial();
+                } else {
+                    value_ = value;
+                }
+                onChanged();
+            } else {
+                if (valueCase_ == 3) {
+                    callBuilder_.mergeFrom(value);
+                }
+                callBuilder_.setMessage(value);
+            }
+            valueCase_ = 3;
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         */
+        public Builder clearCall() {
+            if (callBuilder_ == null) {
+                if (valueCase_ == 3) {
+                    valueCase_ = 0;
+                    value_ = null;
+                    onChanged();
+                }
+            } else {
+                if (valueCase_ == 3) {
+                    valueCase_ = 0;
+                    value_ = null;
+                }
+                callBuilder_.clear();
+            }
+            return this;
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.Call.Builder getCallBuilder() {
+            return getCallFieldBuilder().getBuilder();
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         */
+        public com.sstewartgallus.peacod.ast.Expr.CallOrBuilder getCallOrBuilder() {
+            if ((valueCase_ == 3) && (callBuilder_ != null)) {
+                return callBuilder_.getMessageOrBuilder();
+            } else {
+                if (valueCase_ == 3) {
+                    return (com.sstewartgallus.peacod.ast.Expr.Call) value_;
+                }
+                return com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance();
+            }
+        }
+
+        /**
+         * <code>.peacod_ast.Expr.Call call = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.sstewartgallus.peacod.ast.Expr.Call, com.sstewartgallus.peacod.ast.Expr.Call.Builder, com.sstewartgallus.peacod.ast.Expr.CallOrBuilder>
+        getCallFieldBuilder() {
+            if (callBuilder_ == null) {
+                if (!(valueCase_ == 3)) {
+                    value_ = com.sstewartgallus.peacod.ast.Expr.Call.getDefaultInstance();
+                }
+                callBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                        com.sstewartgallus.peacod.ast.Expr.Call, com.sstewartgallus.peacod.ast.Expr.Call.Builder, com.sstewartgallus.peacod.ast.Expr.CallOrBuilder>(
+                        (com.sstewartgallus.peacod.ast.Expr.Call) value_,
+                        getParentForChildren(),
+                        isClean());
+                value_ = null;
+            }
+            valueCase_ = 3;
+            onChanged();
+            ;
+            return callBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+                final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+        }
 
 
-    // @@protoc_insertion_point(builder_scope:peacod_ast.Expr)
-  }
-
-  // @@protoc_insertion_point(class_scope:peacod_ast.Expr)
-  private static final com.sstewartgallus.peacod.ast.Expr DEFAULT_INSTANCE;
-  static {
-    DEFAULT_INSTANCE = new com.sstewartgallus.peacod.ast.Expr();
-  }
-
-  public static com.sstewartgallus.peacod.ast.Expr getDefaultInstance() {
-    return DEFAULT_INSTANCE;
-  }
-
-  private static final com.google.protobuf.Parser<Expr>
-      PARSER = new com.google.protobuf.AbstractParser<Expr>() {
-    @java.lang.Override
-    public Expr parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Expr(input, extensionRegistry);
+        // @@protoc_insertion_point(builder_scope:peacod_ast.Expr)
     }
-  };
-
-  public static com.google.protobuf.Parser<Expr> parser() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.google.protobuf.Parser<Expr> getParserForType() {
-    return PARSER;
-  }
-
-  @java.lang.Override
-  public com.sstewartgallus.peacod.ast.Expr getDefaultInstanceForType() {
-    return DEFAULT_INSTANCE;
-  }
 
 }
 

@@ -21,74 +21,82 @@ option java_multiple_files = true;
 message LibraryDef {
     uint32 version = 1;
     string name = 2;
-    // fixme consider map?
-    repeated FunctionDef function = 3;
+    map<string, Def> def = 3;
 }
 
 // Fixme, just rename Def or something
-message FunctionDef {
-    string name = 1;
-    uint32 num_type_params = 2;
-    TypeExpr type = 3;
-    Expr body = 4;
+message Def {
+    TypeSchemeExpr type = 1;
+    // The arity of a definition has actually pretty little to do with the type
+    uint32 arity = 2;
+    Expr body = 3;
 }
 
 // FIXME: Rename as Term?
 message Expr {
     // FIXME Add debug information
     oneof value {
-        Simple simple = 1;
-
-        // FIXME spell out fully as LiteralByte ?
-        LitByte lit_byte = 2;
-        LitShort lit_short = 3;
-        LitInt lit_int = 4;
-        LitLong lit_long = 5;
-
-        Get get = 6;
-        Apply apply = 7;
-
-        LoadArg load_arg = 13;
+        Variable variable = 1;
+        Constant constant = 2;
+        Call call = 3;
     }
 
-    // FIXME, just do literal boolean
-    enum Simple {
-        FALSE = 0;
-        TRUE = 1;
+    message Literal {
+        oneof value {
+            LiteralFalse literal_false = 2;
+            LiteralTrue literal_true = 3;
+
+            LiteralByte literal_byte = 4;
+            LiteralShort literal_short = 5;
+            LiteralInteger literal_int = 6;
+            LiteralLong literal_long = 7;
+        }
     }
 
-    message LitByte {
-        int32 value = 1;
-    }
-    message LitShort {
-        int32 value = 1;
-    }
-    message LitInt {
-        int32 value = 1;
-    }
-    message LitLong {
-        int64 value = 1;
+    message Constant {
+        oneof value {
+            TermReference reference = 1;
+            Literal literal = 2;
+        }
     }
 
-    message Get {
+    message Call {
+        Constant function = 1;
+        repeated TypeExpr type_argument = 2;
+        repeated Expr argument = 3;
+    }
+
+    message TermReference {
+        Reference reference = 1;
+        TypeSchemeExpr scheme = 2;
+    }
+
+    message Reference {
         string library = 1;
         string name = 2;
-        TypeExpr type = 3;
-
-        // FIXME delay?
-        repeated TypeExpr type_argument = 5;
     }
 
-    // FIXME consider types?
-    message Apply {
-        Expr function = 1;
-        repeated Expr argument = 2;
-    }
-
-    // fixme rename
-    message LoadArg {
+    message Variable {
         TypeExpr type = 1;
         uint32 index = 2;
+    }
+
+    message LiteralFalse {
+    }
+    message LiteralTrue {
+    }
+
+    message LiteralByte {
+        int32 value = 1;
+    }
+    message LiteralShort {
+        int32 value = 1;
+    }
+    message LiteralInteger {
+        int32 value = 1;
+    }
+    message LiteralLong {
+        int64 value = 1;
     }
 }
 
@@ -110,4 +118,9 @@ message TypeExpr {
         // FIXME... give a kind?
         uint32 index = 1;
     }
+}
+
+message TypeSchemeExpr {
+    TypeExpr type = 1;
+    uint32 arity = 2;
 }

@@ -9,15 +9,15 @@ import com.oracle.truffle.api.library.ExportMessage;
 @ExportLibrary(InteropLibrary.class)
 public final class ProceduresObject extends PeacodObject {
 
-    @Override
-    public Object findMetaObject() {
-        return "ProceduresObject";
-    }
-
     private final Object[] names;
 
     ProceduresObject(Object[] names) {
         this.names = names;
+    }
+
+    @Override
+    public Object findMetaObject() {
+        return "ProceduresObject";
     }
 
     @ExportMessage

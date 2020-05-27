@@ -23,7 +23,7 @@ public final class PeacodFileDetector implements TruffleFile.FileTypeDetector {
 
     @Override
     public String findMimeType(TruffleFile file) {
-        String name = file.getName();
+        var name = file.getName();
         if (name == null) {
             return null;
         }

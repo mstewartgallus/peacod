@@ -4,34 +4,46 @@
 package com.sstewartgallus.peacod.ast;
 
 public interface TypeExprOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:peacod_ast.TypeExpr)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:peacod_ast.TypeExpr)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>.peacod_ast.TypeExpr.Literal literal = 1;</code>
-   */
-  boolean hasLiteral();
-  /**
-   * <code>.peacod_ast.TypeExpr.Literal literal = 1;</code>
-   */
-  com.sstewartgallus.peacod.ast.TypeExpr.Literal getLiteral();
-  /**
-   * <code>.peacod_ast.TypeExpr.Literal literal = 1;</code>
-   */
-  com.sstewartgallus.peacod.ast.TypeExpr.LiteralOrBuilder getLiteralOrBuilder();
+    /**
+     * <code>.peacod_ast.TypeExpr.Literal literal = 1;</code>
+     *
+     * @return Whether the literal field is set.
+     */
+    boolean hasLiteral();
 
-  /**
-   * <code>.peacod_ast.TypeExpr.Variable variable = 2;</code>
-   */
-  boolean hasVariable();
-  /**
-   * <code>.peacod_ast.TypeExpr.Variable variable = 2;</code>
-   */
-  com.sstewartgallus.peacod.ast.TypeExpr.Variable getVariable();
-  /**
-   * <code>.peacod_ast.TypeExpr.Variable variable = 2;</code>
-   */
-  com.sstewartgallus.peacod.ast.TypeExpr.VariableOrBuilder getVariableOrBuilder();
+    /**
+     * <code>.peacod_ast.TypeExpr.Literal literal = 1;</code>
+     *
+     * @return The literal.
+     */
+    com.sstewartgallus.peacod.ast.TypeExpr.Literal getLiteral();
 
-  public com.sstewartgallus.peacod.ast.TypeExpr.ValueCase getValueCase();
+    /**
+     * <code>.peacod_ast.TypeExpr.Literal literal = 1;</code>
+     */
+    com.sstewartgallus.peacod.ast.TypeExpr.LiteralOrBuilder getLiteralOrBuilder();
+
+    /**
+     * <code>.peacod_ast.TypeExpr.Variable variable = 2;</code>
+     *
+     * @return Whether the variable field is set.
+     */
+    boolean hasVariable();
+
+    /**
+     * <code>.peacod_ast.TypeExpr.Variable variable = 2;</code>
+     *
+     * @return The variable.
+     */
+    com.sstewartgallus.peacod.ast.TypeExpr.Variable getVariable();
+
+    /**
+     * <code>.peacod_ast.TypeExpr.Variable variable = 2;</code>
+     */
+    com.sstewartgallus.peacod.ast.TypeExpr.VariableOrBuilder getVariableOrBuilder();
+
+    public com.sstewartgallus.peacod.ast.TypeExpr.ValueCase getValueCase();
 }

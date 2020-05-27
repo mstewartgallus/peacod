@@ -15,7 +15,8 @@
  */
 package com.sstewartgallus.peacod.compiler;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 class Expander {
@@ -23,20 +24,20 @@ class Expander {
 
     static Env expandForms(Env env, Form forms) {
         while (forms instanceof Form.Cons) {
-            Form.Cons c = (Form.Cons) forms;
+            var c = (Form.Cons) forms;
 
-            Form form = c.head;
+            var form = c.head;
             forms = c.tail;
 
-            String headString = formHead(form);
+            var headString = formHead(form);
 
-            Function<Form, Effect<Value>> command = env.get(EXPR).get(headString);
+            var command = env.get(EXPR).get(headString);
             if (null == command) {
                 throw new Error("no top level binding for " + headString + " in environment " + env);
             }
-            Effect.Results<Value> results = command.apply(form).execute(env);
+            var results = command.apply(form).execute(env);
             env = results.env;
-            // ignore the type
+            // ignore the scheme
         }
         return env;
     }
@@ -44,7 +45,7 @@ class Expander {
     static Effect.Results<Value> expand(Env env, Form expr) {
         for (; ; ) {
             if (expr instanceof Form.Atom) {
-                String atom = ((Form.Atom) expr).value;
+                var atom = ((Form.Atom) expr).value;
 
                 // FIXME Find a good way to handle such a hook?
                 notint:
@@ -62,9 +63,9 @@ class Expander {
                     return new Effect.Results<>(env, Expander.Value.of(new Term.LitInt(x)));
                 }
             } else if (expr instanceof Form.Cons) {
-                Form.Cons compound = ((Form.Cons) expr);
-                Form head = compound.head;
-                Form tail = compound.tail;
+                var compound = ((Form.Cons) expr);
+                var head = compound.head;
+                var tail = compound.tail;
 
                 if (tail instanceof Form.Empty) {
                     expr = head;
@@ -72,8 +73,8 @@ class Expander {
                 }
             }
 
-            String headName = formHead(expr);
-            Function<Form, Effect<Value>> maker = env.get(EXPR).get(headName);
+            var headName = formHead(expr);
+            var maker = env.get(EXPR).get(headName);
             if (null == maker) {
                 throw new Error("form " + headName + " not found!");
             }
@@ -84,8 +85,8 @@ class Expander {
     private static String formHead(Form form) {
         String headString;
         if (form instanceof Form.Cons) {
-            Form.Cons c = (Form.Cons) form;
-            Form head = c.head;
+            var c = (Form.Cons) form;
+            var head = c.head;
             headString = ((Form.Atom) head).value;
         } else if (form instanceof Form.Atom) {
             headString = ((Form.Atom) form).value;
@@ -95,74 +96,81 @@ class Expander {
         return headString;
     }
 
-    static Function<Form, Effect<Value>> typeOp(KindSig sig) {
-        int arity = sig.arity;
-        Function<List<Type>, Type> f = sig.transformation;
+    static Function<Form, Effect<Value>> typeOp(Type.Tag tag) {
+        var arity = tag.arity;
         return (g) -> (env) -> {
-            Form form = g;
+            var form = g;
+
+            form = ((Form.Cons) form).tail;
 
             List<Type> args = new ArrayList<>();
             while (form instanceof Form.Cons) {
-                Form.Cons c = (Form.Cons) form;
-                Form head = c.head;
+                var c = (Form.Cons) form;
+                var head = c.head;
                 form = c.tail;
 
-                Effect.Results<Value> results = expand(env, head);
+                var results = expand(env, head);
                 env = results.env;
 
                 args.add(results.result.type());
             }
 
             if (args.size() != arity) {
-                throw new Error("wrong " + args + "  arity " + arity);
+                throw new Error("cannot apply " + args + " of size " + args.size() + " to " + tag + " of arity " + arity);
             }
-            Type value = f.apply(args);
+            var value = Type.of(tag, args.toArray(new Type[0]));
             return new Effect.Results<>(env, Value.of(value));
 
         };
     }
 
     static Function<Form, Effect<Value>> op(Signature signature) {
-        Type type = signature.type;
-        String libraryName = signature.libraryName;
-        String name = signature.name;
-        List<Type> typeParameters = signature.typeParameters;
+        var libraryName = signature.libraryName;
+        var name = signature.name;
+
+        var scheme = signature.typeScheme;
 
         return (g) -> (env) -> {
-            Form form = g;
+            var form = g;
 
-            Form.Cons c = (Form.Cons) form;
-            form = c.tail;
-            c = (Form.Cons) form;
+            // sometimes an atom..
 
             List<Term> args = new ArrayList<>();
-            while (form instanceof Form.Cons) {
-                c = (Form.Cons) form;
-                Form head = c.head;
+
+
+            if (form instanceof Form.Cons) {
+                var c = (Form.Cons) form;
                 form = c.tail;
+                c = (Form.Cons) form;
 
-                Effect.Results<Value> results = expand(env, head);
-                env = results.env;
+                while (form instanceof Form.Cons) {
+                    c = (Form.Cons) form;
+                    var head = c.head;
+                    form = c.tail;
 
-                args.add(results.result.expr());
+                    var results = expand(env, head);
+                    env = results.env;
+
+                    args.add(results.result.expr());
+                }
             }
 
-            Map<Type, Type> solutions = new HashMap<>();
             List<Type> typeArgsCopy = new ArrayList<>();
-            for (Type typeArg : typeParameters) {
+
+            // fixme.. consider other use?
+            var typeParameters = scheme.holes;
+
+            for (Type ignored : typeParameters) {
                 Type fresh = new Type.Hole();
                 typeArgsCopy.add(fresh);
-                solutions.put(typeArg, fresh);
             }
 
-            Type freshType = Constraints.resolve(solutions, type);
-
-            Term value = new Term.Get(libraryName, name, freshType, typeArgsCopy);
+            // fixme use one term..
+            Term value = new Term.TermReference(new Term.Reference(libraryName, name), scheme, typeArgsCopy);
             if (args.size() > 0) {
                 value = new Term.Apply(value, args);
             }
             return new Effect.Results<>(env, Value.of(value));
-
         };
     }
 
@@ -207,15 +215,5 @@ class Expander {
         }
 
         Type type();
-    }
-
-    static final class KindSig {
-        final int arity;
-        final Function<List<Type>, Type> transformation;
-
-        KindSig(int arity, Function<List<Type>, Type> transformation) {
-            this.arity = arity;
-            this.transformation = transformation;
-        }
     }
 }

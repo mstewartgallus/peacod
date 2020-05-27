@@ -1,4 +1,4 @@
-(declare fact fn int int int)
+(declare fact fn (int int) int)
 (define (fact Accum N)
    if (< N 1)
       Accum

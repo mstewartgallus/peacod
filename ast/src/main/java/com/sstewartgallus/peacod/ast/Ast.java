@@ -4,215 +4,298 @@
 package com.sstewartgallus.peacod.ast;
 
 public final class Ast {
-  private Ast() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_LibraryDef_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_LibraryDef_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_LibraryDef_DefEntry_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_LibraryDef_DefEntry_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Def_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Def_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_Literal_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_Literal_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_Constant_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_Constant_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_Call_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_Call_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_TermReference_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_TermReference_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_Reference_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_Reference_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_Variable_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_Variable_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_LiteralFalse_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_LiteralFalse_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_LiteralTrue_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_LiteralTrue_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_LiteralByte_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_LiteralByte_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_LiteralShort_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_LiteralShort_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_LiteralInteger_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_LiteralInteger_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_Expr_LiteralLong_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_Expr_LiteralLong_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_TypeExpr_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_TypeExpr_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_TypeExpr_Literal_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_TypeExpr_Literal_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_TypeExpr_Variable_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_TypeExpr_Variable_fieldAccessorTable;
+    static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_peacod_ast_TypeSchemeExpr_descriptor;
+    static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_peacod_ast_TypeSchemeExpr_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor
+            descriptor;
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_LibraryDef_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_LibraryDef_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_FunctionDef_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_FunctionDef_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_LitByte_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_LitByte_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_LitShort_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_LitShort_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_LitInt_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_LitInt_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_LitLong_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_LitLong_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_Get_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_Get_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_Apply_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_Apply_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_Expr_LoadArg_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_Expr_LoadArg_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_TypeExpr_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_TypeExpr_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_TypeExpr_Literal_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_TypeExpr_Literal_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_peacod_ast_TypeExpr_Variable_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_peacod_ast_TypeExpr_Variable_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\026ast/src/main/ast.proto\022\npeacod_ast\"V\n\n" +
-      "LibraryDef\022\017\n\007version\030\001 \001(\r\022\014\n\004name\030\002 \001(" +
-      "\t\022)\n\010function\030\003 \003(\0132\027.peacod_ast.Functio" +
-      "nDef\"x\n\013FunctionDef\022\014\n\004name\030\001 \001(\t\022\027\n\017num" +
-      "_type_params\030\002 \001(\r\022\"\n\004type\030\003 \001(\0132\024.peaco" +
-      "d_ast.TypeExpr\022\036\n\004body\030\004 \001(\0132\020.peacod_as" +
-      "t.Expr\"\373\005\n\004Expr\022)\n\006simple\030\001 \001(\0162\027.peacod" +
-      "_ast.Expr.SimpleH\000\022,\n\010lit_byte\030\002 \001(\0132\030.p" +
-      "eacod_ast.Expr.LitByteH\000\022.\n\tlit_short\030\003 " +
-      "\001(\0132\031.peacod_ast.Expr.LitShortH\000\022*\n\007lit_" +
-      "int\030\004 \001(\0132\027.peacod_ast.Expr.LitIntH\000\022,\n\010" +
-      "lit_long\030\005 \001(\0132\030.peacod_ast.Expr.LitLong" +
-      "H\000\022#\n\003get\030\006 \001(\0132\024.peacod_ast.Expr.GetH\000\022" +
-      "\'\n\005apply\030\007 \001(\0132\026.peacod_ast.Expr.ApplyH\000" +
-      "\022,\n\010load_arg\030\r \001(\0132\030.peacod_ast.Expr.Loa" +
-      "dArgH\000\032\030\n\007LitByte\022\r\n\005value\030\001 \001(\005\032\031\n\010LitS" +
-      "hort\022\r\n\005value\030\001 \001(\005\032\027\n\006LitInt\022\r\n\005value\030\001" +
-      " \001(\005\032\030\n\007LitLong\022\r\n\005value\030\001 \001(\003\032u\n\003Get\022\017\n" +
-      "\007library\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\"\n\004type\030\003 \001" +
-      "(\0132\024.peacod_ast.TypeExpr\022+\n\rtype_argumen" +
-      "t\030\005 \003(\0132\024.peacod_ast.TypeExpr\032O\n\005Apply\022\"" +
-      "\n\010function\030\001 \001(\0132\020.peacod_ast.Expr\022\"\n\010ar" +
-      "gument\030\002 \003(\0132\020.peacod_ast.Expr\032<\n\007LoadAr" +
-      "g\022\"\n\004type\030\001 \001(\0132\024.peacod_ast.TypeExpr\022\r\n" +
-      "\005index\030\002 \001(\r\"\035\n\006Simple\022\t\n\005FALSE\020\000\022\010\n\004TRU" +
-      "E\020\001B\007\n\005value\"\344\001\n\010TypeExpr\022/\n\007literal\030\001 \001" +
-      "(\0132\034.peacod_ast.TypeExpr.LiteralH\000\0221\n\010va" +
-      "riable\030\002 \001(\0132\035.peacod_ast.TypeExpr.Varia" +
-      "bleH\000\032P\n\007Literal\022\017\n\007library\030\001 \001(\t\022\014\n\004nam" +
-      "e\030\002 \001(\t\022&\n\010argument\030\003 \003(\0132\024.peacod_ast.T" +
-      "ypeExpr\032\031\n\010Variable\022\r\n\005index\030\001 \001(\rB\007\n\005va" +
-      "lueB!\n\035com.sstewartgallus.peacod.astP\001b\006" +
-      "proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
+    static {
+        java.lang.String[] descriptorData = {
+                "\n\026ast/src/main/ast.proto\022\npeacod_ast\"\226\001\n" +
+                        "\nLibraryDef\022\017\n\007version\030\001 \001(\r\022\014\n\004name\030\002 \001" +
+                        "(\t\022,\n\003def\030\003 \003(\0132\037.peacod_ast.LibraryDef." +
+                        "DefEntry\032;\n\010DefEntry\022\013\n\003key\030\001 \001(\t\022\036\n\005val" +
+                        "ue\030\002 \001(\0132\017.peacod_ast.Def:\0028\001\"^\n\003Def\022(\n\004" +
+                        "type\030\001 \001(\0132\032.peacod_ast.TypeSchemeExpr\022\r" +
+                        "\n\005arity\030\002 \001(\r\022\036\n\004body\030\003 \001(\0132\020.peacod_ast" +
+                        ".Expr\"\343\010\n\004Expr\022-\n\010variable\030\001 \001(\0132\031.peaco" +
+                        "d_ast.Expr.VariableH\000\022-\n\010constant\030\002 \001(\0132" +
+                        "\031.peacod_ast.Expr.ConstantH\000\022%\n\004call\030\003 \001" +
+                        "(\0132\025.peacod_ast.Expr.CallH\000\032\334\002\n\007Literal\022" +
+                        "6\n\rliteral_false\030\002 \001(\0132\035.peacod_ast.Expr" +
+                        ".LiteralFalseH\000\0224\n\014literal_true\030\003 \001(\0132\034." +
+                        "peacod_ast.Expr.LiteralTrueH\000\0224\n\014literal" +
+                        "_byte\030\004 \001(\0132\034.peacod_ast.Expr.LiteralByt" +
+                        "eH\000\0226\n\rliteral_short\030\005 \001(\0132\035.peacod_ast." +
+                        "Expr.LiteralShortH\000\0226\n\013literal_int\030\006 \001(\013" +
+                        "2\037.peacod_ast.Expr.LiteralIntegerH\000\0224\n\014l" +
+                        "iteral_long\030\007 \001(\0132\034.peacod_ast.Expr.Lite" +
+                        "ralLongH\000B\007\n\005value\032u\n\010Constant\0223\n\trefere" +
+                        "nce\030\001 \001(\0132\036.peacod_ast.Expr.TermReferenc" +
+                        "eH\000\022+\n\007literal\030\002 \001(\0132\030.peacod_ast.Expr.L" +
+                        "iteralH\000B\007\n\005value\032\204\001\n\004Call\022+\n\010function\030\001" +
+                        " \001(\0132\031.peacod_ast.Expr.Constant\022+\n\rtype_" +
+                        "argument\030\002 \003(\0132\024.peacod_ast.TypeExpr\022\"\n\010" +
+                        "argument\030\003 \003(\0132\020.peacod_ast.Expr\032j\n\rTerm" +
+                        "Reference\022-\n\treference\030\001 \001(\0132\032.peacod_as" +
+                        "t.Expr.Reference\022*\n\006scheme\030\002 \001(\0132\032.peaco" +
+                        "d_ast.TypeSchemeExpr\032*\n\tReference\022\017\n\007lib" +
+                        "rary\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\032=\n\010Variable\022\"\n\004" +
+                        "type\030\001 \001(\0132\024.peacod_ast.TypeExpr\022\r\n\005inde" +
+                        "x\030\002 \001(\r\032\016\n\014LiteralFalse\032\r\n\013LiteralTrue\032\034" +
+                        "\n\013LiteralByte\022\r\n\005value\030\001 \001(\005\032\035\n\014LiteralS" +
+                        "hort\022\r\n\005value\030\001 \001(\005\032\037\n\016LiteralInteger\022\r\n" +
+                        "\005value\030\001 \001(\005\032\034\n\013LiteralLong\022\r\n\005value\030\001 \001" +
+                        "(\003B\007\n\005value\"\344\001\n\010TypeExpr\022/\n\007literal\030\001 \001(" +
+                        "\0132\034.peacod_ast.TypeExpr.LiteralH\000\0221\n\010var" +
+                        "iable\030\002 \001(\0132\035.peacod_ast.TypeExpr.Variab" +
+                        "leH\000\032P\n\007Literal\022\017\n\007library\030\001 \001(\t\022\014\n\004name" +
+                        "\030\002 \001(\t\022&\n\010argument\030\003 \003(\0132\024.peacod_ast.Ty" +
+                        "peExpr\032\031\n\010Variable\022\r\n\005index\030\001 \001(\rB\007\n\005val" +
+                        "ue\"C\n\016TypeSchemeExpr\022\"\n\004type\030\001 \001(\0132\024.pea" +
+                        "cod_ast.TypeExpr\022\r\n\005arity\030\002 \001(\rB!\n\035com.s" +
+                        "stewartgallus.peacod.astP\001b\006proto3"
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_peacod_ast_LibraryDef_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_peacod_ast_LibraryDef_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_LibraryDef_descriptor,
-        new java.lang.String[] { "Version", "Name", "Function", });
-    internal_static_peacod_ast_FunctionDef_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_peacod_ast_FunctionDef_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_FunctionDef_descriptor,
-        new java.lang.String[] { "Name", "NumTypeParams", "Type", "Body", });
-    internal_static_peacod_ast_Expr_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_peacod_ast_Expr_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_descriptor,
-        new java.lang.String[] { "Simple", "LitByte", "LitShort", "LitInt", "LitLong", "Get", "Apply", "LoadArg", "Value", });
-    internal_static_peacod_ast_Expr_LitByte_descriptor =
-      internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(0);
-    internal_static_peacod_ast_Expr_LitByte_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_LitByte_descriptor,
-        new java.lang.String[] { "Value", });
-    internal_static_peacod_ast_Expr_LitShort_descriptor =
-      internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(1);
-    internal_static_peacod_ast_Expr_LitShort_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_LitShort_descriptor,
-        new java.lang.String[] { "Value", });
-    internal_static_peacod_ast_Expr_LitInt_descriptor =
-      internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(2);
-    internal_static_peacod_ast_Expr_LitInt_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_LitInt_descriptor,
-        new java.lang.String[] { "Value", });
-    internal_static_peacod_ast_Expr_LitLong_descriptor =
-      internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(3);
-    internal_static_peacod_ast_Expr_LitLong_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_LitLong_descriptor,
-        new java.lang.String[] { "Value", });
-    internal_static_peacod_ast_Expr_Get_descriptor =
-      internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(4);
-    internal_static_peacod_ast_Expr_Get_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_Get_descriptor,
-        new java.lang.String[] { "Library", "Name", "Type", "TypeArgument", });
-    internal_static_peacod_ast_Expr_Apply_descriptor =
-      internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(5);
-    internal_static_peacod_ast_Expr_Apply_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_Apply_descriptor,
-        new java.lang.String[] { "Function", "Argument", });
-    internal_static_peacod_ast_Expr_LoadArg_descriptor =
-      internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(6);
-    internal_static_peacod_ast_Expr_LoadArg_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_Expr_LoadArg_descriptor,
-        new java.lang.String[] { "Type", "Index", });
-    internal_static_peacod_ast_TypeExpr_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_peacod_ast_TypeExpr_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_TypeExpr_descriptor,
-        new java.lang.String[] { "Literal", "Variable", "Value", });
-    internal_static_peacod_ast_TypeExpr_Literal_descriptor =
-      internal_static_peacod_ast_TypeExpr_descriptor.getNestedTypes().get(0);
-    internal_static_peacod_ast_TypeExpr_Literal_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_TypeExpr_Literal_descriptor,
-        new java.lang.String[] { "Library", "Name", "Argument", });
-    internal_static_peacod_ast_TypeExpr_Variable_descriptor =
-      internal_static_peacod_ast_TypeExpr_descriptor.getNestedTypes().get(1);
-    internal_static_peacod_ast_TypeExpr_Variable_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_peacod_ast_TypeExpr_Variable_descriptor,
-        new java.lang.String[] { "Index", });
-  }
+        descriptor = com.google.protobuf.Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[]{
+                        });
+        internal_static_peacod_ast_LibraryDef_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_peacod_ast_LibraryDef_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_LibraryDef_descriptor,
+                new java.lang.String[]{"Version", "Name", "Def",});
+        internal_static_peacod_ast_LibraryDef_DefEntry_descriptor =
+                internal_static_peacod_ast_LibraryDef_descriptor.getNestedTypes().get(0);
+        internal_static_peacod_ast_LibraryDef_DefEntry_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_LibraryDef_DefEntry_descriptor,
+                new java.lang.String[]{"Key", "Value",});
+        internal_static_peacod_ast_Def_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_peacod_ast_Def_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Def_descriptor,
+                new java.lang.String[]{"Type", "Arity", "Body",});
+        internal_static_peacod_ast_Expr_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_peacod_ast_Expr_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_descriptor,
+                new java.lang.String[]{"Variable", "Constant", "Call", "Value",});
+        internal_static_peacod_ast_Expr_Literal_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(0);
+        internal_static_peacod_ast_Expr_Literal_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_Literal_descriptor,
+                new java.lang.String[]{"LiteralFalse", "LiteralTrue", "LiteralByte", "LiteralShort", "LiteralInt", "LiteralLong", "Value",});
+        internal_static_peacod_ast_Expr_Constant_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(1);
+        internal_static_peacod_ast_Expr_Constant_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_Constant_descriptor,
+                new java.lang.String[]{"Reference", "Literal", "Value",});
+        internal_static_peacod_ast_Expr_Call_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(2);
+        internal_static_peacod_ast_Expr_Call_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_Call_descriptor,
+                new java.lang.String[]{"Function", "TypeArgument", "Argument",});
+        internal_static_peacod_ast_Expr_TermReference_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(3);
+        internal_static_peacod_ast_Expr_TermReference_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_TermReference_descriptor,
+                new java.lang.String[]{"Reference", "Scheme",});
+        internal_static_peacod_ast_Expr_Reference_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(4);
+        internal_static_peacod_ast_Expr_Reference_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_Reference_descriptor,
+                new java.lang.String[]{"Library", "Name",});
+        internal_static_peacod_ast_Expr_Variable_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(5);
+        internal_static_peacod_ast_Expr_Variable_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_Variable_descriptor,
+                new java.lang.String[]{"Type", "Index",});
+        internal_static_peacod_ast_Expr_LiteralFalse_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(6);
+        internal_static_peacod_ast_Expr_LiteralFalse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_LiteralFalse_descriptor,
+                new java.lang.String[]{});
+        internal_static_peacod_ast_Expr_LiteralTrue_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(7);
+        internal_static_peacod_ast_Expr_LiteralTrue_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_LiteralTrue_descriptor,
+                new java.lang.String[]{});
+        internal_static_peacod_ast_Expr_LiteralByte_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(8);
+        internal_static_peacod_ast_Expr_LiteralByte_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_LiteralByte_descriptor,
+                new java.lang.String[]{"Value",});
+        internal_static_peacod_ast_Expr_LiteralShort_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(9);
+        internal_static_peacod_ast_Expr_LiteralShort_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_LiteralShort_descriptor,
+                new java.lang.String[]{"Value",});
+        internal_static_peacod_ast_Expr_LiteralInteger_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(10);
+        internal_static_peacod_ast_Expr_LiteralInteger_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_LiteralInteger_descriptor,
+                new java.lang.String[]{"Value",});
+        internal_static_peacod_ast_Expr_LiteralLong_descriptor =
+                internal_static_peacod_ast_Expr_descriptor.getNestedTypes().get(11);
+        internal_static_peacod_ast_Expr_LiteralLong_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_Expr_LiteralLong_descriptor,
+                new java.lang.String[]{"Value",});
+        internal_static_peacod_ast_TypeExpr_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_peacod_ast_TypeExpr_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_TypeExpr_descriptor,
+                new java.lang.String[]{"Literal", "Variable", "Value",});
+        internal_static_peacod_ast_TypeExpr_Literal_descriptor =
+                internal_static_peacod_ast_TypeExpr_descriptor.getNestedTypes().get(0);
+        internal_static_peacod_ast_TypeExpr_Literal_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_TypeExpr_Literal_descriptor,
+                new java.lang.String[]{"Library", "Name", "Argument",});
+        internal_static_peacod_ast_TypeExpr_Variable_descriptor =
+                internal_static_peacod_ast_TypeExpr_descriptor.getNestedTypes().get(1);
+        internal_static_peacod_ast_TypeExpr_Variable_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_TypeExpr_Variable_descriptor,
+                new java.lang.String[]{"Index",});
+        internal_static_peacod_ast_TypeSchemeExpr_descriptor =
+                getDescriptor().getMessageTypes().get(4);
+        internal_static_peacod_ast_TypeSchemeExpr_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                internal_static_peacod_ast_TypeSchemeExpr_descriptor,
+                new java.lang.String[]{"Type", "Arity",});
+    }
+    private Ast() {
+    }
 
-  // @@protoc_insertion_point(outer_class_scope)
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistryLite registry) {
+    }
+
+    public static void registerAllExtensions(
+            com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions(
+                (com.google.protobuf.ExtensionRegistryLite) registry);
+    }
+
+    public static com.google.protobuf.Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    // @@protoc_insertion_point(outer_class_scope)
 }

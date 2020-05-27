@@ -4,120 +4,65 @@
 package com.sstewartgallus.peacod.ast;
 
 public interface ExprOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:peacod_ast.Expr)
-    com.google.protobuf.MessageOrBuilder {
+        // @@protoc_insertion_point(interface_extends:peacod_ast.Expr)
+        com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-   */
-  int getSimpleValue();
-  /**
-   * <code>.peacod_ast.Expr.Simple simple = 1;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.Simple getSimple();
+    /**
+     * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+     *
+     * @return Whether the variable field is set.
+     */
+    boolean hasVariable();
 
-  /**
-   * <pre>
-   * FIXME spell out fully as LiteralByte ?
-   * </pre>
-   *
-   * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-   */
-  boolean hasLitByte();
-  /**
-   * <pre>
-   * FIXME spell out fully as LiteralByte ?
-   * </pre>
-   *
-   * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitByte getLitByte();
-  /**
-   * <pre>
-   * FIXME spell out fully as LiteralByte ?
-   * </pre>
-   *
-   * <code>.peacod_ast.Expr.LitByte lit_byte = 2;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitByteOrBuilder getLitByteOrBuilder();
+    /**
+     * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+     *
+     * @return The variable.
+     */
+    com.sstewartgallus.peacod.ast.Expr.Variable getVariable();
 
-  /**
-   * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-   */
-  boolean hasLitShort();
-  /**
-   * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitShort getLitShort();
-  /**
-   * <code>.peacod_ast.Expr.LitShort lit_short = 3;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitShortOrBuilder getLitShortOrBuilder();
+    /**
+     * <code>.peacod_ast.Expr.Variable variable = 1;</code>
+     */
+    com.sstewartgallus.peacod.ast.Expr.VariableOrBuilder getVariableOrBuilder();
 
-  /**
-   * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-   */
-  boolean hasLitInt();
-  /**
-   * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitInt getLitInt();
-  /**
-   * <code>.peacod_ast.Expr.LitInt lit_int = 4;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitIntOrBuilder getLitIntOrBuilder();
+    /**
+     * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+     *
+     * @return Whether the constant field is set.
+     */
+    boolean hasConstant();
 
-  /**
-   * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-   */
-  boolean hasLitLong();
-  /**
-   * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitLong getLitLong();
-  /**
-   * <code>.peacod_ast.Expr.LitLong lit_long = 5;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LitLongOrBuilder getLitLongOrBuilder();
+    /**
+     * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+     *
+     * @return The constant.
+     */
+    com.sstewartgallus.peacod.ast.Expr.Constant getConstant();
 
-  /**
-   * <code>.peacod_ast.Expr.Get get = 6;</code>
-   */
-  boolean hasGet();
-  /**
-   * <code>.peacod_ast.Expr.Get get = 6;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.Get getGet();
-  /**
-   * <code>.peacod_ast.Expr.Get get = 6;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.GetOrBuilder getGetOrBuilder();
+    /**
+     * <code>.peacod_ast.Expr.Constant constant = 2;</code>
+     */
+    com.sstewartgallus.peacod.ast.Expr.ConstantOrBuilder getConstantOrBuilder();
 
-  /**
-   * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-   */
-  boolean hasApply();
-  /**
-   * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.Apply getApply();
-  /**
-   * <code>.peacod_ast.Expr.Apply apply = 7;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.ApplyOrBuilder getApplyOrBuilder();
+    /**
+     * <code>.peacod_ast.Expr.Call call = 3;</code>
+     *
+     * @return Whether the call field is set.
+     */
+    boolean hasCall();
 
-  /**
-   * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-   */
-  boolean hasLoadArg();
-  /**
-   * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LoadArg getLoadArg();
-  /**
-   * <code>.peacod_ast.Expr.LoadArg load_arg = 13;</code>
-   */
-  com.sstewartgallus.peacod.ast.Expr.LoadArgOrBuilder getLoadArgOrBuilder();
+    /**
+     * <code>.peacod_ast.Expr.Call call = 3;</code>
+     *
+     * @return The call.
+     */
+    com.sstewartgallus.peacod.ast.Expr.Call getCall();
 
-  public com.sstewartgallus.peacod.ast.Expr.ValueCase getValueCase();
+    /**
+     * <code>.peacod_ast.Expr.Call call = 3;</code>
+     */
+    com.sstewartgallus.peacod.ast.Expr.CallOrBuilder getCallOrBuilder();
+
+    public com.sstewartgallus.peacod.ast.Expr.ValueCase getValueCase();
 }

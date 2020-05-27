@@ -16,64 +16,11 @@
 package com.sstewartgallus.peacod.truffle.nodes.type;
 
 import com.oracle.truffle.api.frame.VirtualFrame;
-import com.oracle.truffle.api.instrumentation.GenerateWrapper;
-import com.oracle.truffle.api.instrumentation.ProbeNode;
-import com.oracle.truffle.api.nodes.Node;
 import com.oracle.truffle.api.nodes.NodeInfo;
-import com.oracle.truffle.api.source.SourceSection;
 import com.sstewartgallus.peacod.truffle.nodes.BaseNode;
-import com.sstewartgallus.peacod.truffle.runtime.PeacodType;
-
-import java.io.File;
-import java.util.List;
+import com.sstewartgallus.peacod.truffle.runtime.PeacodTypeInstance;
 
 @NodeInfo(description = "The abstract base nodes for all type expressions")
 public abstract class TypeNode extends BaseNode {
-
-    private static TypeNode of(PeacodType t) {
-        return new Literal(t);
-    }
-
-    public static TypeNode ofLiteral(String name, List<TypeNode> params) {
-        // fixme cleanup...
-        switch (name) {
-            default:
-                throw new Error("unimpl " + name);
-
-            case "boolean":
-                return TypeNode.of(PeacodType.BOOLEAN_VALUE);
-            case "byte":
-                return TypeNode.of(PeacodType.BYTE_VALUE);
-            case "short":
-                return TypeNode.of(PeacodType.SHORT_VALUE);
-            case "int":
-                return TypeNode.of(PeacodType.INT_VALUE);
-            case "long":
-                return TypeNode.of(PeacodType.LONG_VALUE);
-
-            case "fn": {
-                // FIXME make generic over templates
-                int size = params.size();
-                TypeNode result = params.get(size - 1);
-                List<TypeNode> arguments = params.subList(0, size - 1);
-                return FunctionNode.of(result, arguments);
-            }
-        }
-    }
-
-    public abstract PeacodType execute(VirtualFrame frame);
-
-    @NodeInfo(shortName = "const")
-    private static final class Literal extends TypeNode {
-        private final PeacodType value;
-
-        private Literal(PeacodType value) {
-            this.value = value;
-        }
-
-        @Override
-        public PeacodType execute(VirtualFrame frame) {
-            return value;
-        }
-    }
+    public abstract PeacodTypeInstance execute(VirtualFrame frame);
 }

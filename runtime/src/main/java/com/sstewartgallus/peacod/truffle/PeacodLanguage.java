@@ -23,15 +23,8 @@ import com.oracle.truffle.api.debug.DebuggerTags;
 import com.oracle.truffle.api.instrumentation.ProvidedTags;
 import com.oracle.truffle.api.instrumentation.StandardTags;
 import com.oracle.truffle.api.interop.InteropLibrary;
-import com.oracle.truffle.api.source.Source;
-import com.oracle.truffle.api.source.SourceSection;
-import com.sstewartgallus.peacod.ast.LibraryDef;
 import com.sstewartgallus.peacod.compiler.Compiler;
 import com.sstewartgallus.peacod.truffle.builtins.LoadLibraryNodeGen;
-import com.sstewartgallus.peacod.truffle.runtime.PeacodAny;
-
-import java.io.Reader;
-import java.util.List;
 
 @TruffleLanguage.Registration(
         id = PeacodLanguage.ID,
@@ -57,46 +50,40 @@ public final class PeacodLanguage extends TruffleLanguage<PeacodContext> {
         return getCurrentLanguage(PeacodLanguage.class);
     }
 
+    public static PeacodContext getContext() {
+        return getCurrentContext(PeacodLanguage.class);
+    }
+
     @Override
     protected PeacodContext createContext(Env env) {
         return new PeacodContext();
     }
 
     @Override
+    protected void initializeContext(PeacodContext context) {
+        context.initialize();
+    }
+
+    @Override
     protected CallTarget parse(ParsingRequest request) {
-        Source source = request.getSource();
-        List<String> arguments = request.getArgumentNames();
+        var source = request.getSource();
+        var arguments = request.getArgumentNames();
 
         if (!arguments.isEmpty()) {
-            throw new Error("FIXME handle args");
+            throw new Error("FIXME handle argument");
         }
 
-        Reader reader = source.getReader();
+        var reader = source.getReader();
 
-        LibraryDef moduleDef = Compiler.compile(reader);
+        var moduleDef = Compiler.compile(reader);
 
-        return Truffle.getRuntime().createCallTarget(LoadLibraryNodeGen.create(this, moduleDef));
+        return Truffle.getRuntime().createCallTarget(LoadLibraryNodeGen.create(moduleDef));
     }
 
     @Override
     protected boolean isVisible(PeacodContext context, Object value) {
+        // FIXME... this is odd...
         return !InteropLibrary.getFactory().getUncached(value).isNull(value);
     }
-
-    @Override
-    protected boolean isObjectOfLanguage(Object object) {
-        return object instanceof PeacodAny;
-    }
-
-    @Override
-    protected String toString(PeacodContext context, Object value) {
-        return value.toString();
-    }
-
-    @Override
-    protected Object findMetaObject(PeacodContext context, Object value) {
-        return ((PeacodAny) value).findMetaObject();
-    }
-
 }
 

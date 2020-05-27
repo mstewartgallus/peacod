@@ -16,26 +16,29 @@
 package com.sstewartgallus.peacod.compiler;
 
 import java.util.Collections;
-import java.util.List;
+import java.util.Objects;
 
 final class Signature {
     final String libraryName;
     final String name;
-    final Type type;
-    final List<Type> typeParameters;
+    final TypeScheme typeScheme;
 
-    private Signature(String libraryName, String name, Type type, List<Type> typeParameters) {
-        this.libraryName = libraryName;
-        this.name = name;
-        this.type = type;
-        this.typeParameters = typeParameters;
+    private Signature(String libraryName, String name, TypeScheme scheme) {
+        this.libraryName = Objects.requireNonNull(libraryName);
+        this.name = Objects.requireNonNull(name);
+        this.typeScheme = Objects.requireNonNull(scheme);
     }
 
     static Signature of(String libraryName, String name, Type type) {
-        return new Signature(libraryName, name, type, Collections.emptyList());
+        return Signature.of(libraryName, name, TypeScheme.over(Collections.emptyList(), type));
     }
 
-    static Signature of(String libraryName, String name, Type type, List<Type> typeParameters) {
-        return new Signature(libraryName, name, type, typeParameters);
+    static Signature of(String libraryName, String name, TypeScheme scheme) {
+        Objects.requireNonNull(libraryName);
+        return new Signature(libraryName, name, scheme);
+    }
+
+    public String toString() {
+        return libraryName + "." + name + ":" + typeScheme;
     }
 }

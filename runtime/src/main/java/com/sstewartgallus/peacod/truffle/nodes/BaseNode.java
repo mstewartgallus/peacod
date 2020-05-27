@@ -16,7 +16,6 @@
 package com.sstewartgallus.peacod.truffle.nodes;
 
 import com.oracle.truffle.api.dsl.TypeSystemReference;
-import com.oracle.truffle.api.instrumentation.InstrumentableNode;
 import com.oracle.truffle.api.nodes.Node;
 import com.oracle.truffle.api.nodes.NodeInfo;
 import com.sstewartgallus.peacod.truffle.PeacodTypes;

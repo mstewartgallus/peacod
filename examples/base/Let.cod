@@ -1,0 +1,11 @@
+(declare foo int)
+(define foo 5)
+
+(declare main int)
+(define main let (
+        (declare y int)
+        (define y 44)
+
+        (declare x int)
+        (define x y))
+    x)
